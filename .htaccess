@@ -1,0 +1,7 @@
+SetEnv PHP_VER 5
+Options +FollowSymlinks
+RewriteEngine on
+AddDefaultCharset UTF-8
+
+# ------ Réécriture index
+RewriteRule ^accueil.htm$ index.php?&page=auth [L,QSA]
