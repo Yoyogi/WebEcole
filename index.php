@@ -10,6 +10,7 @@ foreach ($_GET as $key => $value) $$key = $value;
 foreach ($_POST as $key => $value) $$key = $value;
 
 include_once "config.php";
+require_once($pdomap_file);
 
 //initialisation des variables de navigation pour la premiere utilisation
 if(!isset($page))
@@ -17,7 +18,7 @@ if(!isset($page))
 if(!isset($spage))
     $spage = "";
 
-include $controler_file;
+include $controller_file;
 ?>
 
 <!DOCTYPE html>
