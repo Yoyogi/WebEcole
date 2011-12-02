@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-    Document   : student.map.xml.xml
-    Created on : 2 décembre 2011, 09:31
-    Author     : Yoyogi
-    Description:
-        /Mapping of the student table
--->
-
 <pdomap>
   <adapter name="students" table="etudiant">
     <entity>
@@ -17,12 +8,12 @@
         <property name="surname" column="prenom" type="char" size="45" />
         <property name="birthday" column="date_naissance" type="date"/>
         <property name="adress" column="rue" type="char" size="45" />
-        <property name="zipCode" column="cp" type="int" size="11" />
+        <property name="zipCode" column="cp" type="char" size="11" />
         <property name="city" column="ville" type="char" size="45" />
         <property name="mail" column="email" type="char" size="45" />
         <property name="login" column="ulogin" type="char" size="45" />
         <property name="passwd" column="passwd" type="char" size="45" />
-        <property name="p33333hoto" column="photo" type="char" size="250" />
+        <property name="photo" column="photo" type="char" size="250" />
       </properties>
     </entity>
   </adapter>

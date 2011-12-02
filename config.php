@@ -6,7 +6,7 @@ $footer_file = "footer.php";
 
 /* nom des fichiers pour pdomap */
 $pdomap_file = "lib/pdomap/pdomap.php";
-$pdomap_config = "ressources/pdomap_config/pdomap_config.xml";
+$pdomap_config = "essources/pdomap_config/pdomap_config.xml";
 $pdomap_studentmap = "ressources/pdomap_config/student.map.xml";
 
 /* nom des fichiers de style */
