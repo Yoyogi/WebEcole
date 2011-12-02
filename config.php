@@ -22,6 +22,7 @@ $teacher_repo = "teacher/";
 /* nom des fichiers de page */
 $index_file = $auth_repo."auth.php";
 $log_forwarding_file = $auth_repo."forwarding.php";
+$gest_personne_file = $adm_repo."gest_personne.php";
 
 /* nom des fichiers du crud */
 $crud_file = $crud_repo."Crud.php";
