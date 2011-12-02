@@ -7,7 +7,7 @@ switch($page) {
         break;
     
     case "log_forward":
-        $body = $index_file;
+        $body = $log_forwarding_file;
         $title = "Connexion Web Ecole";
         $metadescription = "Web Ecole - Connexion";
         break;
