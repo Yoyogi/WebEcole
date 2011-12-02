@@ -4,6 +4,9 @@ $controler_file = "controler.php";
 $header_file = "header.php";
 $footer_file = "footer.php";
 
+/* nom des librairies */
+$pdomap_file = "lib/pdomap/pdomap.php";
+
 /* nom des fichiers de style */
 $styleGeneral_file = "style.css";
 
