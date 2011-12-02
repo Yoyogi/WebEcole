@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : podmap_config.xml
+    Created on : 2 décembre 2011, 09:18
+    Author     : Yoyogi
+    Description:
+        Define pdomap library configuration
+-->
+
+<pdomap>
+    <connections>
+        <add key="*"
+        dsn="mysql:host=localhost;dbname=webecole"
+        user="root"
+        pwd=""/>
+    </connections>
+</pdomap>
