@@ -15,4 +15,9 @@
         user="root"
         pwd=""/>
     </connections>
+    
+    <!-- the mapping definition starts here -->
+    <mapping root="./">
+        <adapter name="students" meta="student.map.xml"/>
+    </mapping>
 </pdomap>
