@@ -20,8 +20,8 @@ if(!isset($spage))
 include $controller_file;
 
 //include pour le fonctionnement de l'orm doctrine
-include $doctrine_file;
-spl_autoload_register(array('Doctrine_Core', 'autoload'));
+require $doctrine_setup_file;
+Doctrine\ORM\Tools\Setup::registerAutoloadDirectory($doctrine_lib_file);
 include $crud_file;
 ?>
 
