@@ -12,4 +12,8 @@ RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
 # ------
 RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
 
+# ------
+RewriteRule ^loggedAccueil.htm$ index.php?&page=logged_accueil [L,QSA]
+
+# ------
 RewriteRule ^gestion_personne.htm$ index.php?&page=gest_personne [L,QSA]
