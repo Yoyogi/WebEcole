@@ -5,3 +5,9 @@ AddDefaultCharset UTF-8
 
 # ------ Réécriture index
 RewriteRule ^accueil.htm$ index.php?&page=auth [L,QSA]
+
+# ------
+RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
+
+# ------
+RewriteRule ^gestion_personne.htm$ index.php?&page=gest_personne [L,QSA]
