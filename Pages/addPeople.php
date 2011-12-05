@@ -6,7 +6,6 @@
  */
 ?>
 
-
 <form method="POST" action="addEleve.htm">
     <p><label> Identifiant </label> <input type=text name=login> </p>
     <p><label> Mot de passe </label> <input type=text name=password> </p>
@@ -20,5 +19,5 @@
     <p><label> Photo </label> <input type=text name=login> </p>
     <p><label> Date de naissance </label> <input type=text name=password> </p>
     
-    <p> <input type="submit" name="envoyer" value="Se connecter"> </p>
+    <p> <input type="submit" name="envoyer" value="Ajouter personne"> </p>
 </form>
