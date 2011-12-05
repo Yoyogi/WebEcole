@@ -36,10 +36,6 @@ include $crud_file;
     <body>
         <?php
         include $body;
-        
-        //test crud
-        $crud = new Crud();
-        $crud->createStudent();
         ?>
     </body>
 </html>

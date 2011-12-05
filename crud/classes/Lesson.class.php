@@ -22,8 +22,6 @@ class Lesson extends Doctrine_Record {
         $this->hasColumn("id_promo", "integer", 11);
         $this->hasColumn("id_enseignant", "integer", 11);
         $this->hasColumn("id_matiere", "integer", 11);
-        
-        $this->hasColumn("id_absence", "integer", 11);
     }
     
     public function setUp() {

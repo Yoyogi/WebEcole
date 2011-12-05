@@ -8,24 +8,24 @@ class Crud implements ICrud {
         $connection = Doctrine_Manager::connection(CFG_DB_DSN);
     }
     
-    function createStudent() {
+    function createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
         $student = new Student();
-        $student->nom = "TIRAND";
-        $student->prenom = "Yannick";
-        $student->date_naissance = "25/07/1989";
-        $student->rue = "9, rue général René";
-        $student->cp = 34000;
-        $student->ville = "Montpellier";
-        $student->email = "ytirand@epsi.fr";
-        $student->ulogin = "ytirand";
-        $student->passwd = "1234";
-        $student->photo = "C:/photo_yt.jpg";
+        $student->nom = $nom;
+        $student->prenom = $prenom;
+        $student->date_naissance = $date_naisse;
+        $student->rue = $rue;
+        $student->cp = $cp;
+        $student->ville = $ville;
+        $student->email = $email;
+        $student->ulogin = $ulogin;
+        $student->passwd = $passwd;
+        $student->photo = $photo;
         
         $student->save();
     }
     
     function getStudents() {
-        
+        return Doctrine_Core::getTable("Student")->findAll();
     }
 }
 

@@ -25,9 +25,6 @@ class Student extends Doctrine_Record {
         $this->hasColumn("ulogin", "varchar", 45);
         $this->hasColumn("passwd", "varchar", 45);
         $this->hasColumn("photo", "varchar", 250);
-        
-        $this->hasColumn("id_promo", "integer", 11);
-        $this->hasColumn("id_absence", "integer", 11);
     }
     
     public function setUp() {

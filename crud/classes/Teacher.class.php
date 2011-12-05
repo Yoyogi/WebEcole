@@ -24,9 +24,6 @@ class Teacher extends Doctrine_Record {
         $this->hasColumn("email", "varchar", 45);
         $this->hasColumn("ulogin", "varchar", 45);
         $this->hasColumn("passwd", "varchar", 45);
-        
-        $this->hasColumn("id_cours", "integer", 11);
-        $this->hasColumn("id_matiere", "integer", 11);
     }
     
     public function setUp() {
