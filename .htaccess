@@ -10,4 +10,8 @@ RewriteRule ^accueil.htm$ index.php?&page=auth [L,QSA]
 RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
 
 # ------
+<<<<<<< HEAD
 RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
+=======
+RewriteRule ^gestion_personne.htm$ index.php?&page=gest_personne [L,QSA]
+>>>>>>> 7fd6f32a1ea913824684554b71c16c0f7b05502c
