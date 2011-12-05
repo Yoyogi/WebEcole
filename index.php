@@ -32,6 +32,7 @@ include $controller_file;
     
     <body>
         <?php
+        include $body;
         ?>
     </body>
 </html>
