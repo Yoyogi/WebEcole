@@ -32,11 +32,6 @@ include $controller_file;
     
     <body>
         <?php
-            include $body;
-            include $crud_file;
-            $crud = new Crud();
-            $crud->createStudent();
-            //$crud->getStudents();
         ?>
     </body>
 </html>
