@@ -1,10 +1,10 @@
 <?php
-
-require_once($icrud_file);
+require_once $icrud_file;
 class Crud implements ICrud {
+    $connexion;
     
     function Crud() {
-        pdoMap::config("ressources/pdomap_config/pdomap_config.xml");
+        $dsn = "mysql://root:root@localhost/webecole";
     }
     
     function createStudent() {

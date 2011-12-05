@@ -4,10 +4,8 @@ $controller_file = "controller.php";
 $header_file = "header.php";
 $footer_file = "footer.php";
 
-/* nom des fichiers pour pdomap */
-$pdomap_file = "lib/pdomap/pdomap.php";
-$pdomap_config = "essources/pdomap_config/pdomap_config.xml";
-$pdomap_studentmap = "ressources/pdomap_config/student.map.xml";
+/* nom des fichiers pour doctrine */
+$doctrine_file = "lib/doctrine/doctrine2-orm/bin/doctrine.php";
 
 /* nom des fichiers de style */
 $styleGeneral_file = "style.css";

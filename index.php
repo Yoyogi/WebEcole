@@ -18,6 +18,11 @@ if(!isset($spage))
     $spage = "";
 
 include $controller_file;
+
+//include pour le fonctionnement de l'orm doctrine
+include $doctrine_file;
+spl_autoload_register(array('Doctrine_Core', 'autoload'));
+include $crud_file;
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +38,9 @@ include $controller_file;
     <body>
         <?php
         include $body;
+        
+        //test crud
+        $crud = new Crud();
         ?>
     </body>
 </html>
