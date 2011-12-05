@@ -8,3 +8,6 @@ RewriteRule ^accueil.htm$ index.php?&page=auth [L,QSA]
 
 # ------
 RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
+
+# ------
+RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
