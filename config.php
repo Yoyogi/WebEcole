@@ -5,8 +5,8 @@ $header_file = "header.php";
 $footer_file = "footer.php";
 
 /* nom des fichiers pour doctrine */
-$doctrine_setup_file = "lib/doctrine/doctrine2-orm/lib/Doctrine/ORM/Tools/Setup.php";
-$doctrine_lib_file = "lib/doctrine/doctrine2-orm/lib/vendor/doctrine-common/lib";
+//$doctrine_setup_file = "lib/doctrine/doctrine2-orm/lib/Doctrine/ORM/Tools/Setup.php";
+//$doctrine_lib_file = "lib/doctrine/doctrine2-orm/lib";
 
 /* nom des fichiers de style */
 $styleGeneral_file = "style.css";
