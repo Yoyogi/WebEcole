@@ -1,4 +1,4 @@
-<?php // GEN Students AT 2011-12-02 10:55:32
+<?php // GEN Students AT 2011-12-02 12:27:11
 $return = new pdoMap_Dao_Metadata_Table(
                         'students','etudiant','StudentsEntityImpl',
                         '','StudentsAdapterImpl','*');
