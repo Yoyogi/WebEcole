@@ -20,8 +20,6 @@ if(!isset($spage))
 include $controller_file;
 
 //include pour le fonctionnement de l'orm doctrine
-require $doctrine_setup_file;
-Doctrine\ORM\Tools\Setup::registerAutoloadDirectory($doctrine_lib_file);
 include $crud_file;
 ?>
 
@@ -41,6 +39,7 @@ include $crud_file;
         
         //test crud
         $crud = new Crud();
+        $crud->createStudent();
         ?>
     </body>
 </html>
