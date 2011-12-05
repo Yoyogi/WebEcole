@@ -16,6 +16,25 @@ interface ICrud {
     function deleteTeacher($idTeacher);
     function getTeachers();
     function getTeacherById($id);
+    
+    //crud administrateur
+    function getAdmins();
+    function getAdminById($id);
+    
+    //crud absence
+    function getAbsencesBylesson($idLesson);
+    function getAbsencesByStudent($idStudent);
+    
+    //crud cours
+    function getLessons();
+    function getLessonsByTeacher($idTeacher);
+    function getLessonsBySubject($idSubject);
+    function getLessonsByPromotion($idPromotion);
+    
+    //crud matière
+    function getSubjects();
+    function getSubjectsByTeacher($idTeacher);
+    function getSubjectsByLesson($idLesson);
 }
 
 ?>
