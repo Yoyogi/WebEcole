@@ -40,12 +40,14 @@ $index_admin_file = $adm_repo."IndexAdmin.php";
 $manage_absence_file = $adm_repo."ManageAbsence.php";
 $manage_division_file = $adm_repo."ManageDivision.php";
 $manage_lesson_file = $adm_repo."ManageLesson.php";
-$manage_people_file = $adm_repo."ManagePeople.php";
+$manage_people_file = $adm_repo."view/ManagePeople.php";
 $manage_subject_file = $adm_repo."ManageSubject.php";
 $modify_division_file = $adm_repo."ModifyDivision.php";
 $modify_lesson_file = $adm_repo."ModifyLesson.php";
-$modify_people_file = $adm_repo."mModifyPeople.php";
+$modify_people_file = $adm_repo."ModifyPeople.php";
 $modify_subject_file = $adm_repo."ModifySubject.php";
+
+$manage_people_class = $adm_repo."class/ManagePeople.class.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";

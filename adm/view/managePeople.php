@@ -4,6 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+    require $manage_people_class;
     $manage_people = ManagePeople::getInstance();
     
 ?>
