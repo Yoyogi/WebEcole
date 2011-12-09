@@ -123,21 +123,27 @@ class Crud implements ICrud {
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
     function getAdmins() {
-        
+        return Doctrine_Core::getTable("Administrateur")->findAll();
     }
+    
     function getAdminById($id) {
-        
+        return Doctrine_Core::getTable("Administrateur")->findOneBy("id_administrateur", $id);
     }
     
     
     //---------------------------------------------------
     /* CRUD ABSENCES */
     //---------------------------------------------------
-    function getAbsencesBylesson($idLesson) {
-        
+    function getAbsences() {
+        return Doctrine_Core::getTable("Absence")->findAll();
     }
+    
+    function getAbsencesBylesson($idLesson) {
+        return Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLessons);
+    }
+    
     function getAbsencesByStudent($idStudent) {
-        
+        return Doctrine_Core::getTable("Absence")->findBy("id_etudiant", $idStudent);
     }
     
     
@@ -145,16 +151,19 @@ class Crud implements ICrud {
     /* CRUD COURS */
     //---------------------------------------------------
     function getLessons() {
-        
+        return Doctrine_Core::getTable("Cours")->findAll();
     }
+    
     function getLessonsByTeacher($idTeacher) {
-        
+        return Doctrine_Core::getTable("Cours")->findBy("id_enseignant", $idTeacher);
     }
+    
     function getLessonsBySubject($idSubject) {
-        
+        return Doctrine_Core::getTable("Cours")->findBy("id_matiere", $idSubject);
     }
+    
     function getLessonsByPromotion($idPromotion) {
-        
+        return Doctrine_Core::getTable("Cours")->findBy("id_promotion", $idPromotion);
     }
     
     
@@ -162,13 +171,21 @@ class Crud implements ICrud {
     /* CRUD MATIERES */
     //---------------------------------------------------
     function getSubjects() {
-        
+        return Doctrine_Core::getTable("Matiere")->findAll();
     }
+    
     function getSubjectsByTeacher($idTeacher) {
-        
+        $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
+        $subjects = $teacher->Matieres;
+        foreach ($subjects as $subject) {
+            echo $subject->id_matiere + " : " + $subject->libelle + "\n";
+        }
     }
+    
     function getSubjectsByLesson($idLesson) {
-        
+        $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $idLesson);
+        $idSubject = $lesson->id_matiere;
+        return Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $idSubject);
     }
 }
 

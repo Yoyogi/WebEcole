@@ -268,16 +268,8 @@ EnseignantMatiere:
       primary: true
   relations:
     Enseignant:
-      class: Enseignant
-      local: id_enseignant
-      foreign: id_enseignant
-      alias: Enseignant
       foreignAlias: EnseignantMatiere
     Matiere:
-      class: Matiere
-      local: id_matiere
-      foreign: id_matiere
-      alias: Matiere
       foreignAlias: EnseignantMatiere
 
 ## ETUDIANT_PROMOTION
@@ -291,14 +283,6 @@ EtudiantPromotion:
       primary: true
   relations:
     Etudiant:
-      class: Etudiant
-      local: id_etudiant
-      foreign: id_etudiant
-      alias: Etudiant
       foreignAlias: EtudiantPromotion
     Promotion:
-      class: Promotion
-      local: id_promotion
-      foreign: id_promotion
-      alias: Promotion
       foreignAlias: EtudiantPromotion
