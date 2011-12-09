@@ -1,5 +1,17 @@
 <?php
 
+require_once $absenceclass_file;
+require_once $administrateurclass_file;
+require_once $aideclass_file;
+require_once $coursclass_file;
+require_once $enseignantclass_file;
+require_once $enseignantmatiereclass_file;
+require_once $etudiantclass_file;
+require_once $etudiantpromotionclass_file;
+require_once $exerciceclass_file;
+require_once $matiereclass_file;
+require_once $promotionclass_file;
+
 interface ICrud {
     //crud étudiant
     function createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
