@@ -65,3 +65,5 @@ RewriteRule ^modifyPeople.htm$ index.php?&page=modify_people [L,QSA]
 
 # ------
 RewriteRule ^modifySubject.htm$ index.php?&page=modify_subject [L,QSA]
+
+
