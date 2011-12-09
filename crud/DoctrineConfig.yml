@@ -6,6 +6,8 @@ Absence:
     id_absence:
       type: integer(11)
       notnull: true
+      primary: true
+      autoincrement: true
     motif:
       type: string(45)
       notnull: true
@@ -27,16 +29,276 @@ Absence:
       alias: Cours
       foreignAlias: Absences
       
-##ADMINISTRATEUR
+## ADMINISTRATEUR
 Administrateur:
   columns:
     id_administrateur:
       type: integer(11)
       notnull: true
+      primary: true
+      autoincrement: true
     nom:
       type: string(45)
       notnull: true
     prenom:
       type: string(45)
       notnull: true
+    rue:
+      type: string(45)
+      notnull: true
+    cp:
+      type: integer(11)
+      notnull: true
+    ville:
+      type: string(45)
+      notnull: true
+    email:
+      type: string(45)
+      notnull: true
+    ulogin:
+      type: string(45)
+      notnull: true
+    passwd:
+      type: string(45)
+      notnull: true
+
+## AIDE
+Aide:
+  columns:
+    id_aide:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    page:
+      type: string(45)
+      notnull: true
+    libelle:
+      type: string(45)
+      notnull: true
+
+## COURS
+Cours:
+  columns:
+    id_cours:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    date_cours:
+      type: string(45)
+      notnull: true
+    duree:
+      type: string(45)
+      notnull: true
+    descript:
+      type: string(45)
+      notnull: true
+    id_enseignant:
+      type: integer(11)
+    id_promo:
+      type: integer(11)
+    id_matiere:
+      type: integer(11)
   relations:
+    Enseignant:
+      class: Enseignant
+      local: id_enseignant
+      foreign: id_enseignant
+      alias: Enseignant
+      foreignAlias: Cours
+    Promotion:
+      class: Promotion
+      local: id_promo
+      foreign: id_promo
+      alias: Promotion
+      foreignAlias: Cours
+    Matiere:
+      class: Matiere
+      local: id_matiere
+      foreign: id_matiere
+      alias: Matiere
+      foreignAlias: Cours
+
+## ENSEIGNANT
+Enseignant:
+  columns:
+    id_enseignant:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    nom:
+      type: string(45)
+      notnull: true
+    prenom:
+      type: string(45)
+      notnull: true
+    rue:
+      type: string(45)
+      notnull: true
+    cp:
+      type: integer(11)
+      notnull: true
+    ville:
+      type: string(45)
+      notnull: true
+    email:
+      type: string(45)
+      notnull: true
+    ulogin:
+      type: string(45)
+      notnull: true
+    passwd:
+      type: string(45)
+      notnull: true
+  relations:
+    Matieres:
+      class: Matiere
+      refClass: EnseignantMatiere
+      foreignAlias: Enseignants
+  attributes:
+    export: all
+    validate: true
+
+## ETUDIANT
+Etudiant:
+  columns:
+    id_etudiant:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    nom:
+      type: string(45)
+      notnull: true
+    prenom:
+      type: string(45)
+      notnull: true
+    rue:
+      type: string(45)
+      notnull: true
+    cp:
+      type: integer(11)
+      notnull: true
+    ville:
+      type: string(45)
+      notnull: true
+    email:
+      type: string(45)
+      notnull: true
+    ulogin:
+      type: string(45)
+      notnull: true
+    passwd:
+      type: string(45)
+      notnull: true
+    photo:
+      type: string(250)
+  relations:
+    Promotions:
+      class: Promotion
+      refClass: EtudiantPromotion
+      foreignAlias: Etudiants
+
+## EXERCICE
+Exercice:
+  columns:
+    id_exercice:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(45)
+      notnull: true
+    id_cours:
+      type: integer(11)
+  relations:
+    Cours:
+      class: Cours
+      local: id_cours
+      foreign: id_cours
+      alias: Cours
+      foreignAlias: Exercices
+
+## MATIERE
+Matiere:
+  columns:
+    id_matiere:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(45)
+  relations:
+    Enseignants:
+      class: Enseignant
+      refClass: EnseignantMatiere
+      foreignAlias: Matieres
+
+## PROMOTION
+Promotion:
+  columns:
+    id_promo:
+      type: integer(11)
+      notnull: true
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(45)
+      notnull: true
+  relations:
+    Etudiants:
+      class: Etudiant
+      refClass: EtudiantPromotion
+      foreignAlias: Promotions
+
+
+## --- RELATIONS MANY TO MANY
+## ENSEIGNANT_MATIERE
+EnseignantMatiere:
+  columns:
+    id_enseignant:
+      type: integer(11)
+      primary: true
+    id_matiere:
+      type: integer(11)
+      primary: true
+  relations:
+    Enseignant:
+      class: Enseignant
+      local: id_enseignant
+      foreign: id_enseignant
+      alias: Enseignant
+      foreignAlias: EnseignantMatiere
+    Matiere:
+      class: Matiere
+      local: id_matiere
+      foreign: id_matiere
+      alias: Matiere
+      foreignAlias: EnseignantMatiere
+
+## ETUDIANT_PROMOTION
+EtudiantPromotion:
+  columns:
+    id_etudiant:
+      type: integer(11)
+      primary: true
+    id_promo:
+      type: integer(11)
+      primary: true
+  relations:
+    Etudiant:
+      class: Etudiant
+      local: id_etudiant
+      foreign: id_etudiant
+      alias: Etudiant
+      foreignAlias: EtudiantPromotion
+    Promotion:
+      class: Promotion
+      local: id_promotion
+      foreign: id_promotion
+      alias: Promotion
+      foreignAlias: EtudiantPromotion
