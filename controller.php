@@ -15,5 +15,9 @@ switch($page) {
     case "pupil";
         include $controller_pupil_file;
         break;
+    
+    default:
+        include $controller_auth_file;
+        break;
 }
 ?>

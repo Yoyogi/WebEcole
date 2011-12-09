@@ -71,44 +71,74 @@ class Crud implements ICrud {
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
-    function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
-    function updateTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
-    function deleteTeacher($idTeacher);
+    function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        
+    }
+    function updateTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        
+    }
+    function deleteTeacher($idTeacher) {
+        
+    }
     function getTeachers() {
         return Doctrine_Core::getTable("Teacher")->findAll();
     }
-    function getTeacherById($id);
+    function getTeacherById($id) {
+        
+    }
     
     
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
-    function getAdmins();
-    function getAdminById($id);
+    function getAdmins() {
+        
+    }
+    function getAdminById($id) {
+        
+    }
     
     
     //---------------------------------------------------
     /* CRUD ABSENCES */
     //---------------------------------------------------
-    function getAbsencesBylesson($idLesson);
-    function getAbsencesByStudent($idStudent);
+    function getAbsencesBylesson($idLesson) {
+        
+    }
+    function getAbsencesByStudent($idStudent) {
+        
+    }
     
     
     //---------------------------------------------------
     /* CRUD COURS */
     //---------------------------------------------------
-    function getLessons();
-    function getLessonsByTeacher($idTeacher);
-    function getLessonsBySubject($idSubject);
-    function getLessonsByPromotion($idPromotion);
+    function getLessons() {
+        
+    }
+    function getLessonsByTeacher($idTeacher) {
+        
+    }
+    function getLessonsBySubject($idSubject) {
+        
+    }
+    function getLessonsByPromotion($idPromotion) {
+        
+    }
     
     
     //---------------------------------------------------
     /* CRUD MATIERES */
     //---------------------------------------------------
-    function getSubjects();
-    function getSubjectsByTeacher($idTeacher);
-    function getSubjectsByLesson($idLesson);
+    function getSubjects() {
+        
+    }
+    function getSubjectsByTeacher($idTeacher) {
+        
+    }
+    function getSubjectsByLesson($idLesson) {
+        
+    }
 }
 
 ?>

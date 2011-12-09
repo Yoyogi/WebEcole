@@ -12,5 +12,11 @@ switch ($spage) {
         $title = "Connexion Web Ecole en cours ....";
         $metadescription = "Web Ecole - Connexion";
         break;
+    
+    default:
+        $body = $index_file;
+        $title = "Connexion Web Ecole";
+        $metadescription = "Web Ecole - Connexion";
+        break;
 }
 ?>

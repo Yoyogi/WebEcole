@@ -7,9 +7,12 @@ $footer_file = "footer.php";
 /* configuration de doctrine */
 define('CFG_DB_DSN', 'mysql://root@localhost/webecole');
 define('LIB_DIR',  dirname(__FILE__).'/lib/');
+define('CRUD_DIR', dirname(__FILE__).'/crud/');
 define('CFG_DIR',  dirname(__FILE__).'/');
 require_once(LIB_DIR.'vendor/doctrine/Doctrine.php');
 spl_autoload_register(array('Doctrine_Core', 'autoload'));
+spl_autoload_register(array('Doctrine_Core', 'modelsAutoload'));
+Doctrine_Core::generateModelsFromYaml(CFG_DIR.'DoctrineConfig.yml', CRUD_DIR.'models', array('generateTableClasses' => true));
 
 /* nom des fichiers de style */
 $styleGeneral_file = "style.css";
