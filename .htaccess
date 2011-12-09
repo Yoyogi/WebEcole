@@ -13,6 +13,9 @@ RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
 RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
 
 # ------
+RewriteRule ^addDivision.htm$ index.php?&page=add_division [L,QSA]
+
+# ------
 RewriteRule ^addLesson.htm$ index.php?&page=add_lesson [L,QSA]
 
 # ------
