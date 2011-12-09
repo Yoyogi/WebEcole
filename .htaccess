@@ -13,7 +13,52 @@ RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
 RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
 
 # ------
-RewriteRule ^loggedAccueil.htm$ index.php?&page=logged_accueil [L,QSA]
+RewriteRule ^addLesson.htm$ index.php?&page=add_lesson [L,QSA]
 
 # ------
-RewriteRule ^gestion_personne.htm$ index.php?&page=gest_personne [L,QSA]
+RewriteRule ^addPeople.htm$ index.php?&page=add_people [L,QSA]
+
+# ------
+RewriteRule ^addSubject.htm$ index.php?&page=add_subject [L,QSA]
+
+# ------
+RewriteRule ^indexAdmin.htm$ index.php?&page=index_admin [L,QSA]
+
+# ------
+RewriteRule ^manageAbsence.htm$ index.php?&page=manage_absence [L,QSA]
+
+# ------
+RewriteRule ^manageDivision.htm$ index.php?&page=manage_division [L,QSA]
+
+# ------
+RewriteRule ^manageLesson.htm$ index.php?&page=manage_lesson [L,QSA]
+
+# ------
+RewriteRule ^managePeople.htm$ index.php?&page=manage_people [L,QSA]
+
+# ------
+RewriteRule ^manageSubject.htm$ index.php?&page=manage_subject [L,QSA]
+
+# ------
+RewriteRule ^modifyDivision.htm$ index.php?&page=modify_division [L,QSA]
+
+# ------
+RewriteRule ^modifyLesson.htm$ index.php?&page=modify_lesson [L,QSA]
+
+# ------
+RewriteRule ^managePeople.htm$ index.php?&page=manage_people [L,QSA]
+
+# ------
+RewriteRule ^manageSubject.htm$ index.php?&page=manage_subject [L,QSA]
+
+# ------
+RewriteRule ^modifyDivision.htm$ index.php?&page=modify_division [L,QSA]
+
+# ------
+RewriteRule ^modifyLesson.htm$ index.php?&page=modify_lesson [L,QSA]
+
+# ------
+RewriteRule ^modifyPeople.htm$ index.php?&page=modify_people [L,QSA]
+
+# ------
+RewriteRule ^modifySubject.htm$ index.php?&page=modify_subject [L,QSA]
