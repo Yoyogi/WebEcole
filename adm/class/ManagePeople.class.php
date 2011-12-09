@@ -1,18 +1,9 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $crud_file;
 
-/**
- * Description of ManagePeople
- *
- * @author Midgard
- */
 class ManagePeople {
-    //put your code here
-    private static $instance = NULL;
+    public static $instance = NULL;
     private $crud;
     private $header;
     
@@ -25,26 +16,30 @@ class ManagePeople {
     
     function ManagePeople() {
         $crud = Crud::getInstance();
-        $header = array('id_etudiant' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
+        $header = array('id' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
     }
     
     public function getPeople() {
+        $crud = Crud::getInstance();
         $students = $crud->getStudents();
         $teachers = $crud->getTeachers();
         $index = 0;
 
+        $array = array();
         foreach ($students as $student) {
-            $array[$index]['id_etudiant'] = $student->id_etudiant;
+            $array[$index] = array();
+            $array[$index]['id'] = $student->id_etudiant;
             $array[$index]['nom'] = $student->nom;
             $array[$index]['prenom'] = $student->prenom;
             $array[$index]['status'] = "Student";
             $index++;
         }
 
-        foreach ($students as $student) {
-            $array[$index]['id_enseignant'] = $student->id_etudiant;
-            $array[$index]['nom'] = $student->nom;
-            $array[$index]['prenom'] = $student->prenom;
+        foreach ($teachers as $teacher) {
+            $array[$index] = array();
+            $array[$index]['id'] = $teacher->id_enseignant;
+            $array[$index]['nom'] = $teacher->nom;
+            $array[$index]['prenom'] = $teacher->prenom;
             $array[$index]['status'] = "Teacher";
             $index++;
         }
