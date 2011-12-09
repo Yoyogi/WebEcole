@@ -3,9 +3,17 @@ require_once $icrud_file;
 
 class Crud implements ICrud {
     var $connection;
+    private static $instance = NULL;
     
     function Crud() {
         $connection = Doctrine_Manager::connection(CFG_DB_DSN);
+    }
+    
+    static public function getInstance() {
+        if (Crud::$instance == NULL) {
+            Crud::$instance = new Crud();
+        }
+        return Crud::$instance;
     }
     
     //---------------------------------------------------

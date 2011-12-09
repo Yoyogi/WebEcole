@@ -89,9 +89,9 @@ switch ($spage){
     
     
     default:
-        $body = $index_file;
-        $title = "Connexion Web Ecole";
-        $metadescription = "Web Ecole - Connexion";
+        $body = $index_admin_file;
+        $title = "Accueil administrateur";
+        $metadescription = "Web Ecole - Accueil administrateur";
         break;
 
 }
