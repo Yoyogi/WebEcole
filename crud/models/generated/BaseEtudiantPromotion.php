@@ -36,11 +36,11 @@ abstract class BaseEtudiantPromotion extends Doctrine_Record
     {
         parent::setUp();
         $this->hasOne('Etudiant', array(
-             'local' => 'id_etudiant',
-             'foreign' => 'id_etudiant'));
+             'local' => 'etudiant_id',
+             'foreign' => 'id'));
 
         $this->hasOne('Promotion', array(
-             'local' => 'id_promotion',
-             'foreign' => 'id_promotion'));
+             'local' => 'promotion_id',
+             'foreign' => 'id'));
     }
 }

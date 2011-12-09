@@ -46,7 +46,7 @@ abstract class BaseMatiere extends Doctrine_Record
              'foreign' => 'id_matiere'));
 
         $this->hasMany('EnseignantMatiere', array(
-             'local' => 'id_matiere',
-             'foreign' => 'id_matiere'));
+             'local' => 'id',
+             'foreign' => 'matiere_id'));
     }
 }

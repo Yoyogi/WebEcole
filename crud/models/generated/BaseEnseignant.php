@@ -93,7 +93,7 @@ abstract class BaseEnseignant extends Doctrine_Record
              'foreign' => 'id_enseignant'));
 
         $this->hasMany('EnseignantMatiere', array(
-             'local' => 'id_enseignant',
-             'foreign' => 'id_enseignant'));
+             'local' => 'id',
+             'foreign' => 'enseignant_id'));
     }
 }

@@ -38,6 +38,9 @@ include $crud_file;
         include $header_file;
         include $body;
         include $footer_file;
+        
+        $crud = new Crud();
+        $crud->getSubjectsByTeacher(1);
         ?>
     </body>
 </html>
