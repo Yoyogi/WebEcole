@@ -1,6 +1,8 @@
 <?php
 
-case "add_division":
+
+switch ($spage){
+    case "add_division":
         $body = $add_division_file;
         $title = "Ajouter une division";
         $metadescription = "Web Ecole - Ajout de divisions";
@@ -92,5 +94,5 @@ case "add_division":
         $metadescription = "Web Ecole - Connexion";
         break;
 
-
+}
 ?>
