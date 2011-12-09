@@ -32,20 +32,20 @@ $log_forwarding_file = $auth_repo."forwarding.php";
 
 /* nom des fichiers ADM */
 $controller_adm_file = $adm_repo."controller_Admin.php";
-$add_division_file = $adm_repo."addDivision.php";
-$add_lesson_file = $adm_repo."addLesson.php";
-$add_people_file = $adm_repo."addPeople.php";
-$add_subject_file = $adm_repo."addSubject.php";
-$index_admin_file = $adm_repo."indexAdmin.php";
-$manage_absence_file = $adm_repo."manageAbsence.php";
-$manage_division_file = $adm_repo."manageDivision.php";
-$manage_lesson_file = $adm_repo."manageLesson.php";
-$manage_people_file = $adm_repo."managePeople.php";
-$manage_subject_file = $adm_repo."manageSubject.php";
-$modify_division_file = $adm_repo."modifyDivision.php";
-$modify_lesson_file = $adm_repo."modifyLesson.php";
-$modify_people_file = $adm_repo."modifyPeople.php";
-$modify_subject_file = $adm_repo."modifySubject.php";
+$add_division_file = $adm_repo."AddDivision.php";
+$add_lesson_file = $adm_repo."AddLesson.php";
+$add_people_file = $adm_repo."AddPeople.php";
+$add_subject_file = $adm_repo."AddSubject.php";
+$index_admin_file = $adm_repo."IndexAdmin.php";
+$manage_absence_file = $adm_repo."ManageAbsence.php";
+$manage_division_file = $adm_repo."ManageDivision.php";
+$manage_lesson_file = $adm_repo."ManageLesson.php";
+$manage_people_file = $adm_repo."ManagePeople.php";
+$manage_subject_file = $adm_repo."ManageSubject.php";
+$modify_division_file = $adm_repo."ModifyDivision.php";
+$modify_lesson_file = $adm_repo."ModifyLesson.php";
+$modify_people_file = $adm_repo."mModifyPeople.php";
+$modify_subject_file = $adm_repo."ModifySubject.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";
