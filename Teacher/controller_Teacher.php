@@ -20,7 +20,7 @@ switch ($spage){
         break;
     
     case "manage_lesson":
-        $body = $add_subject_file;
+        $body = $manage_lesson_file_teacher;
         $title = "Ajouter une matière";
         $metadescription = "Web Ecole - Ajout de matières";
         break;
