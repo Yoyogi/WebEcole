@@ -4,47 +4,45 @@ RewriteEngine on
 AddDefaultCharset UTF-8
 
 # ------ Réécriture index
-RewriteRule ^accueil.htm$ index.php?&page=auth [L,QSA]
-
-# ------
-RewriteRule ^forwarding.htm$ index.php?&page=log_forward [L,QSA]
+RewriteRule ^accueil.htm$ index.php?&page=auth&spage=auth [L,QSA]
+RewriteRule ^forwarding.htm$ index.php?&page=auth&spage=log_forward [L,QSA]
 
 # ------
 RewriteRule ^addEleve.htm$ index.php?&page=add_eleve [L,QSA]
 
 # ------ ADMIN
-RewriteRule ^addDivision.htm$ index.php?&page=add_division [L,QSA]
-RewriteRule ^addLesson.htm$ index.php?&page=add_lesson [L,QSA]
-RewriteRule ^addPeople.htm$ index.php?&page=add_people [L,QSA]
-RewriteRule ^addSubject.htm$ index.php?&page=add_subject [L,QSA]
-RewriteRule ^indexAdmin.htm$ index.php?&page=index_admin [L,QSA]
-RewriteRule ^manageAbsence.htm$ index.php?&page=manage_absence [L,QSA]
-RewriteRule ^manageDivision.htm$ index.php?&page=manage_division [L,QSA]
-RewriteRule ^manageLesson.htm$ index.php?&page=manage_lesson [L,QSA]
-RewriteRule ^managePeople.htm$ index.php?&page=manage_people [L,QSA]
-RewriteRule ^manageSubject.htm$ index.php?&page=manage_subject [L,QSA]
-RewriteRule ^modifyDivision.htm$ index.php?&page=modify_division [L,QSA]
-RewriteRule ^modifyLesson.htm$ index.php?&page=modify_lesson [L,QSA]
-RewriteRule ^managePeople.htm$ index.php?&page=manage_people [L,QSA]
-RewriteRule ^manageSubject.htm$ index.php?&page=manage_subject [L,QSA]
-RewriteRule ^modifyDivision.htm$ index.php?&page=modify_division [L,QSA]
-RewriteRule ^modifyLesson.htm$ index.php?&page=modify_lesson [L,QSA]
-RewriteRule ^modifyPeople.htm$ index.php?&page=modify_people [L,QSA]
-RewriteRule ^modifySubject.htm$ index.php?&page=modify_subject [L,QSA]
-RewriteRule ^modifySubject.htm$ index.php?&page=modify_subject [L,QSA]
+RewriteRule ^addDivision.htm$ index.php?&page=adm&spage=add_division [L,QSA]
+RewriteRule ^addLesson.htm$ index.php?&page=adm&spage=add_lesson [L,QSA]
+RewriteRule ^addPeople.htm$ index.php?&page=adm&spage=add_people [L,QSA]
+RewriteRule ^addSubject.htm$ index.php?&page=adm&spage=add_subject [L,QSA]
+RewriteRule ^indexAdmin.htm$ index.php?&page=adm&spage=index_admin [L,QSA]
+RewriteRule ^manageAbsence.htm$ index.php?&page=adm&spage=manage_absence [L,QSA]
+RewriteRule ^manageDivision.htm$ index.php?&page=adm&spage=manage_division [L,QSA]
+RewriteRule ^manageLesson.htm$ index.php?&page=adm&spage=manage_lesson [L,QSA]
+RewriteRule ^managePeople.htm$ index.php?&page=adm&spage=manage_people [L,QSA]
+RewriteRule ^manageSubject.htm$ index.php?&page=adm&spage=manage_subject [L,QSA]
+RewriteRule ^modifyDivision.htm$ index.php?&page=adm&spage=modify_division [L,QSA]
+RewriteRule ^modifyLesson.htm$ index.php?&page=adm&spage=modify_lesson [L,QSA]
+RewriteRule ^managePeople.htm$ index.php?&page=adm&spage=manage_people [L,QSA]
+RewriteRule ^manageSubject.htm$ index.php?&page=adm&spage=manage_subject [L,QSA]
+RewriteRule ^modifyDivision.htm$ index.php?&page=adm&spage=modify_division [L,QSA]
+RewriteRule ^modifyLesson.htm$ index.php?&page=adm&spage=modify_lesson [L,QSA]
+RewriteRule ^modifyPeople.htm$ index.php?&page=adm&spage=modify_people [L,QSA]
+RewriteRule ^modifySubject.htm$ index.php?&page=adm&spage=modify_subject [L,QSA]
+RewriteRule ^modifySubject.htm$ index.php?&page=adm&spage=modify_subject [L,QSA]
 
 
 
 # ------ TEACHER
-RewriteRule ^indexTeacher.htm$ index.php?&page=index_teacher [L,QSA]
-RewriteRule ^manageAbsence.htm$ index.php?&page=manage_absence [L,QSA]
-RewriteRule ^manageExercice.htm$ index.php?&page=manage_exercice [L,QSA]
-RewriteRule ^manageLesson.htm$ index.php?&page=manage_lesson [L,QSA]
-RewriteRule ^showStudents.htm$ index.php?&page=show_students [L,QSA]
+RewriteRule ^indexTeacher.htm$ index.php?&page=teacher&spage=index_teacher [L,QSA]
+RewriteRule ^manageAbsence.htm$ index.php?&page=teacher&spage=manage_absence [L,QSA]
+RewriteRule ^manageExercice.htm$ index.php?&page=teacher&spage=manage_exercice [L,QSA]
+RewriteRule ^manageLesson.htm$ index.php?&page=teacher&spage=manage_lesson [L,QSA]
+RewriteRule ^showStudents.htm$ index.php?&page=teacher&spage=show_students [L,QSA]
 
 # ------ PUPIL
-RewriteRule ^indexPupil.htm$ index.php?&page=index_pupil [L,QSA]
-RewriteRule ^showAbsence.htm$ index.php?&page=show_absence [L,QSA]
-RewriteRule ^showLesson.htm$ index.php?&page=show_lesson [L,QSA]
+RewriteRule ^indexPupil.htm$ index.php?&page=pupil&spage=index_pupil [L,QSA]
+RewriteRule ^showAbsence.htm$ index.php?&page=pupil&spage=show_absence [L,QSA]
+RewriteRule ^showLesson.htm$ index.php?&page=pupil&spage=show_lesson [L,QSA]
 
 
