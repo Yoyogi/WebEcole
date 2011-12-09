@@ -35,3 +35,16 @@ RewriteRule ^modifySubject.htm$ index.php?&page=modify_subject [L,QSA]
 
 
 
+# ------ TEACHER
+RewriteRule ^indexTeacher.htm$ index.php?&page=index_teacher [L,QSA]
+RewriteRule ^manageAbsence.htm$ index.php?&page=manage_absence [L,QSA]
+RewriteRule ^manageExercice.htm$ index.php?&page=manage_exercice [L,QSA]
+RewriteRule ^manageLesson.htm$ index.php?&page=manage_lesson [L,QSA]
+RewriteRule ^showStudents.htm$ index.php?&page=show_students [L,QSA]
+
+# ------ PUPIL
+RewriteRule ^indexPupil.htm$ index.php?&page=index_pupil [L,QSA]
+RewriteRule ^showAbsence.htm$ index.php?&page=show_absence [L,QSA]
+RewriteRule ^showLesson.htm$ index.php?&page=show_lesson [L,QSA]
+
+
