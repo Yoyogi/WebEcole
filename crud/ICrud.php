@@ -22,7 +22,7 @@ interface ICrud {
     
     //crud enseignant
     function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
-    function updateTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
+    function updateTeacher($id, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
     function deleteTeacher($idTeacher);
     function getTeachers();
     function getTeacherById($id);

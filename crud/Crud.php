@@ -72,10 +72,35 @@ class Crud implements ICrud {
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
     function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        $teacher = new Enseignant();
+        $teacher->nom = $nom;
+        $teacher->prenom = $prenom;
+        $teacher->date_naissance = $date_naisse;
+        $teacher->rue = $rue;
+        $teacher->cp = $cp;
+        $teacher->ville = $ville;
+        $teacher->email = $email;
+        $teacher->ulogin = $ulogin;
+        $teacher->passwd = $passwd;
+        
+        $teacher->save();
         
     }
-    function updateTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
-        
+    function updateTeacher($id, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        if (Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id)) {
+            $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id);
+            $teacher->nom = $nom;
+            $teacher->prenom = $prenom;
+            $teacher->date_naissance = $date_naisse;
+            $teacher->rue = $rue;
+            $teacher->cp = $cp;
+            $teacher->ville = $ville;
+            $teacher->email = $email;
+            $teacher->ulogin = $ulogin;
+            $teacher->passwd = $passwd;
+
+            $teacher->save();
+        }
     }
     function deleteTeacher($idTeacher) {
         

@@ -69,15 +69,15 @@ $crud_file = $crud_repo."Crud.php";
 $icrud_file = $crud_repo."ICrud.php";
 
 /* nom des classes */
-$absenceclass_file = "models/generated/Absence.php";
-$administrateurclass_file = "models/generated/Administrateur.php";
-$aideclass_file = "models/generated/Aide.php";
-$coursclass_file = "models/generated/Cours.php";
-$enseignantclass_file = "models/generated/Enseignant.php";
-$enseignantmatiereclass_file = "models/generated/EnseignantMatiere.php";
-$etudiantclass_file = "models/generated/Etudiant.php";
-$etudiantpromotionclass_file = "models/generated/EtudiantPromotion.php";
-$exerciceclass_file = "models/generated/Exercice.php";
-$matiereclass_file = "models/generated/Matiere.php";
-$promotionclass_file = "models/generated/Promotion.php";
+$absenceclass_file = "models/Absence.php";
+$administrateurclass_file = "models/Administrateur.php";
+$aideclass_file = "models/Aide.php";
+$coursclass_file = "models/Cours.php";
+$enseignantclass_file = "models/Enseignant.php";
+$enseignantmatiereclass_file = "models/EnseignantMatiere.php";
+$etudiantclass_file = "models/Etudiant.php";
+$etudiantpromotionclass_file = "models/EtudiantPromotion.php";
+$exerciceclass_file = "models/Exercice.php";
+$matiereclass_file = "models/Matiere.php";
+$promotionclass_file = "models/Promotion.php";
 ?>
