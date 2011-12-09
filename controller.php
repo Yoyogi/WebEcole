@@ -29,6 +29,114 @@ switch($page) {
         $metadescription = "Web Ecole - Ajout de personnes";
         break;
     
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
+    case "logged_accueil":
+        $body = $logged_accueil;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
     default:
         $body = $index_file;
         $title = "Connexion Web Ecole";
