@@ -1,7 +1,5 @@
 <?php
 
-require_once $classes_repo.$studentclass_file;
-
 interface ICrud {
     //crud étudiant
     function createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);

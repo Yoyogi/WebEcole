@@ -59,9 +59,9 @@ $show_student_file = $teacher_repo."showStudents.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";
-$index_pupil = $pupil_repo."indexPupil.php";
-$show_absence = $pupil_repo."showAbsence.php";
-$show_lesson = $pupil_repo."showLesson.php";
+$index_pupil_file = $pupil_repo."indexPupil.php";
+$show_absence_file = $pupil_repo."showAbsence.php";
+$show_lesson_file = $pupil_repo."showLesson.php";
 
 
 /* nom des fichiers du crud */
@@ -69,5 +69,15 @@ $crud_file = $crud_repo."Crud.php";
 $icrud_file = $crud_repo."ICrud.php";
 
 /* nom des classes */
-$studentclass_file = "Student.class.php";
+$absenceclass_file = "models/generated/Absence.php";
+$administrateurclass_file = "models/generated/Administrateur.php";
+$aideclass_file = "models/generated/Aide.php";
+$coursclass_file = "models/generated/Cours.php";
+$enseignantclass_file = "models/generated/Enseignant.php";
+$enseignantmatiereclass_file = "models/generated/EnseignantMatiere.php";
+$etudiantclass_file = "models/generated/Etudiant.php";
+$etudiantpromotionclass_file = "models/generated/EtudiantPromotion.php";
+$exerciceclass_file = "models/generated/Exercice.php";
+$matiereclass_file = "models/generated/Matiere.php";
+$promotionclass_file = "models/generated/Promotion.php";
 ?>

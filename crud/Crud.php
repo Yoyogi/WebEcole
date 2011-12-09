@@ -20,7 +20,7 @@ class Crud implements ICrud {
     /* CRUD ETUDIANT */
     //---------------------------------------------------
     function createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
-        $student = new Student();
+        $student = new Etudiant();
         $student->nom = $nom;
         $student->prenom = $prenom;
         $student->date_naissance = $date_naisse;
@@ -36,7 +36,7 @@ class Crud implements ICrud {
     }
     
     function updateStudent($idStudent, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
-        if (Doctrine_Core::getTable("Student")->find($idStudent)) {
+        if (Doctrine_Core::getTable("Etudiant")->findOneBy("id_etudiant", $idStudent)) {
             $student = $this->getStudentById($idStudent);
             $student->nom = $nom;
             $student->prenom = $prenom;
@@ -54,18 +54,18 @@ class Crud implements ICrud {
     }
     
     function deleteStudent($idStudent) {
-        if (Doctrine_Core::getTable("Student")->find($idStudent)) {
-            $student = Doctrine_Core::getTable("Student")->find($idStudent);
+        if (Doctrine_Core::getTable("Etudiant")->find($idStudent)) {
+            $student = Doctrine_Core::getTable("Etudiant")->find($idStudent);
             $student->delete();
         }
     }
     
     function getStudents() {
-        return Doctrine_Core::getTable("Student")->findAll();
+        return Doctrine_Core::getTable("Etudiant")->findAll();
     }
     
     function getStudentById($id) {
-        return Doctrine_Core::getTable("Student")->find($id);
+        return Doctrine_Core::getTable("Etudiant")->findOneBy("id_etudiant", $id);
     }
     
     //---------------------------------------------------
