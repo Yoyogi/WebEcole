@@ -1,0 +1,42 @@
+## YAML Template.
+
+## ABSENCE
+Absence:
+  columns:
+    id_absence:
+      type: integer(11)
+      notnull: true
+    motif:
+      type: string(45)
+      notnull: true
+    id_etudiant:
+      type: integer(11)
+    id_cours:
+      type: integer(11)
+  relations:
+    Etudiant:
+      class: Etudiant
+      local: id_etudiant
+      foreign: id_etudiant
+      alias: Etudiant
+      foreignAlias: Absences
+    Cours:
+      class: Cours
+      local: id_cours
+      foreign: id_cours
+      alias: Cours
+      foreignAlias: Absences
+      
+##ADMINISTRATEUR
+Administrateur:
+  columns:
+    id_administrateur:
+      type: integer(11)
+      notnull: true
+    nom:
+      type: string(45)
+      notnull: true
+    prenom:
+      type: string(45)
+      notnull: true
+  relations:
