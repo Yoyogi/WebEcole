@@ -35,7 +35,9 @@ include $crud_file;
     
     <body>
         <?php
+        include $header_file;
         include $body;
+        include $footer_file;
         ?>
     </body>
 </html>
