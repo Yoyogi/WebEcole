@@ -45,7 +45,7 @@ switch ($spage){
         break;
     
     case "manage_lesson":
-        $body = $manage_lesson_file;
+        $body = $manage_lesson_file_admin;
         $title = "Gérer un cours";
         $metadescription = "Web Ecole - Gestion des cours";
         break;

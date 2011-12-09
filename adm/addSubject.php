@@ -6,7 +6,7 @@
  */
 ?>
 
-<form method="POST" action="addEleve.htm">
+<form method="POST" action="adm/addEleve.htm">
     <p><label> Identifiant </label> <input type=text name=identifiant> </p>
     <p><label> Libelle </label> <input type=text name=libelle> </p>
     <select name="Enseignant">
