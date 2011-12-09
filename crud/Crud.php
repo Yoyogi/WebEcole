@@ -102,14 +102,20 @@ class Crud implements ICrud {
             $teacher->save();
         }
     }
+    
     function deleteTeacher($idTeacher) {
-        
+        if (Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher)) {
+            $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
+            $teacher->delete();
+        }
     }
+    
     function getTeachers() {
-        return Doctrine_Core::getTable("Teacher")->findAll();
+        return Doctrine_Core::getTable("Enseignant")->findAll();
     }
+    
     function getTeacherById($id) {
-        
+        return Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id);
     }
     
     
