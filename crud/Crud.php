@@ -1,22 +1,31 @@
 <?php
+require_once $icrud_file;
 
-require_once($icrud_file);
 class Crud implements ICrud {
+    var $connection;
     
     function Crud() {
-        pdoMap::config($pdomap_config);
+        $connection = Doctrine_Manager::connection(CFG_DB_DSN);
     }
     
-    function createStudent() {
-        $student = pdoMap::get("students")->Create();
-        $student->name = "toto";
-        $student->surname = "titi";
-        $student->Insert();
+    function createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        $student = new Student();
+        $student->nom = $nom;
+        $student->prenom = $prenom;
+        $student->date_naissance = $date_naisse;
+        $student->rue = $rue;
+        $student->cp = $cp;
+        $student->ville = $ville;
+        $student->email = $email;
+        $student->ulogin = $ulogin;
+        $student->passwd = $passwd;
+        $student->photo = $photo;
+        
+        $student->save();
     }
     
     function getStudents() {
-        $students = pdoMap::get("students");
-        echo $students;
+        return Doctrine_Core::getTable("Student")->findAll();
     }
 }
 

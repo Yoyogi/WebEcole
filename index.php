@@ -18,6 +18,9 @@ if(!isset($spage))
     $spage = "";
 
 include $controller_file;
+
+//include pour le fonctionnement de l'orm doctrine
+include $crud_file;
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,7 @@ include $controller_file;
     
     <body>
         <?php
-            include $body;
+        include $body;
         ?>
     </body>
 </html>
