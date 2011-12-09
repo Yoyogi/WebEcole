@@ -33,7 +33,7 @@ switch ($spage){
         break;
     
     case "manage_absence":
-        $body = $manage_absence_file;
+        $body = $manage_absence_file_admin;
         $title = "Gérer une absence";
         $metadescription = "Web Ecole - Gestion d'absences";
         break;
