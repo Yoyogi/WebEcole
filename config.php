@@ -48,6 +48,7 @@ $modify_people_file = $adm_repo."view/ModifyPeople.php";
 $modify_subject_file = $adm_repo."view/ModifySubject.php";
 
 $manage_people_class = $adm_repo."class/ManagePeople.class.php";
+$add_people_class = $adm_repo."class/AddPeople.class.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";
