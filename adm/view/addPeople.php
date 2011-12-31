@@ -10,7 +10,7 @@ require_once $add_people_class;
 $add_people = AddPeople::getInstance();
 
 
-if ($_POST['status']!=null){
+if (isset($status)){
     
     if ($_POST['status']=="professeur"){
         if (($_POST['login']) && ($_POST['password']) && ($_POST['lastName']) 
@@ -39,12 +39,15 @@ if ($_POST['status']!=null){
     
 <form method="POST" action="addPeople.htm">
     
-    <select name="status" onchange="fonction(this);">
-        <option value="eleve">eleve</option>
-        <option value="professeur">professeur</option>
+    <select name="status">
+        <option onclick="windows.href.location='addPeople-0.htm'" <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>
+        <option onclick="windows.href.location='addPeople-1.htm'" <?php if ($type==1) echo "selected='selected'"; ?> value="1">eleve</option>
+        <option onclick="windows.href.location='addPeople-2.htm'" <?php if ($type==2) echo "selected='selected'"; ?> value="2">professeur</option>
     </select>
 
-
+    <?php
+        if (isset($type)) {
+    ?>
     <p><label> Login </label> <input type="text" name="login"> </p>
     <p><label> Mot de passe </label> <input type="text" name="password"> </p>
     <p><label> Nom </label> <input type="text" name="lastName"> </p>
@@ -55,10 +58,20 @@ if ($_POST['status']!=null){
     <p><label> Email </label> <input type="text" name="email"> </p>
     <p><label> Statut </label> <input type="text" name=""> </p>
     
+    <?php
+            if ($type==1){
+    ?>
+    
     <!-- si la personne a ajouter est un étudiant -->
     
     <p><label> Photo </label> <input type="text" name="photo"> </p>
     <p><label> Date de naissance </label> <input type="text" name="birthDay"> </p>
     
     <p> <input type="submit" name="envoyer" value="Ajouter personne"> </p>
+    <?php
+            }
+        }
+    ?>
+    
+    
 </form>
