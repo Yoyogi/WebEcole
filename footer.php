@@ -7,6 +7,8 @@
     
 ?>
 
-<p>
-&copy; Florent VEILLY, S&eacute;bastien FERRAND, Yannick TIRAND 2011, tous droits r&eacute;serv&eacute;s.
-</p>
+<div id="footer">
+    <p>
+        &copy; Florent VEILLY, S&eacute;bastien FERRAND, Yannick TIRAND, 2011, tous droits r&eacute;serv&eacute;s.
+    </p>
+</div>

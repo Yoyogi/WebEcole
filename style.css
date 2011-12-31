@@ -4,12 +4,53 @@ body {
     text-align: center;
 }
 
+#header {
+    /* image et taille */
+    background-image: url(./design/images/bannierewebecole.jpg);
+    width: 880px;
+    height: 250px;
+    
+    /* positionnement */
+    margin: auto;
+}
+
+/* titre dans le header */
+#header_title {
+    position: relative;
+    font: bold 72px Trebuchet MS;
+    color: white;
+    letter-spacing: -5px;
+    padding: 0;
+    margin: 0;
+    left: -100px;
+    top: 100px;
+}
+
+#footer {
+    height: 25px;
+    width: 880px;
+    background-color: #111111;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 25px;
+    
+    text-align: center;
+    clear: both;
+    border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;
+    margin: auto;
+    margin-top: 2px;
+}
+
+/* conteneur de chaque page */
 #main_container {
     /* size */
-    width: 800px;
+    width: 880px;
     
     /* alignment */
     margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     
     /* border */
     border: 1px solid black;
@@ -18,5 +59,3 @@ body {
 }
 
 /* AUTHENTIFICATION CSS */
-#auth_form {
-}

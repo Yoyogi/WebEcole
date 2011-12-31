@@ -6,5 +6,6 @@
  */
 ?>
 
-
-<img src="./design/images/bannierewebecole.jpg" title="Bienvenue sur la web école"></img>
+<div id="header">
+    <p id="header_title">Web Ecole</p>
+</div>
