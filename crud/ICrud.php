@@ -21,8 +21,8 @@ interface ICrud {
     function getStudentById($id);
     
     //crud enseignant
-    function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
-    function updateTeacher($id, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
+    function createTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
+    function updateTeacher($id, $nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
     function deleteTeacher($idTeacher);
     function getTeachers();
     function getTeacherById($id);

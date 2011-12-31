@@ -23,7 +23,7 @@ class Crud implements ICrud {
         $student = new Etudiant();
         $student->nom = $nom;
         $student->prenom = $prenom;
-        $student->date_naissance = $date_naisse;
+        $student->date_naissance = $date_naissance;
         $student->rue = $rue;
         $student->cp = $cp;
         $student->ville = $ville;
@@ -40,7 +40,7 @@ class Crud implements ICrud {
             $student = $this->getStudentById($idStudent);
             $student->nom = $nom;
             $student->prenom = $prenom;
-            $student->date_naissance = $date_naisse;
+            $student->date_naissance = $date_naissance;
             $student->rue = $rue;
             $student->cp = $cp;
             $student->ville = $ville;
@@ -79,11 +79,10 @@ class Crud implements ICrud {
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
-    function createTeacher($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+    function createTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd) {
         $teacher = new Enseignant();
         $teacher->nom = $nom;
         $teacher->prenom = $prenom;
-        $teacher->date_naissance = $date_naisse;
         $teacher->rue = $rue;
         $teacher->cp = $cp;
         $teacher->ville = $ville;
@@ -94,12 +93,11 @@ class Crud implements ICrud {
         $teacher->save();
         
     }
-    function updateTeacher($id, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+    function updateTeacher($id, $nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd) {
         if (Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id)) {
             $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id);
             $teacher->nom = $nom;
             $teacher->prenom = $prenom;
-            $teacher->date_naissance = $date_naisse;
             $teacher->rue = $rue;
             $teacher->cp = $cp;
             $teacher->ville = $ville;
