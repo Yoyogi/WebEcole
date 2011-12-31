@@ -4,8 +4,14 @@ require_once $crud_file;
 
 class ManagePeople {
     public static $instance = NULL;
-    private $crud;
     private $header;
+    
+    public static $ADMIN = 0;
+    public static $TEACHER = 1;
+    public static $STUDENT = 2;
+    
+    public static $DELETE = 0;
+    public static $UPDATE = 1;
     
     static public function getInstance() {
         if (ManagePeople::$instance == NULL) {
@@ -15,8 +21,7 @@ class ManagePeople {
     }
     
     function ManagePeople() {
-        $crud = Crud::getInstance();
-        $header = array('id' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
+        $this->header = array('id' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
     }
     
     public function getPeople() {
@@ -49,6 +54,30 @@ class ManagePeople {
     
     public function getHeader() {
         return $this->header;
+    }
+    
+    public function deletePeople($type, $id) {
+        $crud = Crud::getInstance();
+        
+        echo $type;
+        if ($type == ManagePeople::$TEACHER) {
+            $crud->deleteTeacher($id);
+        }
+        else if ($type == ManagePeople::$STUDENT) {
+            $crud->deleteStudent($id);
+        }
+    }
+    
+    public function getStatus($str) {
+        if ($str == "Admin") {
+            return ManagePeople::$ADMIN;
+        }
+        else if ($str == "Teacher") {
+            return ManagePeople::$TEACHER;
+        }
+        else {
+            return ManagePeople::$STUDENT;
+        }
     }
 }
 

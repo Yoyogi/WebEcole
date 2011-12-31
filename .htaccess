@@ -17,6 +17,7 @@ RewriteRule ^adm/manageAbsence.htm$ index.php?&page=adm&spage=manage_absence [L,
 RewriteRule ^adm/manageDivision.htm$ index.php?&page=adm&spage=manage_division [L,QSA]
 RewriteRule ^adm/manageLesson.htm$ index.php?&page=adm&spage=manage_lesson [L,QSA]
 RewriteRule ^adm/managePeople.htm$ index.php?&page=adm&spage=manage_people [L,QSA]
+RewriteRule ^adm/managePeople-([0-9]+)-([0-9]+)-([0-9]+).htm$ index.php?&page=adm&spage=manage_people&v_action=$1&v_id=$2&v_type=$3 [L,QSA]
 RewriteRule ^adm/manageSubject.htm$ index.php?&page=adm&spage=manage_subject [L,QSA]
 RewriteRule ^adm/modifyDivision.htm$ index.php?&page=adm&spage=modify_division [L,QSA]
 RewriteRule ^adm/modifyLesson.htm$ index.php?&page=adm&spage=modify_lesson [L,QSA]
