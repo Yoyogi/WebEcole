@@ -177,9 +177,10 @@ class Crud implements ICrud {
     function getSubjectsByTeacher($idTeacher) {
         $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
         $subjects = $teacher->Matieres;
-        echo $subjects;
-        foreach ($subjects as $subject) {
-            echo $subject->id_matiere + " : " + $subject->libelle + "\n";
+        if ($subjects != null) {
+            foreach ($subjects as $subject) {
+                echo $subject->id_matiere + " : " + $subject->libelle + "\n";
+            }
         }
     }
     
