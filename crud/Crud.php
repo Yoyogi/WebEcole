@@ -76,6 +76,14 @@ class Crud implements ICrud {
         return null;
     }
     
+    function getStudentByLogin($login) {
+        $student = Doctrine_Core::getTable("Etudiant")->findOneBy("ulogin", $login);
+        if ($student != null) {
+            return $student;
+        }
+        return null;
+    }
+    
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
@@ -132,6 +140,14 @@ class Crud implements ICrud {
         return null;
     }
     
+    function getTeacherByLogin($login) {
+        $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("ulogin", $login);
+        if ($teacher != null) {
+            return $teacher;
+        }
+        return null;
+    }
+    
     
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
@@ -146,6 +162,14 @@ class Crud implements ICrud {
     
     function getAdminById($id) {
         $admin = Doctrine_Core::getTable("Administrateur")->findOneBy("id_administrateur", $id);
+        if ($admin != null) {
+            return $admin;
+        }
+        return null;
+    }
+    
+    function getAdminByLogin($login) {
+        $admin = Doctrine_Core::getTable("Administrateur")->findOneBy("ulogin", $login);
         if ($admin != null) {
             return $admin;
         }
@@ -186,6 +210,14 @@ class Crud implements ICrud {
     //---------------------------------------------------
     function getLessons() {
         $lessons = Doctrine_Core::getTable("Cours")->findAll();
+        if ($lessons != null) {
+            return $lessons;
+        }
+        return null;
+    }
+    
+    function getLessonById($id) {
+        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_cours", $id);
         if ($lessons != null) {
             return $lessons;
         }

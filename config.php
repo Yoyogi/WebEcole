@@ -1,8 +1,8 @@
 <?php
 /* nom des fichiers principaux */
 $controller_file = "controller.php";
-$header_file = "header.php";
-$footer_file = "footer.php";
+$header_file = "/header.php";
+$footer_file = "/footer.php";
 
 /* configuration de doctrine */
 define('CFG_DB_DSN', 'mysql://root@localhost/webecole');
@@ -15,7 +15,7 @@ spl_autoload_register(array('Doctrine_Core', 'modelsAutoload'));
 Doctrine_Core::generateModelsFromYaml(CFG_DIR.'DoctrineConfig.yml', CRUD_DIR.'models', array('generateTableClasses' => true));
 
 /* nom des fichiers de style */
-$styleGeneral_file = "style.css";
+$styleGeneral_file = "/WebEcole_php/style.css";
 
 /* nom des répertoires */
 $crud_repo = "crud/";

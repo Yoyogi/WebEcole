@@ -79,3 +79,6 @@ body {
 }
 
 /* AUTHENTIFICATION CSS */
+#auth_fail {
+    margin: 10px;
+}

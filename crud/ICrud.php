@@ -19,6 +19,7 @@ interface ICrud {
     function deleteStudent($idStudent);
     function getStudents();
     function getStudentById($id);
+    function getStudentByLogin($login);
     
     //crud enseignant
     function createTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
@@ -26,10 +27,12 @@ interface ICrud {
     function deleteTeacher($idTeacher);
     function getTeachers();
     function getTeacherById($id);
+    function getTeacherByLogin($login);
     
     //crud administrateur
     function getAdmins();
     function getAdminById($id);
+    function getAdminByLogin($login);
     
     //crud absence
     function getAbsences();
@@ -38,6 +41,7 @@ interface ICrud {
     
     //crud cours
     function getLessons();
+    function getLessonById($id);
     function getLessonsByTeacher($idTeacher);
     function getLessonsBySubject($idSubject);
     function getLessonsByPromotion($idPromotion);
