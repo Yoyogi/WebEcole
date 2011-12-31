@@ -12,10 +12,12 @@
         
         foreach ($people as $key => $row)
         {
+            echo "<tr>";
             foreach($row as $cell)
             {
-                
+                echo "<td>" . $cell . "</td>";
             }
+            echo "</tr>";
         } 
     ?>
     </tr>
