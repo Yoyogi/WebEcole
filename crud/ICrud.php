@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 require_once $absenceclass_file;
 require_once $administrateurclass_file;
