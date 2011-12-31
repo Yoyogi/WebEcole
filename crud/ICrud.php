@@ -35,6 +35,7 @@ interface ICrud {
     function getAdminByLogin($login);
     
     //crud absence
+    function createAbsence($motif, $etudiant, $cours);
     function getAbsences();
     function getAbsencesBylesson($idLesson);
     function getAbsencesByStudent($idStudent);

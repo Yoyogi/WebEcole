@@ -180,6 +180,16 @@ class Crud implements ICrud {
     //---------------------------------------------------
     /* CRUD ABSENCES */
     //---------------------------------------------------
+    function createAbsence($motif, $etudiant, $cours) {
+        $absence = new Absence();
+        $absence->motif = $motif;
+        $absence->id_etudiant = $etudiant->id_etudiant;
+        $absence->id_cours = $cours->id_cours;
+        $absence->Etudiant = $etudiant;
+        $absence->Cours = $cours;
+        $absence->save();
+    }
+    
     function getAbsences() {
         $absences = Doctrine_Core::getTable("Absence")->findAll();
         if ($absences != null) {
