@@ -45,7 +45,7 @@ interface ICrud {
     //crud matière
     function getSubjects();
     function getSubjectsByTeacher($idTeacher);
-    function getSubjectsByLesson($idLesson);
+    function getSubjectByLesson($idLesson);
 }
 
 ?>

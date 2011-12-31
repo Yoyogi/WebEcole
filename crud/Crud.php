@@ -61,11 +61,19 @@ class Crud implements ICrud {
     }
     
     function getStudents() {
-        return Doctrine_Core::getTable("Etudiant")->findAll();
+        $students = Doctrine_Core::getTable("Etudiant")->findAll();
+        if ($students != null) {
+            return $students;
+        }
+        return null;
     }
     
     function getStudentById($id) {
-        return Doctrine_Core::getTable("Etudiant")->findOneBy("id_etudiant", $id);
+        $student = Doctrine_Core::getTable("Etudiant")->findOneBy("id_etudiant", $id);
+        if ($student != null) {
+            return $student;
+        }
+        return null;
     }
     
     //---------------------------------------------------
@@ -111,11 +119,19 @@ class Crud implements ICrud {
     }
     
     function getTeachers() {
-        return Doctrine_Core::getTable("Enseignant")->findAll();
+        $teachers = Doctrine_Core::getTable("Enseignant")->findAll();
+        if ($teachers != null) {
+            return $teachers;
+        }
+        return null;
     }
     
     function getTeacherById($id) {
-        return Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id);
+        $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $id);
+        if ($teacher != null) {
+            return $teacher;
+        }
+        return null;
     }
     
     
@@ -123,11 +139,19 @@ class Crud implements ICrud {
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
     function getAdmins() {
-        return Doctrine_Core::getTable("Administrateur")->findAll();
+        $admins = Doctrine_Core::getTable("Administrateur")->findAll();
+        if ($admins != null) {
+            return $admins;
+        }
+        return null;
     }
     
     function getAdminById($id) {
-        return Doctrine_Core::getTable("Administrateur")->findOneBy("id_administrateur", $id);
+        $admin = Doctrine_Core::getTable("Administrateur")->findOneBy("id_administrateur", $id);
+        if ($admin != null) {
+            return $admin;
+        }
+        return null;
     }
     
     
@@ -135,15 +159,27 @@ class Crud implements ICrud {
     /* CRUD ABSENCES */
     //---------------------------------------------------
     function getAbsences() {
-        return Doctrine_Core::getTable("Absence")->findAll();
+        $absences = Doctrine_Core::getTable("Absence")->findAll();
+        if ($absences != null) {
+            return $absences;
+        }
+        return null;
     }
     
     function getAbsencesBylesson($idLesson) {
-        return Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLessons);
+        $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLessons);
+        if ($absences != null) {
+            return $absences;
+        }
+        return null;
     }
     
     function getAbsencesByStudent($idStudent) {
-        return Doctrine_Core::getTable("Absence")->findBy("id_etudiant", $idStudent);
+        $absences = Doctrine_Core::getTable("Absence")->findBy("id_etudiant", $idStudent);
+        if ($absences != null) {
+            return $absences;
+        }
+        return null;
     }
     
     
@@ -151,19 +187,35 @@ class Crud implements ICrud {
     /* CRUD COURS */
     //---------------------------------------------------
     function getLessons() {
-        return Doctrine_Core::getTable("Cours")->findAll();
+        $lessons = Doctrine_Core::getTable("Cours")->findAll();
+        if ($lessons != null) {
+            return $lessons;
+        }
+        return null;
     }
     
     function getLessonsByTeacher($idTeacher) {
-        return Doctrine_Core::getTable("Cours")->findBy("id_enseignant", $idTeacher);
+        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_enseignant", $idTeacher);
+        if ($lessons != null) {
+            return $lessons;
+        }
+        return null;
     }
     
     function getLessonsBySubject($idSubject) {
-        return Doctrine_Core::getTable("Cours")->findBy("id_matiere", $idSubject);
+        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_matiere", $idSubject);
+        if ($lessons != null) {
+            return $lessons;
+        }
+        return null;
     }
     
     function getLessonsByPromotion($idPromotion) {
-        return Doctrine_Core::getTable("Cours")->findBy("id_promotion", $idPromotion);
+        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_promotion", $idPromotion);
+        if ($lessons != null) {
+            return $lessons;
+        }
+        return null;
     }
     
     
@@ -171,23 +223,31 @@ class Crud implements ICrud {
     /* CRUD MATIERES */
     //---------------------------------------------------
     function getSubjects() {
-        return Doctrine_Core::getTable("Matiere")->findAll();
+        $subjects = Doctrine_Core::getTable("Matiere")->findAll();
+        if ($subjects != null) {
+            return $subjects;
+        }
+        return null;
     }
     
     function getSubjectsByTeacher($idTeacher) {
         $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
         $subjects = $teacher->Matieres;
         if ($subjects != null) {
-            foreach ($subjects as $subject) {
-                echo $subject->id_matiere + " : " + $subject->libelle + "\n";
-            }
+            return $subjects;
         }
+        return null;
     }
     
-    function getSubjectsByLesson($idLesson) {
+    function getSubjectByLesson($idLesson) {
         $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $idLesson);
         $idSubject = $lesson->id_matiere;
-        return Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $idSubject);
+        
+        $subject = Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $idSubject);
+        if ($subject != null) {
+            return $subject;
+        }
+        return null;
     }
 }
 

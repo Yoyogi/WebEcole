@@ -52,16 +52,16 @@ $manage_people_class = $adm_repo."class/ManagePeople.class.php";
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";
 $index_teacher_file = $teacher_repo."indexTeacher.php";
-$manage_absence_file_teacher = $teacher_repo."manageAbsence.php";
-$manage_exercice_file = $teacher_repo."manageExercice.php";
-$manage_lesson_file_teacher = $teacher_repo."manageLesson.php";
-$show_student_file = $teacher_repo."showStudents.php";
+$manage_absence_file_teacher = $teacher_repo."view/manageAbsence.php";
+$manage_exercice_file = $teacher_repo."view/manageExercice.php";
+$manage_lesson_file_teacher = $teacher_repo."view/manageLesson.php";
+$show_student_file = $teacher_repo."view/showStudents.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";
 $index_pupil_file = $pupil_repo."indexPupil.php";
-$show_absence_file = $pupil_repo."showAbsence.php";
-$show_lesson_file = $pupil_repo."showLesson.php";
+$show_absence_file = $pupil_repo."view/showAbsence.php";
+$show_lesson_file = $pupil_repo."view/showLesson.php";
 
 
 /* nom des fichiers du crud */
