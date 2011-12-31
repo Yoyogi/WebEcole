@@ -85,15 +85,15 @@ abstract class BaseEnseignant extends Doctrine_Record
         parent::setUp();
         $this->hasMany('Matiere as Matieres', array(
              'refClass' => 'EnseignantMatiere',
-             'local' => 'enseignant_id',
-             'foreign' => 'matiere_id'));
+             'local' => 'id_matiere',
+             'foreign' => 'id_matiere'));
 
         $this->hasMany('Cours', array(
              'local' => 'id_enseignant',
              'foreign' => 'id_enseignant'));
 
         $this->hasMany('EnseignantMatiere', array(
-             'local' => 'id',
-             'foreign' => 'enseignant_id'));
+             'local' => 'id_enseignant',
+             'foreign' => 'id_enseignant'));
     }
 }

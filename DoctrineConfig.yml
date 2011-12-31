@@ -155,6 +155,8 @@ Enseignant:
   relations:
     Matieres:
       class: Matiere
+      local: id_matiere
+      foreign: id_matiere
       refClass: EnseignantMatiere
       foreignAlias: Enseignants
   attributes:
@@ -198,6 +200,8 @@ Etudiant:
   relations:
     Promotions:
       class: Promotion
+      local: id_promotion
+      foreign: id_promotion
       refClass: EtudiantPromotion
       foreignAlias: Etudiants
 
@@ -235,6 +239,8 @@ Matiere:
   relations:
     Enseignants:
       class: Enseignant
+      local: id_enseignant
+      foreign: id_enseignant
       refClass: EnseignantMatiere
       foreignAlias: Matieres
 
@@ -252,6 +258,8 @@ Promotion:
   relations:
     Etudiants:
       class: Etudiant
+      local: id_etudiant
+      foreign: id_etudiant
       refClass: EtudiantPromotion
       foreignAlias: Promotions
 
@@ -268,8 +276,12 @@ EnseignantMatiere:
       primary: true
   relations:
     Enseignant:
+      local: id_enseignant
+      foreign: id_enseignant
       foreignAlias: EnseignantMatiere
     Matiere:
+      local: id_matiere
+      foreign: id_matiere
       foreignAlias: EnseignantMatiere
 
 ## ETUDIANT_PROMOTION
@@ -283,6 +295,10 @@ EtudiantPromotion:
       primary: true
   relations:
     Etudiant:
+      local: id_etudiant
+      foreign: id_etudiant
       foreignAlias: EtudiantPromotion
     Promotion:
+      local: id_promotion
+      foreign: id_promotion
       foreignAlias: EtudiantPromotion
