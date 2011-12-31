@@ -8,10 +8,10 @@ class ManageAbsence extends Manager {
     private $header;
     
     static public function getInstance() {
-        if (ManagePeople::$instance == NULL) {
-            ManagePeople::$instance = new ManagePeople();
+        if (ManageAbsence::$instance == NULL) {
+            ManageAbsence::$instance = new ManageAbsence();
         }
-        return ManagePeople::$instance;
+        return ManageAbsence::$instance;
     }
     
     function ManageAbsence() {

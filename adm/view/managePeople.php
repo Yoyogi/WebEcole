@@ -19,7 +19,7 @@
         {
             echo "<td>" . $value . "</td>";   
         } 
-        echo "<td>Controles</td>";
+        echo "<td></td>";
         echo "</tr>";
         
         foreach ($people as $key => $row)
