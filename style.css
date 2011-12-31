@@ -1,0 +1,22 @@
+/* MAIN CSS */
+body {
+    /* alignment */
+    text-align: center;
+}
+
+#main_container {
+    /* size */
+    width: 800px;
+    
+    /* alignment */
+    margin: auto;
+    
+    /* border */
+    border: 1px solid black;
+    -moz-border-radius: 10px 40px 10px 40px;
+    border-radius: 10px 40px 10px 40px;
+}
+
+/* AUTHENTIFICATION CSS */
+#auth_form {
+}

@@ -35,12 +35,15 @@ include $crud_file;
     
     <body>
         <?php
-        include $header_file;
-        include $body;
-        include $footer_file;
-        
-        $crud = new Crud();
-        $crud->getSubjectsByTeacher(1);
+            include $header_file;
+        ?>
+        <div id="main_container">
+        <?php
+            include $body;
+        ?>
+        </div>
+        <?php
+            include $footer_file;
         ?>
     </body>
 </html>
