@@ -1,17 +1,28 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $manager;
 
-/**
- * Description of ModifyPeople
- *
- * @author Midgard
- */
-class ModifyPeople {
-    //put your code here
+class ModifyPeople extends Manager {
+    public static $instance = NULL;
+    
+    static public function getInstance() {
+        if (ManagePeople::$instance == NULL) {
+            ManagePeople::$instance = new ManagePeople();
+        }
+        return ManagePeople::$instance;
+    }
+    
+    function ModifyPeople() {
+        
+    }
+    
+    function getPeopleByID($type, $id) {
+        
+    }
+    
+    function updatePeople() {
+        
+    }
 }
 
 ?>
