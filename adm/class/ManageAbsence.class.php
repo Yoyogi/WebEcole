@@ -15,7 +15,7 @@ class ManageAbsence extends Manager {
     }
     
     function ManageAbsence() {
-        $this->header = array('id_absence' => 'Identifiant', 'motif' => 'Motif', 'nom_etudiant' => 'Prenom', 'prenom_etudiant' => 'Prenom', 'nom_cours' => 'Cours');
+        $this->header = array('id_absence' => 'Identifiant', 'motif' => 'Motif', 'nom_etudiant' => 'Nom', 'prenom_etudiant' => 'Prenom', 'nom_cours' => 'Cours');
     }
     
     public function getAbsence() {
@@ -25,7 +25,7 @@ class ManageAbsence extends Manager {
 
         $array = array();
         foreach ($absences as $absence) {
-            $students = $crud->getStudentById($absence->id_etudiant);
+            $student = $crud->getStudentById($absence->id_etudiant);
             $matiere = $crud->getSubjectByLesson($absence->id_cours);
             
             $array[$index] = array();
