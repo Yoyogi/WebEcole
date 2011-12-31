@@ -31,12 +31,6 @@ if ($_POST['status']!=null){
     }
     
     
-    
-
-    
-
-    
-    
 }
 
 
