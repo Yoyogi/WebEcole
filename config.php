@@ -1,6 +1,6 @@
 <?php
 /* nom des fichiers principaux */
-$controller_file = "controller.php";
+$controller_file = "/controller.php";
 $header_file = "/header.php";
 $footer_file = "/footer.php";
 
