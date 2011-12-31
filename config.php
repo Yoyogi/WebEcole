@@ -32,20 +32,20 @@ $log_forwarding_file = $auth_repo."forwarding.php";
 
 /* nom des fichiers ADM */
 $controller_adm_file = $adm_repo."controller_Admin.php";
-$add_division_file = $adm_repo."AddDivision.php";
-$add_lesson_file = $adm_repo."AddLesson.php";
-$add_people_file = $adm_repo."AddPeople.php";
-$add_subject_file = $adm_repo."AddSubject.php";
+$add_division_file = $adm_repo."view/AddDivision.php";
+$add_lesson_file = $adm_repo."view/AddLesson.php";
+$add_people_file = $adm_repo."view/AddPeople.php";
+$add_subject_file = $adm_repo."view/AddSubject.php";
 $index_admin_file = $adm_repo."IndexAdmin.php";
-$manage_absence_file_admin = $adm_repo."ManageAbsence.php";
-$manage_division_file = $adm_repo."ManageDivision.php";
-$manage_lesson_file_admin = $adm_repo."ManageLesson.php";
+$manage_absence_file_admin = $adm_repo."view/ManageAbsence.php";
+$manage_division_file = $adm_repo."view/ManageDivision.php";
+$manage_lesson_file_admin = $adm_repo."view/ManageLesson.php";
 $manage_people_file = $adm_repo."view/ManagePeople.php";
-$manage_subject_file = $adm_repo."ManageSubject.php";
-$modify_division_file = $adm_repo."ModifyDivision.php";
-$modify_lesson_file = $adm_repo."ModifyLesson.php";
-$modify_people_file = $adm_repo."ModifyPeople.php";
-$modify_subject_file = $adm_repo."ModifySubject.php";
+$manage_subject_file = $adm_repo."view/ManageSubject.php";
+$modify_division_file = $adm_repo."view/ModifyDivision.php";
+$modify_lesson_file = $adm_repo."view/ModifyLesson.php";
+$modify_people_file = $adm_repo."view/ModifyPeople.php";
+$modify_subject_file = $adm_repo."view/ModifySubject.php";
 
 $manage_people_class = $adm_repo."class/ManagePeople.class.php";
 
