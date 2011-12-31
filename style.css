@@ -16,30 +16,50 @@ body {
 
 /* titre dans le header */
 #header_title {
+    /* positionnement */
     position: relative;
-    font: bold 72px Trebuchet MS;
-    color: white;
-    letter-spacing: -5px;
     padding: 0;
     margin: 0;
     left: -100px;
     top: 100px;
+    
+    /* police */
+    font: bold 72px Trebuchet MS;
+    color: white;
+    letter-spacing: -5px;
 }
 
 #footer {
+    /* positionnement */
+    text-align: center;
     height: 25px;
     width: 880px;
     background-color: #111111;
+    border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;
+    clear: both;
+    margin: auto;
+    margin-top: 2px;
+    
+    /* police */
     color: white;
     font-size: 11px;
     letter-spacing: 2px;
     line-height: 25px;
     
-    text-align: center;
-    clear: both;
-    border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;
-    margin: auto;
-    margin-top: 2px;
+    /* dégradé */
+    background-image: linear-gradient(left bottom, rgb(184,178,180) 1%, rgb(0,0,0) 100%);
+    background-image: -o-linear-gradient(left bottom, rgb(184,178,180) 1%, rgb(0,0,0) 100%);
+    background-image: -moz-linear-gradient(left bottom, rgb(184,178,180) 1%, rgb(0,0,0) 100%);
+    background-image: -webkit-linear-gradient(left bottom, rgb(184,178,180) 1%, rgb(0,0,0) 100%);
+    background-image: -ms-linear-gradient(left bottom, rgb(184,178,180) 1%, rgb(0,0,0) 100%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            right top,
+            color-stop(0.01, rgb(184,178,180)),
+            color-stop(1, rgb(0,0,0))
+    );
 }
 
 /* conteneur de chaque page */
