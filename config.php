@@ -30,6 +30,9 @@ $controller_auth_file = $auth_repo."controller_Auth.php";
 $index_file = $auth_repo."auth.php";
 $log_forwarding_file = $auth_repo."forwarding.php";
 
+/* manager générale */
+$manager = "manager.class.php";
+
 /* nom des fichiers ADM */
 $controller_adm_file = $adm_repo."controller_Admin.php";
 $add_division_file = $adm_repo."view/AddDivision.php";

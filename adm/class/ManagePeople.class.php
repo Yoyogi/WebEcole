@@ -1,17 +1,11 @@
 <?php
 
 require_once $crud_file;
+require_once $manager;
 
-class ManagePeople {
+class ManagePeople extends Manager {
     public static $instance = NULL;
     private $header;
-    
-    public static $ADMIN = 0;
-    public static $TEACHER = 1;
-    public static $STUDENT = 2;
-    
-    public static $DELETE = 0;
-    public static $UPDATE = 1;
     
     static public function getInstance() {
         if (ManagePeople::$instance == NULL) {
@@ -59,24 +53,11 @@ class ManagePeople {
     public function deletePeople($type, $id) {
         $crud = Crud::getInstance();
         
-        echo $type;
-        if ($type == ManagePeople::$TEACHER) {
+        if ($type == Manager::$TEACHER) {
             $crud->deleteTeacher($id);
         }
-        else if ($type == ManagePeople::$STUDENT) {
+        else if ($type == Manager::$STUDENT) {
             $crud->deleteStudent($id);
-        }
-    }
-    
-    public function getStatus($str) {
-        if ($str == "Admin") {
-            return ManagePeople::$ADMIN;
-        }
-        else if ($str == "Teacher") {
-            return ManagePeople::$TEACHER;
-        }
-        else {
-            return ManagePeople::$STUDENT;
         }
     }
 }
