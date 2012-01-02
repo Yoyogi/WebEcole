@@ -190,6 +190,26 @@ class Crud implements ICrud {
         $absence->save();
     }
     
+    function updateAbsence($id, $motif, $etudiant, $cours) {
+        if (Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id)) {
+            $absence = Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id);
+            $absence->motif = $motif;
+            $absence->id_etudiant = $etudiant->id_etudiant;
+            $absence->id_cours = $cours->id_cours;
+            $absence->Etudiant = $etudiant;
+            $absence->Cours = $cours;
+
+            $absence->save();
+        }
+    }
+    
+    function deleteAbsence($id) {
+        if (Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id)) {
+            $absence = Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id);
+            $absence->delete();
+        }
+    }
+    
     function getAbsences() {
         $absences = Doctrine_Core::getTable("Absence")->findAll();
         if ($absences != null) {
@@ -218,6 +238,77 @@ class Crud implements ICrud {
     //---------------------------------------------------
     /* CRUD COURS */
     //---------------------------------------------------
+    function createLesson($date, $duree, $descript, $enseignant, $promotion, $matiere) {
+        $lesson = new Cours();
+        $lesson->date_cours = $date;
+        $lesson->duree = $duree;
+        $lesson->descript = $descript;
+        $lesson->id_enseignant = $enseignant->id_enseignant;
+        $lesson->id_promotion = $promotion->id_promotion;
+        $lesson->id_matiere = $matiere->id_matiere;
+        $lesson->Enseignant = $enseignant;
+        $lesson->Promotion = $promotion;
+        $lesson->Matiere = $matiere;
+
+        $lesson->save();
+    }
+    
+    function updateLesson($id, $date, $duree, $descript, $enseignant, $promotion, $matiere) {
+        if (Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id)) {
+            $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id);
+            $lesson->date_cours = $date;
+            $lesson->duree = $duree;
+            $lesson->descript = $descript;
+            $lesson->id_enseignant = $enseignant->id_enseignant;
+            $lesson->id_promotion = $promotion->id_promotion;
+            $lesson->id_matiere = $matiere->id_matiere;
+            $lesson->enseignant = $enseignant;
+            $lesson->promotion = $promotion;
+            $lesson->matiere = $matiere;
+            
+            $lesson->save();
+        }
+    }
+    
+    function deleteLesson($id) {
+        if (Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id)) {
+            $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id);
+            $lesson->delete();
+        }
+    }
+    
+    function addAbsence($absence) {
+        if (!$lesson->Absences->contains($absence)) {
+            $lesson->Absences->add($absence);
+            $lesson->Absences->save();
+            $lesson->save();
+        }
+    }
+    
+    function removeAbsence($absence) {
+        if (!$lesson->Absences->contains($absence)) {
+            $lesson->Absences->remove($absence);
+            $lesson->Absences->save();
+            $lesson->save();
+        }
+    }
+    
+    function addExercice($exercice) {
+        if (!$lesson->Exercices->contains($exercice)) {
+            $lesson->Exercices->add($exercice);
+            $lesson->Exercices->save();
+            $lesson->save();
+        }
+    }
+    
+    function removeExercice($exercice) {
+        if (!$lesson->Exercices->contains($exercice)) {
+            $lesson->Absences->remove($exercice);
+            $lesson->Exercices->save();
+            $lesson->save();
+        }
+    }
+    
     function getLessons() {
         $lessons = Doctrine_Core::getTable("Cours")->findAll();
         if ($lessons != null) {

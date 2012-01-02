@@ -36,11 +36,20 @@ interface ICrud {
     
     //crud absence
     function createAbsence($motif, $etudiant, $cours);
+    function updateAbsence($id, $motif, $etudiant, $cours);
+    function deleteAbsence($id);
     function getAbsences();
     function getAbsencesBylesson($idLesson);
     function getAbsencesByStudent($idStudent);
     
     //crud cours
+    function createLesson($date, $duree, $descript, $enseignant, $promotion, $matiere);
+    function updateLesson($id, $date, $duree, $descript, $enseignant, $promotion, $matiere);
+    function deleteLesson($id);
+    function addAbsence($absence);
+    function removeAbsence($absence);
+    function addExercice($exercice);
+    function removeExercice($exercice);
     function getLessons();
     function getLessonById($id);
     function getLessonsByTeacher($idTeacher);
