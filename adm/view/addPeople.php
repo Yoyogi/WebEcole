@@ -9,22 +9,24 @@
 require_once $add_people_class;
 $add_people = AddPeople::getInstance();
 
-
+echo $status;
 if (isset($status)){
     
-    if ($_POST['status']=="professeur"){
-        if (($_POST['login']) && ($_POST['password']) && ($_POST['lastName']) 
-            && ($_POST['firstName']) && ($_POST['email']) && ($_POST['street']) 
-                && ($_POST['zipcode']) && ($_POST['city'])){
+    if ($status=="2"){
+        if ((isset($login)) && (isset($password)) && (isset($lastName))
+            && (isset($firstName)) && (isset($email)) && (isset($street)) 
+                && (isset($zipcode)) && (isset($city))){
+            echo "tuta";
             $add_people->addTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
         }
     }
     
-    if ($_POST['status']=="eleve"){
+    if ($status=="1"){
         
-        if (($_POST['login']) && ($_POST['password']) && ($_POST['lastName']) 
-            && ($_POST['firstName']) && ($_POST['email']) && ($_POST['street']) 
-                && ($_POST['zipcode']) && ($_POST['city']) && ($_POST['photo']) && ($_POST['birthday'])){
+        if (($login) && ($password) && ($lastName) 
+            && ($firstName) && ($email) && ($street) 
+                && ($zipcode) && ($city) && ($photo) && ($birthday)){
+            echo "tutu";
             $add_people->addPupil($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
         }
         
@@ -39,14 +41,15 @@ if (isset($status)){
     
 <form method="POST" action="addPeople.htm">
     
-    <select name="status">
-        <option onclick="windows.href.location='addPeople-0.htm'" <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>
-        <option onclick="windows.href.location='addPeople-1.htm'" <?php if ($type==1) echo "selected='selected'"; ?> value="1">eleve</option>
-        <option onclick="windows.href.location='addPeople-2.htm'" <?php if ($type==2) echo "selected='selected'"; ?> value="2">professeur</option>
+    <select name="status" onchange="window.location.href='addPeople-'+this.selectedIndex+'.htm'">
+        <option <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>
+        <option <?php if ($type==1) echo "selected='selected'"; ?> value="1">eleve</option>
+        <option <?php if ($type==2) echo "selected='selected'"; ?> value="2">professeur</option>
     </select>
 
     <?php
         if (isset($type)) {
+            if ($type != 0) {
     ?>
     <p><label> Login </label> <input type="text" name="login"> </p>
     <p><label> Mot de passe </label> <input type="text" name="password"> </p>
@@ -56,9 +59,9 @@ if (isset($status)){
     <p><label> Code postal </label> <input type="text" name="zipcode"> </p>
     <p><label> Ville </label> <input type="text" name="city"> </p>
     <p><label> Email </label> <input type="text" name="email"> </p>
-    <p><label> Statut </label> <input type="text" name=""> </p>
     
     <?php
+            }
             if ($type==1){
     ?>
     
@@ -66,10 +69,11 @@ if (isset($status)){
     
     <p><label> Photo </label> <input type="text" name="photo"> </p>
     <p><label> Date de naissance </label> <input type="text" name="birthDay"> </p>
-    
-    <p> <input type="submit" name="envoyer" value="Ajouter personne"> </p>
     <?php
             }
+    ?>
+    <p> <input type="submit" name="envoyer" value="Ajouter personne"> </p>
+    <?php
         }
     ?>
     
