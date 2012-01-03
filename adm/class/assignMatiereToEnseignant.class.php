@@ -25,7 +25,7 @@ class AssignMatiereToEnseignant extends Manager {
     
     public function assign($teacher, $subject) {
         $crud = Crud::getInstance();
-        $crud->addSubjectToTeacher($crud->getTeacherById($teacher), $crud->$subject);
+        $crud->addSubjectToTeacher($crud->getTeacherById($teacher), $crud->getSubjectById($subject));
     }
 }
 
