@@ -4,7 +4,7 @@
 ?>
 
 <table border="1">
-    <caption align="center">Affichage des élèves</caption>
+    <caption align="center">Affichage des eleves</caption>
     <tr bgcolor="#ff0000">
     <?php    
         $students = $show_student->getStudent();
@@ -15,7 +15,6 @@
         {
             echo "<td>" . $value . "</td>";   
         } 
-        echo "<td></td>";
         echo "</tr>";
         
         foreach ($students as $key => $row)
@@ -31,4 +30,3 @@
     </tr>
     
 </table>
-<a href="addLesson.htm">Ajouter une Lesson</a>
