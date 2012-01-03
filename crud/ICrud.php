@@ -24,6 +24,7 @@ interface ICrud {
     function getStudents();
     function getStudentById($id);
     function getStudentByLogin($login);
+    function getStudentByAbsence($absence);
     
     //crud enseignant
     function createTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
@@ -63,6 +64,7 @@ interface ICrud {
     function getLessonsByTeacher($idTeacher);
     function getLessonsBySubject($idSubject);
     function getLessonsByPromotion($idPromotion);
+    function getLessonByAbsence($absence);
     
     //crud matière
     function createSubject($libelle);
@@ -73,6 +75,7 @@ interface ICrud {
     function addLessonToSubject(Matiere $subject, Cours $lesson);
     function removeLessonToSubject(Matiere $subject, Cours $lesson);
     function getSubjects();
+    function getSubjectById($id);
     function getSubjectsByTeacher($idTeacher);
     function getSubjectByLesson($idLesson);
     

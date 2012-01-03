@@ -156,6 +156,16 @@ class Crud implements ICrud {
         return null;
     }
     
+    function getStudentByAbsence($absence) {
+        $students = Doctrine_Core::getTable("Etudiant")->findAll();
+        foreach ($students as $student) {
+            if ($student->Absences->contains($absence)) {
+                return $student;
+            }
+        }
+        return null;
+    }
+    
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
     //---------------------------------------------------
@@ -332,24 +342,39 @@ class Crud implements ICrud {
         $absence->Etudiant = $etudiant;
         $absence->Cours = $cours;
         $absence->save();
+        
+        $this->addAbsenceToStudent($absence, $etudiant);
+        $this->addAbsenceToLesson($cours, $absence);
     }
     
     function updateAbsence($id, $motif, Etudiant $etudiant, Cours $cours) {
         if (Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id)) {
             $absence = Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id);
+            
+            $this->removeAbsenceToStudent($absence, $etudiant);
+            $this->removeAbsenceToLesson($cours, $absence);
+            
             $absence->motif = $motif;
             $absence->id_etudiant = $etudiant->id_etudiant;
             $absence->id_cours = $cours->id_cours;
             $absence->Etudiant = $etudiant;
             $absence->Cours = $cours;
-
             $absence->save();
+        
+            $this->addAbsenceToStudent($absence, $etudiant);
+            $this->addAbsenceToLesson($cours, $absence);
         }
     }
     
     function deleteAbsence($id) {
         if (Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id)) {
             $absence = Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $id);
+            
+            $student = $this->getStudentByAbsence($absence);
+            $lesson = $this->getLessonByAbsence($absence);
+            $this->removeAbsenceToStudent($absence, $student);
+            $this->removeAbsenceToLesson($lesson, $absence);
+            
             $absence->delete();
         }
     }
@@ -393,13 +418,21 @@ class Crud implements ICrud {
         $lesson->Enseignant = $enseignant;
         $lesson->Promotion = $promotion;
         $lesson->Matiere = $matiere;
-
         $lesson->save();
+        
+        $this->addLessonToPromotion($promotion, $lesson);
+        $this->addLessonToSubject($matiere, $lesson);
+        $this->addLessonToTeacher($enseignant, $lesson);
     }
     
     function updateLesson($id, $date, $duree, $descript, Enseignant $enseignant, Promotion $promotion, Matiere $matiere) {
         if (Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id)) {
             $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id);
+            
+            $this->removeLessonFromPromotion($promotion, $lesson);
+            $this->removeLessonToSubject($matiere, $lesson);
+            $this->removeLessonToTeacher($enseignant, $lesson);
+            
             $lesson->date_cours = $date;
             $lesson->duree = $duree;
             $lesson->descript = $descript;
@@ -409,8 +442,11 @@ class Crud implements ICrud {
             $lesson->enseignant = $enseignant;
             $lesson->promotion = $promotion;
             $lesson->matiere = $matiere;
-            
             $lesson->save();
+        
+            $this->addLessonToPromotion($promotion, $lesson);
+            $this->addLessonToSubject($matiere, $lesson);
+            $this->addLessonToTeacher($enseignant, $lesson);
         }
     }
     
@@ -447,7 +483,7 @@ class Crud implements ICrud {
     
     function removeExerciceToLesson(Cours $lesson, Exercice $exercice) {
         if (!$lesson->Exercices->contains($exercice)) {
-            $lesson->Absences->remove($exercice);
+            $lesson->Exercices->remove($exercice);
             $lesson->Exercices->save();
             $lesson->save();
         }
@@ -489,6 +525,16 @@ class Crud implements ICrud {
         $lessons = Doctrine_Core::getTable("Cours")->findBy("id_promotion", $idPromotion);
         if ($lessons != null) {
             return $lessons;
+        }
+        return null;
+    }
+    
+    function getLessonByAbsence($absence) {
+        $lessons = Doctrine_Core::getTable("Cours")->findAll();
+        foreach ($lessons as $lesson) {
+            if ($lesson->Absences->contains($absence)) {
+                return $lesson;
+            }
         }
         return null;
     }
@@ -548,6 +594,14 @@ class Crud implements ICrud {
         $subjects = Doctrine_Core::getTable("Matiere")->findAll();
         if ($subjects != null) {
             return $subjects;
+        }
+        return null;
+    }
+    
+    function getSubjectById($id) {
+        $subject = Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $id);
+        if ($subject != null) {
+            return $subject;
         }
         return null;
     }
@@ -727,18 +781,22 @@ class Crud implements ICrud {
         $exercice->libelle = $libelle;
         $exercice->id_cours = $lesson->id_cours;
         $exercice->Cours = $lesson;
-        
         $exercice->save();
+        
+        $this->addExerciceToLesson($lesson, $exercice);
     }
     
     function updateExercice($id, $libelle, Cours $lesson) {
         $exercice = Doctrine_Core::getTable("Exercice")->findOneBy("id_exercice", $id);
         if ($exercice != null) {
+            $this->removeExerciceToLesson($lesson, $exercice);
+            
             $exercice->libelle = $libelle;
             $exercice->id_cours = $lesson->id_cours;
             $exercice->Cours = $lesson;
-            
             $exercice->save();
+            
+            $this->addExerciceToLesson($lesson, $exercice);
         }
     }
     
