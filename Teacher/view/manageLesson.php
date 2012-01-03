@@ -29,7 +29,7 @@
             {
                 echo "<td>" . $cell . "</td>";
             }
-            echo "<td><a href='modifyAbsence-" . $row['id'] . ".htm'>Modifier</a>  <a href='manageAbsence-" . $row['id'] . ".htm'>Supprimer</a></td>";
+            echo "<td><a href='modifyLesson-" . $row['id'] . ".htm'>Modifier</a>  <a href='manageLesson-" . $row['id'] . ".htm'>Supprimer</a></td>";
             echo "</tr>";
         } 
     ?>
