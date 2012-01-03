@@ -66,11 +66,12 @@ $modify_subject_class = $adm_repo."class/ModifySubject.class.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";
-$index_teacher_file = $teacher_repo."indexTeacher.php";
-$manage_absence_file_teacher = $teacher_repo."view/manageAbsence.php";
-$manage_exercice_file = $teacher_repo."view/manageExercice.php";
-$manage_lesson_file_teacher = $teacher_repo."view/manageLesson.php";
-$show_student_file = $teacher_repo."view/showStudents.php";
+$index_teacher_file = $teacher_repo."IndexTeacher.php";
+$manage_absence_file_teacher = $teacher_repo."view/ManageAbsence.php";
+$manage_exercice_file = $teacher_repo."view/ManageExercice.php";
+$manage_lesson_file_teacher = $teacher_repo."view/ManageLesson.php";
+$show_student_file = $teacher_repo."view/ShowStudents.php";
+$manage_absence_class = "class/ManageExercice.class.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";
