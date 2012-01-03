@@ -37,6 +37,7 @@ interface ICrud {
     function getTeachers();
     function getTeacherById($id);
     function getTeacherByLogin($login);
+    function getTeacherByLesson($lesson);
     
     //crud administrateur
     function getAdmins();

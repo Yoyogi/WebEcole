@@ -453,6 +453,14 @@ class Crud implements ICrud {
     function deleteLesson($id) {
         if (Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id)) {
             $lesson = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id);
+            
+            $teacher = $this->getTeacherByLesson($lesson);
+            $promotion = $this->getPromotionsByLesson($lesson);
+            $subject = $this->getSubjectByLesson($id);
+            $this->removeLessonFromPromotion($promotion, $lesson);
+            $this->removeLessonToSubject($subject, $lesson);
+            $this->removeLessonToTeacher($teacher, $lesson);
+            
             $lesson->delete();
         }
     }
