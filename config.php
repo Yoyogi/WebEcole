@@ -83,7 +83,8 @@ $controller_pupil_file = $pupil_repo."controller_Pupil.php";
 $index_pupil_file = $pupil_repo."indexPupil.php";
 $show_absence_file = $pupil_repo."view/showAbsence.php";
 $show_lesson_file = $pupil_repo."view/showLesson.php";
-
+$show_absence_class = $pupil_repo."class/ShowAbsence.class.php";
+$show_lesson_class = $pupil_repo."class/ShowLesson.class.php";
 
 /* nom des fichiers du crud */
 $crud_file = $crud_repo."Crud.php";

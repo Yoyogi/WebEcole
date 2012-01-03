@@ -44,10 +44,6 @@ class ShowLesson {
     public function getHeader() {
         return $this->header;
     }
-    
-    public function deleteLesson($id) {
-        $crud = Crud::getInstance();
-    }
 }
 
 ?>

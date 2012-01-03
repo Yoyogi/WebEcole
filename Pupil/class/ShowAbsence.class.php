@@ -43,10 +43,6 @@ class ShowAbsence extends Manager {
     public function getHeader() {
         return $this->header;
     }
-    
-    public function deleteAbsence($id) {
-        $crud = Crud::getInstance();
-    }
 }
 
 ?>
