@@ -71,7 +71,7 @@ $manage_absence_file_teacher = $teacher_repo."view/ManageAbsence.php";
 $manage_exercice_file = $teacher_repo."view/ManageExercice.php";
 $manage_lesson_file_teacher = $teacher_repo."view/ManageLesson.php";
 $show_student_file = $teacher_repo."view/ShowStudents.php";
-$manage_absence_class = "class/ManageExercice.class.php";
+$manage_exercice_class = "class/ManageExercice.class.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";
