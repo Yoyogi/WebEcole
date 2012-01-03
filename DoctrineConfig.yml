@@ -178,7 +178,7 @@ Etudiant:
       type: string(45)
       notnull: true
     date_naissance:
-      type: date
+      type: string(45)
       notnull: true
     rue:
       type: string(45)
