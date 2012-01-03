@@ -1,15 +1,35 @@
 <?php
     require_once $assign_etudianttopromotion_class;
     $assign_student_to_promotion = AssignEtudiantToPromotion::getInstance();
-?>
-
-<select name="student" id="student">
-    <?php
     $students = $assign_student_to_promotion->getStudent();
     $promotions = $assign_student_to_promotion->getPromotion();
 
-    foreach ($students as $student) {
-        echo "<option>" . $student->nom . " " . $student->prenom . "</option>";
+    if ($isValided != null) {
+        if ($student != null && $promotion != null) {
+            $assign_student_to_promotion->assign($student, $promotion);
+            echo "Etudiant assigné à une promotion.";
+        } 
     }
-    ?>
-</select>
+?>
+
+<form method="POST" action="assignEtudiantToPromotion.htm">
+    <input type="hidden" name="isValided" value="valided" />
+    
+    <select name="student" id="student">
+        <?php
+        foreach ($students as $student) {
+            echo "<option value=\"" . $student->id_etudiant . "\">" . $student->nom . " " . $student->prenom . "</option>";
+        }
+        ?>
+    </select>
+
+    <select name="promotion" id="promotion">
+        <?php
+        foreach ($promotions as $promotion) {
+            echo "<option value=\"" . $promotion->id_promo . "\">" . $promotion->libelle . "</option>";
+        }
+        ?>
+    </select>
+
+    <input type="submit" name="assign" value="Assign" />
+</form>
