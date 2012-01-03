@@ -9,38 +9,55 @@
 require_once $add_people_class;
 $add_people = AddPeople::getInstance();
 
-echo "status" . $status;
-echo "login" . $login;
-echo "password" . $password;
-echo "lastname" . $lastName;
-echo "firstname" . $firstName;
-echo "email" . $email;
-echo "street" . $street;
-echo "zipcode" . $zipcode;
-echo "city" . $city;
 if (isset($status)){
     
     if ($status=="2"){
-        if ((isset($login)) && (isset($password)) && (isset($lastName))
-            && (isset($firstName)) && (isset($email)) && (isset($street)) 
-                && (isset($zipcode)) && (isset($city))){
-            echo "tuta";
+        if (($login != null) && ($password != null) && ($lastName != null)
+            && ($firstName != null) && ($email != null) && ($street != null) 
+                && ($zipcode != null) && ($city != null)){
+            
             $add_people->addTeacher($lastName, $firstName, $street, $zipcode, $city, $email, $login, $password);
+            echo "enseignant ajoute";
+        }else{
+            echo "Login : " . $login;
+            echo "password : " . $password;
+            echo "lastname : " . $lastName;
+            echo "firstname : " . $firstName;
+            echo "email : " . $email;
+            echo "street : " . $street;
+            echo "zipcode : " . $zipcode;
+            echo "city : " . $city;
+            echo "Veuillez remplir tous les champs correctement";
         }
     }
     
     if ($status=="1"){
         
-        if (($login) && ($password) && ($lastName) 
-            && ($firstName) && ($email) && ($street) 
-                && ($zipcode) && ($city) && ($photo) && ($birthday)){
-            echo "tutu";
+        if (($login != null) && ($password != null) && ($lastName != null)
+            && ($firstName != null) && ($email != null) && ($street != null) 
+                && ($zipcode != null) && ($city != null) && ($photo != null) && ($birthDay != null)){
             $add_people->addPupil($lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
+            echo "eleve ajoute";
         }
+        else {
+            echo "<br>Login : " . ($login != null);
+            echo "<br>password : " . ($password != 0);
+            echo "<br>lastname : " . ($lastName != 0);
+            echo "<br>firstname : " . ($firstName != 0);
+            echo "<br>email : " . ($email != 0);
+            echo "<br>street : " . ($street != 0);
+            echo "<br>zipcode : " . ($zipcode != null);
+            echo "<br>city : " . ($city != 0);
+            echo "<br>photo : " . ($photo != 0);
+            echo "<br>birthday : " . ($birthDay != 0);
+            echo "<br>Veuillez remplir tous les champs correctement";
         
+        }
     }
     
     
+}else{
+    echo "Choisissez une categorie";
 }
 
 
