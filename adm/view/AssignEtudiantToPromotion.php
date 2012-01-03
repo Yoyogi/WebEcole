@@ -12,24 +12,33 @@
     }
 ?>
 
-<form method="POST" action="adm-assignEtudiantToPromotion.htm">
-    <input type="hidden" name="isValided" value="valided" />
-    
-    <select name="student" id="student">
-        <?php
-        foreach ($students as $student) {
-            echo "<option value=\"" . $student->id_etudiant . "\">" . $student->nom . " " . $student->prenom . "</option>";
-        }
-        ?>
-    </select>
+<table class="sub_body">
+    <tr>
+        <td class="menu">
+            <?php include $menu_adm_file; ?>
+        </td>
+        <td class="content_td">
+            <form method="POST" action="adm-assignEtudiantToPromotion.htm">
+                <input type="hidden" name="isValided" value="valided" />
 
-    <select name="promotion" id="promotion">
-        <?php
-        foreach ($promotions as $promotion) {
-            echo "<option value=\"" . $promotion->id_promo . "\">" . $promotion->libelle . "</option>";
-        }
-        ?>
-    </select>
+                <select name="student" id="student">
+                    <?php
+                    foreach ($students as $student) {
+                        echo "<option value=\"" . $student->id_etudiant . "\">" . $student->nom . " " . $student->prenom . "</option>";
+                    }
+                    ?>
+                </select>
 
-    <input type="submit" name="assign" value="Assign" />
-</form>
+                <select name="promotion" id="promotion">
+                    <?php
+                    foreach ($promotions as $promotion) {
+                        echo "<option value=\"" . $promotion->id_promo . "\">" . $promotion->libelle . "</option>";
+                    }
+                    ?>
+                </select>
+
+                <input type="submit" name="assign" value="Assign" />
+            </form>
+        </td>
+    </tr>
+</table>
