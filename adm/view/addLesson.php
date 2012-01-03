@@ -6,7 +6,7 @@
  */
 ?>
 
-<form method="POST" action="addEleve.htm">
+<form method="POST" action="adm-addEleve.htm">
 
     
     <select name="Promotion">

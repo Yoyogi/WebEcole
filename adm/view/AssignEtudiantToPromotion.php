@@ -12,7 +12,7 @@
     }
 ?>
 
-<form method="POST" action="assignEtudiantToPromotion.htm">
+<form method="POST" action="adm-assignEtudiantToPromotion.htm">
     <input type="hidden" name="isValided" value="valided" />
     
     <select name="student" id="student">

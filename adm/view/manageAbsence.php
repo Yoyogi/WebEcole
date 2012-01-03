@@ -29,11 +29,11 @@
             {
                 echo "<td>" . $cell . "</td>";
             }
-            echo "<td><a href='modifyAbsence-" . $row['id'] . ".htm'>Modifier</a>  <a href='manageAbsence-" . $row['id'] . ".htm'>Supprimer</a></td>";
+            echo "<td><a href='adm-modifyAbsence-" . $row['id'] . ".htm'>Modifier</a>  <a href='adm-manageAbsence-" . $row['id'] . ".htm'>Supprimer</a></td>";
             echo "</tr>";
         } 
     ?>
     </tr>
     
 </table>
-<a href="addAbsence.htm">Ajouter une Absence</a>
+<a href="adm-addAbsence.htm">Ajouter une Absence</a>

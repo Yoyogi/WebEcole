@@ -29,11 +29,11 @@
             {
                 echo "<td>" . $cell . "</td>";
             }
-            echo "<td><a href='modifyPeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Modifier</a>  <a href='managePeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Supprimer</a></td>";
+            echo "<td><a href='adm-modifyPeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Modifier</a>  <a href='adm-managePeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Supprimer</a></td>";
             echo "</tr>";
         } 
     ?>
     </tr>
     
 </table>
-<a href="addPeople.htm">Ajouter une personne</a>
+<a href="adm-addPeople.htm">Ajouter une personne</a>

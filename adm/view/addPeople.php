@@ -64,7 +64,7 @@ if (isset($status)){
 ?>
 
     
-<form method="POST" action="addPeople.htm">
+<form method="POST" action="adm-addPeople.htm">
     
     <select name="status" onchange="window.location.href='addPeople-'+this.selectedIndex+'.htm'">
         <option <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>

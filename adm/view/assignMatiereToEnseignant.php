@@ -12,7 +12,7 @@
     }
 ?>
 
-<form method="POST" action="assignMatiereToEnseignant.htm">
+<form method="POST" action="adm-assignMatiereToEnseignant.htm">
     <input type="hidden" name="isValided" value="valided" />
     
     <select name="teacher" id="teacher">
