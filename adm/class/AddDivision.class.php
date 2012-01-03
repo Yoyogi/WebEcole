@@ -10,8 +10,28 @@
  *
  * @author Midgard
  */
+
+require_once $crud_file;
+
+
 class AddDivision {
     //put your code here
+    
+    public static $instance = NULL;
+    private $crud;
+
+    static public function getInstance() {
+        if (AddDivision::$instance == NULL) {
+            AddDivision::$instance = new AddDivision();
+        }
+        return AddDivision::$instance;
+    }
+
+    
+    function addDivisionFunc($libelle){
+        $crud = Crud::getInstance();
+        $crud->createPromotion($libelle);
+    }
 }
 
 ?>

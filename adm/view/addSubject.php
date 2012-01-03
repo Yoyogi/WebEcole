@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -11,19 +10,21 @@ $add_subject = AddSubject::getInstance();
 
 //echo "fihefrviuerncvi      :      " . $libelle;
 
-if (isset($isValided)){
-    if(isset($libelle)){
+
+if ($isValided != null) {
+    if ($libelle != null) {
         $add_subject->addSubjectFunc($libelle);
         echo "Matiere ajoutee";
-    }
-}else{
-    echo "Veillez a remplir tous les champs correctement";
-}
+    } else {
 
+        echo $isValided;
+        echo "Veillez a remplir tous les champs correctement";
+    }
+}
 ?>
 
 <form method="POST" action="addSubject.htm">
-    <input type="hidden" name="isValided">
+    <input type="hidden" name="isValided" value="valided">
     <p><label> Libelle </label> <input type=text name=libelle> </p>
-    <p> <input type="submit" name="envoyer" value="Ajouter matière"> </p>
+    <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
 </form>
