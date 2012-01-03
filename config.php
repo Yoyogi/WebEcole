@@ -15,7 +15,7 @@ spl_autoload_register(array('Doctrine_Core', 'modelsAutoload'));
 Doctrine_Core::generateModelsFromYaml(CFG_DIR.'DoctrineConfig.yml', CRUD_DIR.'models', array('generateTableClasses' => true));
 
 /* nom des fichiers de style */
-$styleGeneral_file = "/WebEcole_php/style.css";
+$styleGeneral_file = "style.css";
 
 /* nom des répertoires */
 $crud_repo = "crud/";

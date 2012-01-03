@@ -22,7 +22,7 @@ if ($isValided != null) {
 ?>
 
 
-<form method="POST" action="addDivision.htm">
+<form method="POST" action="adm-addDivision.htm">
     <input type="hidden" name="isValided" value="valided">
     <p><label> Libelle </label> <input type=text name=libelle> </p>
 
