@@ -49,6 +49,8 @@ $modify_division_file = $adm_repo."view/ModifyDivision.php";
 $modify_lesson_file = $adm_repo."view/ModifyLesson.php";
 $modify_people_file = $adm_repo."view/ModifyPeople.php";
 $modify_subject_file = $adm_repo."view/ModifySubject.php";
+$assign_etudianttopromotion_file = $adm_repo."view/assignEtudiantToPromotion.php";
+$assign_matieretoenseignant_file = $adm_repo."view/assignMatiereToEnseignant.php";
 
 $manage_people_class = $adm_repo."class/ManagePeople.class.php";
 $manage_absence_class = $adm_repo."class/ManageAbsence.class.php";
@@ -63,6 +65,8 @@ $modify_people_class = $adm_repo."class/ModifyPeople.class.php";
 $modify_division_class = $adm_repo."class/ModifyDivision.class.php";
 $modify_lesson_class = $adm_repo."class/ModifyLesson.class.php";
 $modify_subject_class = $adm_repo."class/ModifySubject.class.php";
+$assign_etudianttopromotion_class = $adm_repo."class/AssignEtudiantToPromotion.class.php";
+$assign_matieretoenseignant_class = $adm_repo."class/AssignMatiereToEnseignant.class.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";

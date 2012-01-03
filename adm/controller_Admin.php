@@ -86,7 +86,17 @@ switch ($spage){
         $metadescription = "Web Ecole - Modification de matières";
         break;
     
+    case "assign_etudianttopromotion":
+        $body = $assign_etudianttopromotion_file;
+        $title = "Assigne à un étudiant une promotion";
+        $metadescription = "Web Ecole - Assignation des promotions";
+        break;
     
+    case "assign_matieretoenseignant":
+        $body = $assign_matieretoenseignant_file;
+        $title = "Assigne une matière à un enseignant";
+        $metadescription = "Web Ecole - Assignation des matières";
+        break;
     
     default:
         $body = $index_admin_file;

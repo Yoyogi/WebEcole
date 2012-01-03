@@ -31,6 +31,9 @@ RewriteRule ^adm/modifyPeople-([0-9]+)-([0-9]+).htm$ index.php?&page=adm&spage=m
 RewriteRule ^adm/modifySubject.htm$ index.php?&page=adm&spage=modify_subject [L,QSA]
 RewriteRule ^adm/modifySubject.htm$ index.php?&page=adm&spage=modify_subject [L,QSA]
 
+RewriteRule ^adm/assignEtudiantToPromotion.htm$ index.php?&page=adm&spage=assign_etudianttopromotion [L,QSA]
+RewriteRule ^adm/assignMatiereToEnseignant.htm$ index.php?&page=adm&spage=assign_matieretoenseignant [L,QSA]
+
 # ------ TEACHER
 RewriteRule ^tea/indexTeacher.htm$ index.php?&page=teacher&spage=index_teacher [L,QSA]
 RewriteRule ^tea/manageAbsence.htm$ index.php?&page=teacher&spage=manage_absence [L,QSA]
