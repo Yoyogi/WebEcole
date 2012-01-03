@@ -15,7 +15,7 @@ class AssignEtudiantToPromotion extends Manager {
     
     public function getStudent() {
         $crud = Crud::getInstance();
-        return $crud->getgetStudents();
+        return $crud->getStudents();
     }
     
     public function getPromotion() {
