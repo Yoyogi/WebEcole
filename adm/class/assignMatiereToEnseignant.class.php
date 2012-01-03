@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 require_once $crud_file;
 require_once $manager;
@@ -25,7 +25,7 @@ class AssignMatiereToEnseignant extends Manager {
     
     public function assign($teacher, $subject) {
         $crud = Crud::getInstance();
-        $crud->addSubjectToTeacher($teacher, $subject);
+        $crud->addSubjectToTeacher($crud->getTeacherById($teacher), $crud->$subject);
     }
 }
 

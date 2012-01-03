@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 require_once $crud_file;
 require_once $manager;
@@ -25,7 +25,7 @@ class AssignEtudiantToPromotion extends Manager {
     
     public function assign($student, $promotion) {
         $crud = Crud::getInstance();
-        $crud->addPromotionToStudent($student, $promotion);
+        $crud->addPromotionToStudent($crud->getStudentById($student), $crud->getPromotionById($promotion));
     }
 }
 

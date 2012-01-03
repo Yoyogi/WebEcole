@@ -5,13 +5,10 @@
     $promotions = $assign_student_to_promotion->getPromotion();
 
     if ($isValided != null) {
-            echo ">";
         if ($student != null && $promotion != null) {
-            echo "Matiere ajoutee";
-        } else {
-            echo $isValided;
-            echo "Veillez a remplir tous les champs correctement";
-        }
+            $assign_student_to_promotion->assign($student, $promotion);
+            echo "Etudiant assigné à une promotion.";
+        } 
     }
 ?>
 
@@ -21,7 +18,7 @@
     <select name="student" id="student">
         <?php
         foreach ($students as $student) {
-            echo "<option value=\"" . $student->nom . " " . $student->prenom . "\">" . $student->nom . " " . $student->prenom . "</option>";
+            echo "<option value=\"" . $student->id_etudiant . "\">" . $student->nom . " " . $student->prenom . "</option>";
         }
         ?>
     </select>
@@ -29,7 +26,7 @@
     <select name="promotion" id="promotion">
         <?php
         foreach ($promotions as $promotion) {
-            echo "<option value=\"" . $promotion->libelle . "\">" . $promotion->libelle . "</option>";
+            echo "<option value=\"" . $promotion->id_promo . "\">" . $promotion->libelle . "</option>";
         }
         ?>
     </select>
