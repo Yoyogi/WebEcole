@@ -76,6 +76,7 @@ $manage_exercice_file = $teacher_repo."view/ManageExercice.php";
 $manage_lesson_file_teacher = $teacher_repo."view/ManageLesson.php";
 $show_student_file = $teacher_repo."view/ShowStudents.php";
 $manage_exercice_class = $teacher_repo."class/ManageExercice.class.php";
+$show_student_class = $teacher_repo."class/showStudent.class.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";

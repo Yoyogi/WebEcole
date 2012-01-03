@@ -8,7 +8,7 @@
  * @property integer $id_etudiant
  * @property string $nom
  * @property string $prenom
- * @property date $date_naissance
+ * @property string $date_naissance
  * @property string $rue
  * @property integer $cp
  * @property string $ville
@@ -46,9 +46,10 @@ abstract class BaseEtudiant extends Doctrine_Record
              'notnull' => true,
              'length' => '45',
              ));
-        $this->hasColumn('date_naissance', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('date_naissance', 'string', 45, array(
+             'type' => 'string',
              'notnull' => true,
+             'length' => '45',
              ));
         $this->hasColumn('rue', 'string', 45, array(
              'type' => 'string',
