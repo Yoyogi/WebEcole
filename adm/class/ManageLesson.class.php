@@ -1,17 +1,53 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $crud_file;
+require_once $manager;
 
-/**
- * Description of ManageLesson
- *
- * @author Midgard
- */
 class ManageLesson {
-    //put your code here
+    public static $instance = NULL;
+    private $header;
+    
+    static public function getInstance() {
+        if (ManageLesson::$instance == NULL) {
+            ManageLesson::$instance = new ManageLesson();
+        }
+        return ManageLesson::$instance;
+    }
+    
+    function ManageLesson() {
+        $this->header = array('id_cours' => 'Identifiant', 'date_cours' => 'Date', 'duree' => 'Duree', 'descript' => 'Description', 'promo' => 'Promotion', 'matiere' => 'Matiere');
+    }
+    
+    public function getLesson() {
+        $crud = Crud::getInstance();
+        $lessons = $crud->getLessons();
+        $index = 0;
+
+        $array = array();
+        foreach ($lessons as $lesson) {  
+            $promotion = $crud->getPromotionById($lesson->id_promo);
+            $matiere = $crud->getSubjectByLesson($lesson->id_cours);
+            
+            $array[$index] = array();
+            $array[$index]['id'] = $lesson->id_cours;
+            $array[$index]['date_cours'] = $lesson->date_cours;
+            $array[$index]['duree'] = $lesson->duree;
+            $array[$index]['descript'] = $lesson->descript;
+            $array[$index]['promotion'] = $promotion->libelle;
+            $array[$index]['matiere'] = $matiere->libelle;
+            $index++;
+        }
+        
+        return $array;
+    }
+    
+    public function getHeader() {
+        return $this->header;
+    }
+    
+    public function deleteLesson($id) {
+        $crud = Crud::getInstance();
+    }
 }
 
 ?>

@@ -40,7 +40,7 @@ abstract class BaseEtudiantPromotion extends Doctrine_Record
              'foreign' => 'id_etudiant'));
 
         $this->hasOne('Promotion', array(
-             'local' => 'id_promotion',
-             'foreign' => 'id_promotion'));
+             'local' => 'id_promo',
+             'foreign' => 'id_promo'));
     }
 }

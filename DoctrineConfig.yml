@@ -200,8 +200,8 @@ Etudiant:
   relations:
     Promotions:
       class: Promotion
-      local: id_promotion
-      foreign: id_promotion
+      local: id_promo
+      foreign: id_promo
       refClass: EtudiantPromotion
       foreignAlias: Etudiants
 
@@ -299,6 +299,6 @@ EtudiantPromotion:
       foreign: id_etudiant
       foreignAlias: EtudiantPromotion
     Promotion:
-      local: id_promotion
-      foreign: id_promotion
+      local: id_promo
+      foreign: id_promo
       foreignAlias: EtudiantPromotion

@@ -86,8 +86,8 @@ abstract class BaseEtudiant extends Doctrine_Record
         parent::setUp();
         $this->hasMany('Promotion as Promotions', array(
              'refClass' => 'EtudiantPromotion',
-             'local' => 'id_promotion',
-             'foreign' => 'id_promotion'));
+             'local' => 'id_promo',
+             'foreign' => 'id_promo'));
 
         $this->hasMany('Absence as Absences', array(
              'local' => 'id_etudiant',

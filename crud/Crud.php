@@ -636,7 +636,7 @@ class Crud implements ICrud {
     }
     
     function updatePromotion($id, $libelle) {
-        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promotion", $id);
+        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promo", $id);
         if ($promotion != null) {
             $promotion->libelle = $libelle;
             $promotion->save();
@@ -644,7 +644,7 @@ class Crud implements ICrud {
     }
     
     function deletePromotion($id) {
-        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promotion", $id);
+        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promo", $id);
         if ($promotion != null) {
             $promotion->delete();
         }
@@ -683,7 +683,7 @@ class Crud implements ICrud {
     }
     
     function getPromotionById($id) {
-        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promotion", $id);
+        $promotion = Doctrine_Core::getTable("Promotion")->findOneBy("id_promo", $id);
         if ($promotion != null) {
             return $promotion;
         }
