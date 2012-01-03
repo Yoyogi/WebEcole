@@ -44,13 +44,13 @@ if ($logged == 0) {
     <?php
 }
 else if ($logged == 1) {
-    header('Location: pup/indexPupil.htm');
+    header('Location: pup-indexPupil.htm');
 } 
 else if ($logged == 2) {
-    header('Location: tea/indexTeacher.htm');
+    header('Location: tea-indexTeacher.htm');
 } 
 else if ($logged == 3) {
-    header('Location: adm/indexAdmin.htm');
+    header('Location: adm-indexAdmin.htm');
 }
 
 ?>
