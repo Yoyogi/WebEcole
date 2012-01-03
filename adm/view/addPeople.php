@@ -9,7 +9,15 @@
 require_once $add_people_class;
 $add_people = AddPeople::getInstance();
 
-echo $status;
+echo "status" . $status;
+echo "login" . $login;
+echo "password" . $password;
+echo "lastname" . $lastName;
+echo "firstname" . $firstName;
+echo "email" . $email;
+echo "street" . $street;
+echo "zipcode" . $zipcode;
+echo "city" . $city;
 if (isset($status)){
     
     if ($status=="2"){
@@ -17,7 +25,7 @@ if (isset($status)){
             && (isset($firstName)) && (isset($email)) && (isset($street)) 
                 && (isset($zipcode)) && (isset($city))){
             echo "tuta";
-            $add_people->addTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
+            $add_people->addTeacher($lastName, $firstName, $street, $zipcode, $city, $email, $login, $password);
         }
     }
     
@@ -27,7 +35,7 @@ if (isset($status)){
             && ($firstName) && ($email) && ($street) 
                 && ($zipcode) && ($city) && ($photo) && ($birthday)){
             echo "tutu";
-            $add_people->addPupil($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
+            $add_people->addPupil($lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
         }
         
     }

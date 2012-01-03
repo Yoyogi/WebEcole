@@ -25,14 +25,14 @@ class AddPeople {
             return AddPeople::$instance;
         }
 
-        function addPupil($id_etudiant, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
+        function addPupil($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo) {
             $crud = Crud::getInstance();
-            $crud->createStudent($id_etudiant, $nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
+            $crud->createStudent($nom, $prenom, $date_naissance, $rue, $cp, $ville, $email, $ulogin, $passwd, $photo);
         }
         
-        function addTeacher($id_enseignant, $nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd){
+        function addTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd){
             $crud = Crud::getInstance();
-            $crud->createTeacher($id_enseignant, $nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
+            $crud->createTeacher($nom, $prenom, $rue, $cp, $ville, $email, $ulogin, $passwd);
         }
 
     }
