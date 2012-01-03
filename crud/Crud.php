@@ -302,6 +302,16 @@ class Crud implements ICrud {
         return null;
     }
     
+    function getTeacherByLesson($lesson) {
+        $teachers = Doctrine_Core::getTable("Enseignant")->findAll();
+        foreach ($teachers as $teacher) {
+            if ($teacher->Cours->contains($lesson)) {
+                return $teacher;
+            }
+        }
+        return null;
+    }
+    
     
     //---------------------------------------------------
     /* CRUD ENSEIGNANT */
