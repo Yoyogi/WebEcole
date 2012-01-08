@@ -1,17 +1,31 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $crud_file;
+require_once $manager;
 
-/**
- * Description of ModifyLesson
- *
- * @author Midgard
- */
 class ModifyLesson {
-    //put your code here
+    public static $instance = NULL;
+    
+    static public function getInstance() {
+        if (ModifyLesson::$instance == NULL) {
+            ModifyLesson::$instance = new ModifyLesson();
+        }
+        return ModifyLesson::$instance;
+    }
+    
+    public function getLessonByID($id_lesson) {
+        $crud = Crud::getInstance();
+        return $crud->getLessonById($id_lesson);
+    }
+
+    public function updateLesson($id, $date, $duree, $descript, $id_enseignant, $id_promotion, $id_matiere) {
+        $crud = Crud::getInstance();
+        $enseignant = getTeacherById($id_enseignant);
+        $promotion = $crud->getPromotionById($id_promotion);
+        $matiere = $crud->getSubjectById($id_matiere);
+        
+        $crud->updateLesson($id, $date, $duree, $descript, $enseignant, $promotion, $matiere);
+    }
 }
 
 ?>

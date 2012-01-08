@@ -1,17 +1,27 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $crud_file;
+require_once $manager;
 
-/**
- * Description of ModifyDivision
- *
- * @author Midgard
- */
 class ModifyDivision {
-    //put your code here
+    public static $instance = NULL;
+    
+    static public function getInstance() {
+        if (ModifyDivision::$instance == NULL) {
+            ModifyDivision::$instance = new ModifyDivision();
+        }
+        return ModifyDivision::$instance;
+    }
+    
+    public function getDivisionByID($id_division) {
+        $crud = Crud::getInstance();
+        return $crud->getPromotionById($id_division);
+    }
+
+    public function updateDivision($id, $libelle) {
+        $crud = Crud::getInstance();
+        $crud->updatePromotion($id, $libelle);
+    }
 }
 
 ?>
