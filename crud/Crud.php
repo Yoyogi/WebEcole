@@ -423,7 +423,7 @@ class Crud implements ICrud {
         $lesson->duree = $duree;
         $lesson->descript = $descript;
         $lesson->id_enseignant = $enseignant->id_enseignant;
-        $lesson->id_promotion = $promotion->id_promotion;
+        $lesson->id_promo = $promotion->id_promo;
         $lesson->id_matiere = $matiere->id_matiere;
         $lesson->Enseignant = $enseignant;
         $lesson->Promotion = $promotion;
@@ -447,7 +447,7 @@ class Crud implements ICrud {
             $lesson->duree = $duree;
             $lesson->descript = $descript;
             $lesson->id_enseignant = $enseignant->id_enseignant;
-            $lesson->id_promotion = $promotion->id_promotion;
+            $lesson->id_promo = $promotion->id_promo;
             $lesson->id_matiere = $matiere->id_matiere;
             $lesson->enseignant = $enseignant;
             $lesson->promotion = $promotion;
@@ -540,7 +540,7 @@ class Crud implements ICrud {
     }
     
     function getLessonsByPromotion($idPromotion) {
-        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_promotion", $idPromotion);
+        $lessons = Doctrine_Core::getTable("Cours")->findBy("id_promo", $idPromotion);
         if ($lessons != null) {
             return $lessons;
         }

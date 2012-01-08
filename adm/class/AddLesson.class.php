@@ -91,16 +91,23 @@ class AddLesson {
     
     function getSubjectByIdFunc($id_matiere){
         $crud = Crud::getInstance();
-        mat = new Matiere();
-        $crud->getSubjectById($id_matiere);
+        $mat = new Matiere();
+        $mat = $crud->getSubjectById($id_matiere);
+        return $mat;
     }
     
     function getTeacherByIdFunc($id_enseignant){
         $crud = Crud::getInstance();
+        $ens = new Enseignant();
+        $ens = $crud->getTeacherById($id_enseignant);
+        return $ens;
     }
     
     function getPromotionByIdFunc($id_promo){
         $crud = Crud::getInstance();
+        $pro = new Promotion();
+        $pro = $crud->getPromotionById($id_promo);
+        return $pro;
     }
 }
 

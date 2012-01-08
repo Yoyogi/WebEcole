@@ -13,11 +13,11 @@
     if ($isValided != null) {
         if (($date_cours != null) && ($duree != null) && ($descript != null)) {
             $matiereObj = new Matiere();
-            $matiereObj = $add_lesson->getSubjectByIdFunc($id_matiere);
+            $matiereObj = $add_lesson->getSubjectByIdFunc($matiere);
             $teacherObj = new Enseignant();
-            $teacherObj = $add_lesson->getTeacherByIdFunc($id_enseignant);
+            $teacherObj = $add_lesson->getTeacherByIdFunc($teacher);
             $promoObj = new Promotion();
-            $promoObj = $add_lesson->getPromotionByIdFunc($id_promo);
+            $promoObj = $add_lesson->getPromotionByIdFunc($promotion);
             $add_lesson->addLessonFunc($date_cours, $duree, $descript, $teacherObj, $promoObj, $matiereObj);
             echo "Cours ajoutee";
         } else {
@@ -93,7 +93,7 @@
                 <p><label> Duree : </label> <input type=text name=duree> </p>
                 <p><label> Description : </label> <input type=text name=descript> </p>
                 
-                <input type="submit" name="Créer le cours" value="addLesson" />
+                <input type="submit" name="addLesson" value="Créer le cours" />
             </form>
         </td>
     </tr>
