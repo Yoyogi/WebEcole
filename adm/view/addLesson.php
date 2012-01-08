@@ -1,33 +1,41 @@
 <?php
+    require_once $add_lesson_class;
+    $add_lesson_class = AddLesson::getInstance();
+    $teachers = $add_lesson_class->getTeachers();
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>
 
 <table class="sub_body">
     <tr>
         <td class="menu">
-            <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-            <form method="POST" action="adm-addEleve.htm">
+             <form method="POST" action="adm-addLesson.htm">
+                <input type="hidden" name="isValided" value="valided" />
+                
+                <select name="teacher" id="teacher">
+                <?php
 
-
-                <select name="Promotion">
-                    <option value="oui">Oui</option>
+                    
+                    foreach ($teachers as $key => $row)
+                    {
+                        
+                        echo "<option value=\" " . $row . " \">";
+                        
+                        foreach($row as $cell)
+                        {
+                            echo " " . $cell . " "; 
+                            
+                        }
+                        
+                         echo "</option>";
+                    } 
+                ?>
                 </select>
-                <select name="Matiere">
-                    <option value="oui">Oui</option>
-                </select>
-                <select name="Enseignant">
-                    <option value="oui">Oui</option>
-                </select>
-
-
-                <p> <input type="submit" name="envoyer" value="Ajouter cours"> </p>
+                
+                <input type="submit" name="assign" value="Assign" />
             </form>
         </td>
     </tr>
 </table>
+    
