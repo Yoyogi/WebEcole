@@ -1,17 +1,27 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once $crud_file;
+require_once $manager;
 
-/**
- * Description of ModifySubject
- *
- * @author Midgard
- */
 class ModifySubject {
-    //put your code here
+    public static $instance = NULL;
+    
+    static public function getInstance() {
+        if (ModifySubject::$instance == NULL) {
+            ModifySubject::$instance = new ModifySubject();
+        }
+        return ModifySubject::$instance;
+    }
+    
+    public function getSubjectByID($id_subject) {
+        $crud = Crud::getInstance();
+        return $crud->getSubjectById($id_subject);
+    }
+
+    public function updateSubject($id, $libelle) {
+        $crud = Crud::getInstance();
+        $crud->updateSubject($id, $libelle);
+    }
 }
 
 ?>
