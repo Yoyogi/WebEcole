@@ -16,6 +16,7 @@ Doctrine_Core::generateModelsFromYaml(CFG_DIR.'DoctrineConfig.yml', CRUD_DIR.'mo
 
 /* nom des fichiers de style */
 $styleGeneral_file = "style.css";
+$styleMenu_file = "design/style_menu.css";
 
 /* nom des répertoires */
 $crud_repo = "crud/";
@@ -51,6 +52,7 @@ $modify_people_file = $adm_repo."view/ModifyPeople.php";
 $modify_subject_file = $adm_repo."view/ModifySubject.php";
 $assign_etudianttopromotion_file = $adm_repo."view/assignEtudiantToPromotion.php";
 $assign_matieretoenseignant_file = $adm_repo."view/assignMatiereToEnseignant.php";
+$menu_adm_file = $adm_repo."adm_menu.php";
 
 $manage_people_class = $adm_repo."class/ManagePeople.class.php";
 $manage_absence_class = $adm_repo."class/ManageAbsence.class.php";
@@ -77,6 +79,7 @@ $manage_lesson_file_teacher = $teacher_repo."view/ManageLesson.php";
 $show_student_file = $teacher_repo."view/ShowStudents.php";
 $manage_exercice_class = $teacher_repo."class/ManageExercice.class.php";
 $show_student_class = $teacher_repo."class/showStudent.class.php";
+$menu_teacher_file = $teacher_repo."teacher_menu.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";
@@ -85,6 +88,7 @@ $show_absence_file = $pupil_repo."view/showAbsence.php";
 $show_lesson_file = $pupil_repo."view/showLesson.php";
 $show_absence_class = $pupil_repo."class/ShowAbsence.class.php";
 $show_lesson_class = $pupil_repo."class/ShowLesson.class.php";
+$menu_pupil_file = $pupil_repo."pupil_menu.php";
 
 /* nom des fichiers du crud */
 $crud_file = $crud_repo."Crud.php";

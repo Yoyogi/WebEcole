@@ -23,8 +23,17 @@ if ($isValided != null) {
 }
 ?>
 
-<form method="POST" action="adm-addSubject.htm">
-    <input type="hidden" name="isValided" value="valided">
-    <p><label> Libelle </label> <input type=text name=libelle> </p>
-    <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
-</form>
+<table class="sub_body">
+    <tr>
+        <td class="menu">
+            <?php include $menu_adm_file; ?>
+        </td>
+        <td class="content_td">
+            <form method="POST" action="adm-addSubject.htm">
+                <input type="hidden" name="isValided" value="valided">
+                <p><label> Libelle </label> <input type=text name=libelle> </p>
+                <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
+            </form>
+        </td>
+    </tr>
+</table>

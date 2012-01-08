@@ -21,10 +21,18 @@ if ($isValided != null) {
 }
 ?>
 
+<table class="sub_body">
+    <tr>
+        <td class="menu">
+            <?php include $menu_adm_file; ?>
+        </td>
+        <td class="content_td">
+            <form method="POST" action="adm-addDivision.htm">
+                <input type="hidden" name="isValided" value="valided">
+                <p><label> Libelle </label> <input type=text name=libelle> </p>
 
-<form method="POST" action="adm-addDivision.htm">
-    <input type="hidden" name="isValided" value="valided">
-    <p><label> Libelle </label> <input type=text name=libelle> </p>
-
-    <p> <input type="submit" name="envoyer" value="Se connecter"> </p>
-</form>
+                <p> <input type="submit" name="envoyer" value="Se connecter"> </p>
+            </form>
+        </td>
+    </tr>
+</table>

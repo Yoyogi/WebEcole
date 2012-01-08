@@ -12,24 +12,33 @@
     }
 ?>
 
-<form method="POST" action="adm-assignMatiereToEnseignant.htm">
-    <input type="hidden" name="isValided" value="valided" />
-    
-    <select name="teacher" id="teacher">
-        <?php
-        foreach ($teachers as $teacher) {
-            echo "<option value=\"" . $teachers->id_enseignant . "\">" . $teachers->nom . " " . $teachers->prenom . "</option>";
-        }
-        ?>
-    </select>
+<table class="sub_body">
+    <tr>
+        <td class="menu">
+            <?php include $menu_adm_file; ?>
+        </td>
+        <td class="content_td">
+            <form method="POST" action="adm-assignMatiereToEnseignant.htm">
+                <input type="hidden" name="isValided" value="valided" />
 
-    <select name="subject" id="subject">
-        <?php
-        foreach ($subjects as $subject) {
-            echo "<option value=\"" . $subjects->id_matiere . "\">" . $subjects->libelle . "</option>";
-        }
-        ?>
-    </select>
+                <select name="teacher" id="teacher">
+                    <?php
+                    foreach ($teachers as $teacher) {
+                        echo "<option value=\"" . $teachers->id_enseignant . "\">" . $teachers->nom . " " . $teachers->prenom . "</option>";
+                    }
+                    ?>
+                </select>
 
-    <input type="submit" name="assign" value="Assign" />
-</form>
+                <select name="subject" id="subject">
+                    <?php
+                    foreach ($subjects as $subject) {
+                        echo "<option value=\"" . $subjects->id_matiere . "\">" . $subjects->libelle . "</option>";
+                    }
+                    ?>
+                </select>
+
+                <input type="submit" name="assign" value="Assign" />
+            </form>
+        </td>
+    </tr>
+</table>
