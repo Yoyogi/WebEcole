@@ -95,15 +95,15 @@ $crud_file = $crud_repo."Crud.php";
 $icrud_file = $crud_repo."ICrud.php";
 
 /* nom des classes */
-$absenceclass_file = "models/Absence.php";
-$administrateurclass_file = "models/Administrateur.php";
-$aideclass_file = "models/Aide.php";
-$coursclass_file = "models/Cours.php";
-$enseignantclass_file = "models/Enseignant.php";
-$enseignantmatiereclass_file = "models/EnseignantMatiere.php";
-$etudiantclass_file = "models/Etudiant.php";
-$etudiantpromotionclass_file = "models/EtudiantPromotion.php";
-$exerciceclass_file = "models/Exercice.php";
-$matiereclass_file = "models/Matiere.php";
-$promotionclass_file = "models/Promotion.php";
+$absenceclass_file = $crud_repo . "models/Absence.php";
+$administrateurclass_file = $crud_repo . "models/Administrateur.php";
+$aideclass_file = $crud_repo . "models/Aide.php";
+$coursclass_file = $crud_repo . "models/Cours.php";
+$enseignantclass_file = $crud_repo . "models/Enseignant.php";
+$enseignantmatiereclass_file = $crud_repo . "models/EnseignantMatiere.php";
+$etudiantclass_file = $crud_repo . "models/Etudiant.php";
+$etudiantpromotionclass_file = $crud_repo . "models/EtudiantPromotion.php";
+$exerciceclass_file = $crud_repo . "models/Exercice.php";
+$matiereclass_file = $crud_repo . "models/Matiere.php";
+$promotionclass_file = $crud_repo . "models/Promotion.php";
 ?>

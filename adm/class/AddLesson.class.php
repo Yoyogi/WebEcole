@@ -12,6 +12,9 @@
  */
 require_once $crud_file;
 require_once $manager;
+require_once $matiereclass_file;
+require_once $promotionclass_file;
+require_once $enseignantclass_file;
 
 class AddLesson {
     public static $instance = NULL;
@@ -45,6 +48,59 @@ class AddLesson {
         }
         
         return $array;
+    }
+    
+    public function getPromotions() {
+        $crud = Crud::getInstance();
+        $promotions = $crud->getPromotions();
+        $index = 0;
+
+        $array = array();
+        foreach ($promotions as $promotion) {
+            
+            $array[$index] = array();
+            $array[$index]['id_promo'] = $promotion->id_promo;
+            $array[$index]['libelle'] = $promotion->libelle;
+            $index++;
+        }
+        
+        return $array;
+    }
+    
+    public function getMatieres() {
+        $crud = Crud::getInstance();
+        $matieres = $crud->getSubjects();
+        $index = 0;
+
+        $array = array();
+        foreach ($matieres as $matiere) {
+            
+            $array[$index] = array();
+            $array[$index]['id_matiere'] = $matiere->id_matiere;
+            $array[$index]['libelle'] = $matiere->libelle;
+            $index++;
+        }
+        
+        return $array;
+    }
+    
+    function addLessonFunc($date, $duree, $descript, Enseignant $enseignant, Promotion $promotion, Matiere $matiere) {
+        $crud = Crud::getInstance();
+        $crud->createLesson($date, $duree, $descript, $enseignant, $promotion, $matiere);
+    }
+    
+    function getSubjectByIdFunc($id_matiere){
+        $crud = Crud::getInstance();
+        mat = new Matiere();
+        $crud->getSubjectById($id_matiere);
+    }
+    
+    function getTeacherByIdFunc($id_enseignant){
+        $crud = Crud::getInstance();
+    }
+    
+    function getPromotionByIdFunc($id_promo){
+        $crud = Crud::getInstance();
     }
 }
 
