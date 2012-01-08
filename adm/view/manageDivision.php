@@ -35,7 +35,7 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='adm-modifyAbsence-" . $row['id'] . ".htm'>Modifier</a>  <a href='adm-manageAbsence-" . $row['id'] . ".htm'>Supprimer</a></td>";
+                        echo "<td><a href='adm-modifyDivision-" . $row['id'] . ".htm'>Modifier</a>  <a href='adm-manageDivision-" . $row['id'] . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>
