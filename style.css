@@ -29,11 +29,16 @@ body {
     letter-spacing: -5px;
 }
 
-/* */
 #header_login {
+    /* polive */
     font: bold 14px Trebuchet MS;
     color: white;
     letter-spacing: 1px;
+    
+    /* positionnement */
+    position: relative;
+    top: 50%;
+    left: -120px;
 }
 
 #footer {
@@ -120,6 +125,28 @@ body {
     
     /* police */
     font-family: Calibri;
+}
+
+/* tableaux */
+table {
+    border-collapse: collapse;
+    font-family: Calibri;
+    
+    width: 100%;
+}
+table caption {
+    font: 20px Calibri;
+    letter-spacing: 1px;
+}
+table th {
+    font-weight: normal;
+    font-style: italic;
+    padding: 5px;
+    background-color: #ddeeee;
+    text-align: center;
+}
+table td {
+    padding: 5px;
 }
 
 /* AUTHENTIFICATION CSS */

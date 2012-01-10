@@ -16,7 +16,7 @@
                     }
                 ?>
             </span>
-            <input type="button" value="deconnexion" onclick='window.location.href="deconnexion.htm";'/>
+            <input type="button" value="Déconnexion" onclick='window.location.href="deconnexion.htm";'/>
         </div>
         <?php
     }

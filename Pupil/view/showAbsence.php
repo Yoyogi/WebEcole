@@ -39,7 +39,7 @@
                     echo "<tr>";
                     foreach ($header as $id => $value)
                     {
-                        echo "<td>" . $value . "</td>";   
+                        echo "<th>" . $value . "</th>";   
                     } 
                     echo "</tr>";
 
