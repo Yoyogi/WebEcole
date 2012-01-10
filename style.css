@@ -29,6 +29,18 @@ body {
     letter-spacing: -5px;
 }
 
+#header_login {
+    /* polive */
+    font: bold 14px Trebuchet MS;
+    color: white;
+    letter-spacing: 1px;
+    
+    /* positionnement */
+    position: relative;
+    top: 50%;
+    left: -120px;
+}
+
 #footer {
     /* positionnement */
     text-align: center;
