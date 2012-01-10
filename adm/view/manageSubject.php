@@ -60,7 +60,7 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='adm-modifySubject-" . $row['id'] . ".htm'>Modifier</a>  <a href='adm-manageSubject-" . $row['id'] . ".htm'>Supprimer</a></td>";
+                        echo "<td><a href='adm-modifySubject-" . $row['id_matiere'] . ".htm'>Modifier</a>  <a href='adm-manageSubject-" . $row['id_matiere'] . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>
