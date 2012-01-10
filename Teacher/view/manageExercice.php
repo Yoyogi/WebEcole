@@ -29,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {
-                        $manage_exercice->deleteExercice($v_id);
+                        try {
+                            $manage_exercice->deleteExercice($v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $exercices = $manage_exercice->getExercice();
-                    $header = $manage_exercice->getHeader();
+                    try {
+                        $exercices = $manage_exercice->getExercice();
+                        $header = $manage_exercice->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

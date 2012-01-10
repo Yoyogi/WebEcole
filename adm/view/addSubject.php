@@ -24,10 +24,14 @@ $add_subject = AddSubject::getInstance();
 
 if ($isValided != null) {
     if ($libelle != null) {
-        $add_subject->addSubjectFunc($libelle);
-        echo "Matiere ajoutee";
+        try {
+            $add_subject->addSubjectFunc($libelle);
+            echo "Matiere ajoutee";
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
     } else {
-
         echo $isValided;
         echo "Veillez a remplir tous les champs correctement";
     }

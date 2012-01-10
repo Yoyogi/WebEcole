@@ -29,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {
-                        $manage_absence->deleteDivision($v_id);
+                        try {
+                            $manage_absence->deleteDivision($v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $promotions = $manage_division->getDivision();
-                    $header = $manage_division->getHeader();
+                    try {
+                        $promotions = $manage_division->getDivision();
+                        $header = $manage_division->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

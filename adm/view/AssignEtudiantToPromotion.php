@@ -16,13 +16,24 @@
     
     require_once $assign_etudianttopromotion_class;
     $assign_student_to_promotion = AssignEtudiantToPromotion::getInstance();
-    $students = $assign_student_to_promotion->getStudent();
-    $promotions = $assign_student_to_promotion->getPromotion();
+    
+    try {
+        $students = $assign_student_to_promotion->getStudent();
+        $promotions = $assign_student_to_promotion->getPromotion();
+    }
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     if ($isValided != null) {
         if ($student != null && $promotion != null) {
-            $assign_student_to_promotion->assign($student, $promotion);
-            echo "Etudiant assigné à une promotion.";
+            try {
+                $assign_student_to_promotion->assign($student, $promotion);
+                echo "Etudiant assigné à une promotion.";
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         } 
     }
 ?>
