@@ -23,26 +23,31 @@ class ShowStudent extends Manager {
     }
     
     public function getStudent() {
-        $crud = Crud::getInstance();
-        $students = $crud->getStudents();
-        $teachers = $crud->getTeachers();
-        $index = 0;
+        try {
+            $crud = Crud::getInstance();
+            $students = $crud->getStudents();
+            $teachers = $crud->getTeachers();
+            $index = 0;
 
-        $array = array();
-        foreach ($students as $student) {
-            $array[$index] = array();
-            $array[$index]['id'] = $student->id_etudiant;
-            $array[$index]['nom'] = $student->nom;
-            $array[$index]['prenom'] = $student->prenom;
-            $array[$index]['date_naissance'] = $student->date_naissance;
-            $array[$index]['rue'] = $student->rue;
-            $array[$index]['cp'] = $student->cp;
-            $array[$index]['ville'] = $student->ville;
-            $array[$index]['email'] = $student->email;
-            $index++;
+            $array = array();
+            foreach ($students as $student) {
+                $array[$index] = array();
+                $array[$index]['id'] = $student->id_etudiant;
+                $array[$index]['nom'] = $student->nom;
+                $array[$index]['prenom'] = $student->prenom;
+                $array[$index]['date_naissance'] = $student->date_naissance;
+                $array[$index]['rue'] = $student->rue;
+                $array[$index]['cp'] = $student->cp;
+                $array[$index]['ville'] = $student->ville;
+                $array[$index]['email'] = $student->email;
+                $index++;
+            }
+
+            return $array;
         }
-        
-        return $array;
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

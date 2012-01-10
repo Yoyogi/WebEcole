@@ -29,8 +29,13 @@ class AddDivision {
 
     
     function addDivisionFunc($libelle){
-        $crud = Crud::getInstance();
-        $crud->createPromotion($libelle);
+        try {
+            $crud = Crud::getInstance();
+            $crud->createPromotion($libelle);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

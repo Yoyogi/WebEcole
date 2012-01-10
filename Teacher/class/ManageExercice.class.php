@@ -19,22 +19,27 @@ class ManageExercice {
     }
     
     public function getExercice() {
-        $crud = Crud::getInstance();
-        $exercices = $crud->getExercices();
-        $index = 0;
+        try {
+            $crud = Crud::getInstance();
+            $exercices = $crud->getExercices();
+            $index = 0;
 
-        $array = array();
-        foreach ($exercices as $exercice) { 
-            $cour = $crud->getLessonById($exercice->id_cours);
-            
-            $array[$index] = array();
-            $array[$index]['id'] = $exercice->id_exercice;
-            $array[$index]['libelle'] = $exercice->libelle;
-            $array[$index]['libelle'] = $cour->id_cours;
-            $index++;
+            $array = array();
+            foreach ($exercices as $exercice) { 
+                $cour = $crud->getLessonById($exercice->id_cours);
+
+                $array[$index] = array();
+                $array[$index]['id'] = $exercice->id_exercice;
+                $array[$index]['libelle'] = $exercice->libelle;
+                $array[$index]['libelle'] = $cour->id_cours;
+                $index++;
+            }
+
+            return $array;
         }
-        
-        return $array;
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function getHeader() {
@@ -42,7 +47,13 @@ class ManageExercice {
     }
     
     public function deleteExercice($id) {
-        $crud = Crud::getInstance();
+        try {
+            $crud = Crud::getInstance();
+            $crud->deleteExercice($id);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 
