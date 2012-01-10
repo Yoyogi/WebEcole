@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "student") {
+            if ($_SESSION["type"] == "teacher") {
+                header('Location: tea-indexTeacher.htm');
+            }
+            else if ($_SESSION["type"] == "admin") {
+                header('Location: adm-indexAdmin.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $show_lesson_class;
     $show_lesson = ShowLesson::getInstance();
 ?>
