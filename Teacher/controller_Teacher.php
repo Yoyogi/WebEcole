@@ -8,7 +8,7 @@ switch ($spage){
         break;
     
     case "manage_absence":
-        $body = $manage_lesson_file_teacher;
+        $body = $manage_absence_file_teacher;
         $title = "Ajouter un cours";
         $metadescription = "Web Ecole - Ajout de cours";
         break;
