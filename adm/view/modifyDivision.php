@@ -24,7 +24,7 @@ $division = $modify_division->getDivisionById($v_id);
 if ($isValided != null) {
     if ($libelle != null) {
         try {
-            $add_division->modifyDivisionFunc($libelle);
+            $modify_division->modifyDivisionFunc($libelle);
         echo "Matiere ajoutee";
         }
         catch (Exception $e) {

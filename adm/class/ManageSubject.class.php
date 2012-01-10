@@ -15,7 +15,7 @@ class ManageSubject extends Manager {
     }
     
     function ManageSubject() {
-        $this->header = array('libelle' => 'Libelle');
+        $this->header = array('id' => 'ID', 'libelle' => 'Libelle');
     }
     
     public function getSubject() {
@@ -27,6 +27,7 @@ class ManageSubject extends Manager {
             $array = array();
             foreach ($matieres as $matiere) {
                 $array[$index] = array();
+                $array[$index]['id'] = $matiere->id_matiere;
                 $array[$index]['libelle'] = $matiere->libelle;
                 $index++;
             }

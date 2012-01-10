@@ -5,11 +5,10 @@ require_once $crud_file;
 class ForwardAbsence {
     
     public static $instance = NULL;
-    private $crud;
 
     static public function getInstance() {
         if (ForwardAbsence::$instance == NULL) {
-            ForwardAbsence::$instance = new AddDivision();
+            ForwardAbsence::$instance = new ForwardAbsence();
         }
         return ForwardAbsence::$instance;
     }

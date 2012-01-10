@@ -16,8 +16,9 @@ else {
 }
 
 
-require_once $add_subject_class;
-$add_subject = AddSubject::getInstance();
+require_once $modify_subject_class;
+$modify_subject = ModifySubject::getInstance();
+$subject = $modify_subject->getSubjectByID($v_id);
 
 //echo "fihefrviuerncvi      :      " . $libelle;
 
@@ -25,7 +26,7 @@ $add_subject = AddSubject::getInstance();
 if ($isValided != null) {
     if ($libelle != null) {
         try {
-            $add_subject->addSubjectFunc($libelle);
+            $modify_subject->updateSubject($v_id, $libelle);
             echo "Matiere ajoutee";
         }
         catch (Exception $e) {
@@ -46,7 +47,7 @@ if ($isValided != null) {
         <td class="content_td">
             <form method="POST" action="adm-addSubject.htm">
                 <input type="hidden" name="isValided" value="valided">
-                <p><label> Libelle </label> <input type=text name=libelle> </p>
+                <p><label> Libelle </label> <input type=text name=libelle value="<?php echo $subject->libelle; ?>"> </p>
                 <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
             </form>
         </td>

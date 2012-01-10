@@ -15,7 +15,7 @@ class ManageDivision {
     }
     
     function ManageDivision() {
-        $this->header = array('libelle' => 'Libelle');
+        $this->header = array('id' => 'ID', 'libelle' => 'Libelle');
     }
     
     public function getDivision() {
@@ -27,6 +27,7 @@ class ManageDivision {
             $array = array();
             foreach ($promotions as $promotion) {            
                 $array[$index] = array();
+                $array[$index]['id'] = $promotion->id_promo;
                 $array[$index]['libelle'] = $promotion->libelle;
                 $index++;
             }
