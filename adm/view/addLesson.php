@@ -46,6 +46,7 @@
 <table class="sub_body">
     <tr>
         <td class="menu">
+            <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
              <form method="POST" action="adm-addLesson.htm">

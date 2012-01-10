@@ -957,7 +957,7 @@ class Crud implements ICrud {
     
     function getLessonById($id) {
         try {
-            $lessons = Doctrine_Core::getTable("Cours")->findBy("id_cours", $id);
+            $lessons = Doctrine_Core::getTable("Cours")->findOneBy("id_cours", $id);
             if ($lessons != null) {
                 return $lessons;
             }

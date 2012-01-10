@@ -162,6 +162,7 @@ a:hover {
 /* formulaires */
 form {
     width: 100%;
+    margin: 10px;
 }
 .title_form {
     text-align: center;
