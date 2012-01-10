@@ -6,14 +6,25 @@ class Crud implements ICrud {
     public static $instance = NULL;
     
     function Crud() {
-        $connection = Doctrine_Manager::connection(CFG_DB_DSN);
+        try {
+            $connection = Doctrine_Manager::connection(CFG_DB_DSN);
+        }
+        catch (Doctrine_Manager_Exception $e) {
+            throw $e;
+        }
     }
     
     static public function getInstance() {
-        if (Crud::$instance == NULL) {
-            Crud::$instance = new Crud();
+        try {
+            if (Crud::$instance == NULL) {
+                Crud::$instance = new Crud();
+            }
+            return Crud::$instance;
         }
-        return Crud::$instance;
+        catch (Doctrine_Manager_Exception $e) {
+            throw $e;
+        }
+        return null;
     }
     
     //---------------------------------------------------
@@ -36,13 +47,13 @@ class Crud implements ICrud {
             $student->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -65,13 +76,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -83,13 +94,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -130,13 +141,13 @@ class Crud implements ICrud {
             $promotion->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -161,13 +172,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -180,13 +191,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -199,13 +210,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -217,13 +228,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -236,13 +247,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -255,13 +266,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -276,13 +287,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -305,13 +316,13 @@ class Crud implements ICrud {
             $teacher->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         
     }
@@ -332,13 +343,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -350,13 +361,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -397,13 +408,13 @@ class Crud implements ICrud {
             $matiere->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -428,13 +439,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -447,13 +458,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -466,13 +477,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -484,13 +495,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -503,13 +514,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -522,13 +533,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -543,13 +554,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -566,13 +577,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -585,13 +596,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -604,13 +615,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -633,13 +644,13 @@ class Crud implements ICrud {
             $this->addAbsenceToLesson($cours, $absence);
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -663,13 +674,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -687,13 +698,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -705,13 +716,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -724,13 +735,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -743,13 +754,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -777,13 +788,13 @@ class Crud implements ICrud {
             $this->addLessonToTeacher($enseignant, $lesson);
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -813,13 +824,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -839,13 +850,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -858,13 +869,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -877,13 +888,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -896,13 +907,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -915,13 +926,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -933,13 +944,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -952,13 +963,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -971,13 +982,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -990,13 +1001,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1009,13 +1020,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1030,13 +1041,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1053,13 +1064,13 @@ class Crud implements ICrud {
             $subject->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1073,13 +1084,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1091,13 +1102,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1118,13 +1129,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1137,13 +1148,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1155,13 +1166,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1174,13 +1185,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1194,13 +1205,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1216,13 +1227,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1240,13 +1251,13 @@ class Crud implements ICrud {
             $help->save;
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1261,13 +1272,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1280,13 +1291,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1298,13 +1309,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1316,13 +1327,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1334,13 +1345,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1357,13 +1368,13 @@ class Crud implements ICrud {
             $promotion->save();
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1376,13 +1387,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1394,13 +1405,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1421,13 +1432,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1440,13 +1451,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1458,13 +1469,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1477,13 +1488,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1502,13 +1513,13 @@ class Crud implements ICrud {
             return $results;
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1526,13 +1537,13 @@ class Crud implements ICrud {
             return $results;
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1551,13 +1562,13 @@ class Crud implements ICrud {
             $this->addExerciceToLesson($lesson, $exercice);
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1576,13 +1587,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1594,13 +1605,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
     }
     
@@ -1612,13 +1623,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1631,13 +1642,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
@@ -1650,13 +1661,13 @@ class Crud implements ICrud {
             }
         }
         catch (Doctrine_Validator_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Connection_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         catch (Doctrine_Manager_Exception $e) {
-            echo $e->errorMessage();
+            throw $e;
         }
         return null;
     }
