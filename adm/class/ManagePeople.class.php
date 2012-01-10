@@ -15,7 +15,7 @@ class ManagePeople extends Manager {
     }
     
     function ManagePeople() {
-        $this->header = array('id' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
+        $this->header = array('nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
     }
     
     public function getPeople() {
@@ -28,7 +28,6 @@ class ManagePeople extends Manager {
             $array = array();
             foreach ($students as $student) {
                 $array[$index] = array();
-                $array[$index]['id'] = $student->id_etudiant;
                 $array[$index]['nom'] = $student->nom;
                 $array[$index]['prenom'] = $student->prenom;
                 $array[$index]['status'] = "Student";
