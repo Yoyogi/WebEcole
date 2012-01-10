@@ -9,8 +9,14 @@ switch ($spage) {
     
     case "log_forward":
         $body = $log_forwarding_file;
-        $title = "Connexion Web Ecole en cours ....";
+        $title = "Connection Web Ecole en cours...";
         $metadescription = "Web Ecole - Connexion";
+        break;
+    
+    case "deconnexion":
+        $body = $deconnexion_file;
+        $title = "Déconnexion";
+        $metadescription = "Web Ecole - Deconnexion";
         break;
     
     default:
