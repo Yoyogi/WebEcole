@@ -28,8 +28,13 @@
                 <caption align="center">Affichage des absences</caption>
                 <tr bgcolor="#ff0000">
                 <?php    
-                    $absences = $show_absence->getAbsence();
-                    $header = $show_absence->getHeader();
+                    try {
+                        $absences = $show_absence->getAbsence();
+                        $header = $show_absence->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

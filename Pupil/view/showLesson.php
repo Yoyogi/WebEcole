@@ -28,8 +28,13 @@
                 <caption align="center">Affichage des cours</caption>
                 <tr bgcolor="#ff0000">
                 <?php    
-                    $lessons = $show_lesson->getLesson();
-                    $header = $show_lesson->getHeader();
+                    try {
+                        $lessons = $show_lesson->getLesson();
+                        $header = $show_lesson->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

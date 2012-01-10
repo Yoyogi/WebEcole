@@ -28,8 +28,13 @@
                 <caption align="center">Affichage des eleves</caption>
                 <tr bgcolor="#ff0000">
                 <?php    
-                    $students = $show_student->getStudent();
-                    $header = $show_student->getHeader();
+                    try {
+                        $students = $show_student->getStudent();
+                        $header = $show_student->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)
