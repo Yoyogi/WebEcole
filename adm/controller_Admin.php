@@ -20,6 +20,12 @@ switch ($spage){
         $metadescription = "Web Ecole - Ajout de personnes";
         break;
     
+    case "add_absence":
+        $body = $add_absence_file;
+        $title = "Ajouter une personne";
+        $metadescription = "Web Ecole - Ajout de personnes";
+        break;
+    
     case "add_subject":
         $body = $add_subject_file;
         $title = "Ajouter une matière";

@@ -37,6 +37,7 @@ $manager = "manager.class.php";
 
 /* nom des fichiers ADM */
 $controller_adm_file = $adm_repo."controller_Admin.php";
+$add_absence_file = $adm_repo."view/AddAbsence.php";
 $add_division_file = $adm_repo."view/AddDivision.php";
 $add_lesson_file = $adm_repo."view/AddLesson.php";
 $add_people_file = $adm_repo."view/AddPeople.php";
@@ -62,6 +63,7 @@ $manage_lesson_class = $adm_repo."class/ManageLesson.class.php";
 $manage_subject_class = $adm_repo."class/ManageSubject.class.php";
 $add_people_class = $adm_repo."class/AddPeople.class.php";
 $add_division_class = $adm_repo."class/AddDivision.class.php";
+$add_absence_class = $adm_repo."class/AddAbsence.class.php";
 $add_lesson_class = $adm_repo."class/AddLesson.class.php";
 $add_subject_class = $adm_repo."class/AddSubject.class.php";
 $modify_people_class = $adm_repo."class/ModifyPeople.class.php";
