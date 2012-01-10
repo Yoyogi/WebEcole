@@ -14,17 +14,27 @@ class ModifyLesson {
     }
     
     public function getLessonByID($id_lesson) {
-        $crud = Crud::getInstance();
-        return $crud->getLessonById($id_lesson);
+        try {
+            $crud = Crud::getInstance();
+            return $crud->getLessonById($id_lesson);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 
     public function updateLesson($id, $date, $duree, $descript, $id_enseignant, $id_promotion, $id_matiere) {
-        $crud = Crud::getInstance();
-        $enseignant = getTeacherById($id_enseignant);
-        $promotion = $crud->getPromotionById($id_promotion);
-        $matiere = $crud->getSubjectById($id_matiere);
-        
-        $crud->updateLesson($id, $date, $duree, $descript, $enseignant, $promotion, $matiere);
+        try {
+            $crud = Crud::getInstance();
+            $enseignant = getTeacherById($id_enseignant);
+            $promotion = $crud->getPromotionById($id_promotion);
+            $matiere = $crud->getSubjectById($id_matiere);
+
+            $crud->updateLesson($id, $date, $duree, $descript, $enseignant, $promotion, $matiere);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

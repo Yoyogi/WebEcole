@@ -14,13 +14,23 @@ class ModifySubject {
     }
     
     public function getSubjectByID($id_subject) {
-        $crud = Crud::getInstance();
-        return $crud->getSubjectById($id_subject);
+        try {
+            $crud = Crud::getInstance();
+            return $crud->getSubjectById($id_subject);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 
     public function updateSubject($id, $libelle) {
-        $crud = Crud::getInstance();
-        $crud->updateSubject($id, $libelle);
+        try {
+            $crud = Crud::getInstance();
+            $crud->updateSubject($id, $libelle);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

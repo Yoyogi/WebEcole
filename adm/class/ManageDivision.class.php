@@ -19,19 +19,24 @@ class ManageDivision {
     }
     
     public function getDivision() {
-        $crud = Crud::getInstance();
-        $promotions = $crud->getPromotions();
-        $index = 0;
+        try {
+            $crud = Crud::getInstance();
+            $promotions = $crud->getPromotions();
+            $index = 0;
 
-        $array = array();
-        foreach ($promotions as $promotion) {            
-            $array[$index] = array();
-            $array[$index]['id'] = $promotion->id_promo;
-            $array[$index]['libelle'] = $promotion->libelle;
-            $index++;
+            $array = array();
+            foreach ($promotions as $promotion) {            
+                $array[$index] = array();
+                $array[$index]['id'] = $promotion->id_promo;
+                $array[$index]['libelle'] = $promotion->libelle;
+                $index++;
+            }
+
+            return $array;
         }
-        
-        return $array;
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function getHeader() {
@@ -39,7 +44,13 @@ class ManageDivision {
     }
     
     public function deleteDivision($id) {
-        $crud = Crud::getInstance();
+        try {
+            $crud = Crud::getInstance();
+            $crud->deletePromotion($id);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

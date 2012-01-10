@@ -14,13 +14,23 @@ class ModifyDivision {
     }
     
     public function getDivisionByID($id_division) {
-        $crud = Crud::getInstance();
-        return $crud->getPromotionById($id_division);
+        try {
+            $crud = Crud::getInstance();
+            return $crud->getPromotionById($id_division);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 
     public function updateDivision($id, $libelle) {
-        $crud = Crud::getInstance();
-        $crud->updatePromotion($id, $libelle);
+        try {
+            $crud = Crud::getInstance();
+            $crud->updatePromotion($id, $libelle);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 
