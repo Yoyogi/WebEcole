@@ -60,7 +60,7 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='adm-modifyPeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Modifier</a>  <a href='adm-managePeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Supprimer</a></td>";
+                        echo "<td><a href='adm-modifyPeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Modifier</a> / <a href='adm-managePeople-" . $row['id'] . "-" . $manage_people->getStatus($row['status']) . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>

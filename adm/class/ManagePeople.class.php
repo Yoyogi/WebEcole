@@ -36,7 +36,6 @@ class ManagePeople extends Manager {
 
             foreach ($teachers as $teacher) {
                 $array[$index] = array();
-                $array[$index]['id'] = $teacher->id_enseignant;
                 $array[$index]['nom'] = $teacher->nom;
                 $array[$index]['prenom'] = $teacher->prenom;
                 $array[$index]['status'] = "Teacher";
