@@ -15,7 +15,7 @@ class ShowAbsence extends Manager {
     }
     
     function ShowAbsence() {
-        $this->header = array('id_absence' => 'Identifiant', 'motif' => 'Motif', 'nom_etudiant' => 'Nom', 'prenom_etudiant' => 'Prenom', 'nom_cours' => 'Cours');
+        $this->header = array('motif' => 'Motif', 'nom_etudiant' => 'Nom', 'prenom_etudiant' => 'Prenom', 'nom_cours' => 'Cours');
     }
     
     public function getAbsence() {
@@ -30,7 +30,6 @@ class ShowAbsence extends Manager {
                 $matiere = $crud->getSubjectByLesson($absence->id_cours);
 
                 $array[$index] = array();
-                $array[$index]['id'] = $absences->id_absence;
                 $array[$index]['motif'] = $absences->motif;
                 $array[$index]['nom'] = $student->nom;
                 $array[$index]['prenom'] = $student->prenom;

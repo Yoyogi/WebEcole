@@ -15,7 +15,7 @@ class ShowLesson {
     }
     
     function ShowLesson() {
-        $this->header = array('id_cours' => 'Identifiant', 'date_cours' => 'Date', 'duree' => 'Duree', 'descript' => 'Description', 'promo' => 'Promotion', 'matiere' => 'Matiere');
+        $this->header = array('date_cours' => 'Date', 'duree' => 'Duree', 'descript' => 'Description', 'promo' => 'Promotion', 'matiere' => 'Matiere');
     }
     
     public function getLesson() {
@@ -30,7 +30,6 @@ class ShowLesson {
                 $matiere = $crud->getSubjectByLesson($lesson->id_cours);
 
                 $array[$index] = array();
-                $array[$index]['id'] = $lesson->id_cours;
                 $array[$index]['date_cours'] = $lesson->date_cours;
                 $array[$index]['duree'] = $lesson->duree;
                 $array[$index]['descript'] = $lesson->descript;
