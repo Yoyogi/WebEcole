@@ -375,6 +375,24 @@ class Crud implements ICrud {
         try {
             if (Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher)) {
                 $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
+                $subjects = Dcotrine_Core::getTables("Matiere")->findAll();
+                foreach ($subjects as $subject) {
+                    $flag = false;
+                    foreach ($subject->Enseignants as $enseignant) {
+                        if ($enseignant->id_enseignant == $idTeacher) {
+                            $flag = true;
+                        }
+                    }
+                    if ($flag == true) {
+                        $this->removeSubjectToTeacher($enseignant, $subject);
+                    }
+                }
+                
+                $lessons = Doctrine_Core::getTable("Cours")->findBy("id_enseignant", $idTeacher);
+                foreach ($lessons as $lesson) {
+                    $this->deleteLesson($lesson->id_cours);
+                }
+                
                 $teacher->delete();
             }
         }
@@ -884,6 +902,11 @@ class Crud implements ICrud {
                 }
                 $this->removeLessonToSubject($subject, $lesson);
                 $this->removeLessonToTeacher($teacher, $lesson);
+                
+                $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $id);
+                foreach ($absences as $absence) {
+                    $this->deleteAbsence($absence->id_absence);
+                }
 
                 $lesson->delete();
             }
