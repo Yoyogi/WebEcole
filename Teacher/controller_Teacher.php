@@ -29,7 +29,19 @@ switch ($spage){
         $body = $show_student_file;
         $title = "Lister les élèves";
         $metadescription = "Web Ecole - Listage des élèves";
-        break;    
+        break;
+    
+    case "add_absences":
+        $body = $add_absence_file;
+        $title = "Ajouter une absence";
+        $metadescription = "Web Ecole - Ajout d'une absence";
+        break;
+    
+    case "add_exercices":
+        $body = $add_exercice_file;
+        $title = "Ajouter un exercice";
+        $metadescription = "Web Ecole - Ajout d'un exercice";
+        break;
     
     
     default:
