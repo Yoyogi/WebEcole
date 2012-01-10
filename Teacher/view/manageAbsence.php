@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "teacher") {
+            if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+            else if ($_SESSION["type"] == "admin") {
+                header('Location: adm-indexAdmin.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $manage_absence_class;
     $manage_absence = ManageAbsence::getInstance();
 ?>
