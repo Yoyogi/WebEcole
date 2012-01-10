@@ -37,6 +37,5 @@ class AddDivision {
             throw $e;
         }
     }
-}
 
 ?>
