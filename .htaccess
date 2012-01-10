@@ -37,6 +37,8 @@ RewriteRule ^adm-modifySubject-([0-9]+).htm$ index.php?&page=adm&spage=modify_su
 RewriteRule ^adm-assignEtudiantToPromotion.htm$ index.php?&page=adm&spage=assign_etudianttopromotion [L,QSA]
 RewriteRule ^adm-assignMatiereToEnseignant.htm$ index.php?&page=adm&spage=assign_matieretoenseignant [L,QSA]
 
+RewriteRule ^adm-forwardAbsence.htm$ index.php?&page=adm&spage=forwardAbsence [L,QSA]
+
 # ------ TEACHER
 RewriteRule ^tea-indexTeacher.htm$ index.php?&page=teacher&spage=index_teacher [L,QSA]
 RewriteRule ^tea-manageAbsence.htm$ index.php?&page=teacher&spage=manage_absence [L,QSA]

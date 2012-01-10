@@ -104,6 +104,12 @@ switch ($spage){
         $metadescription = "Web Ecole - Assignation des matières";
         break;
     
+    case "forwardAbsence":
+        $body = $forward_absence_file;
+        $title = "Signaler une absence à un élève";
+        $metadescription = "Web Ecole - Signalement des absences";
+        break;
+    
     default:
         $body = $index_admin_file;
         $title = "Accueil administrateur";

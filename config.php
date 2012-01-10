@@ -73,6 +73,7 @@ $modify_lesson_class = $adm_repo."class/ModifyLesson.class.php";
 $modify_subject_class = $adm_repo."class/ModifySubject.class.php";
 $assign_etudianttopromotion_class = $adm_repo."class/AssignEtudiantToPromotion.class.php";
 $assign_matieretoenseignant_class = $adm_repo."class/AssignMatiereToEnseignant.class.php";
+$forward_absence_class = $adm_repo."class/ForwardAbsence.class.php";
 
 /* nom des fichiers TEACHER */
 $controller_teacher_file = $teacher_repo."controller_Teacher.php";
