@@ -16,13 +16,24 @@
     
     require_once $assign_matieretoenseignant_class;
     $assign_matiere_to_enseignant = AssignMatiereToEnseignant::getInstance();
-    $teachers = $assign_matiere_to_enseignant->getTeacher();
-    $subjects = $assign_matiere_to_enseignant->getSubject();
+    
+    try {
+        $teachers = $assign_matiere_to_enseignant->getTeacher();
+        $subjects = $assign_matiere_to_enseignant->getSubject();
+    }
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     if ($isValided != null) {
         if ($teachers != null && $subjects != null) {
-            $assign_matiere_to_enseignant->assign($teachers, $subjects);
-            echo "Matiere assignée à l'enseignant";
+            try {
+                $assign_matiere_to_enseignant->assign($teachers, $subjects);
+                echo "Matiere assignée à l'enseignant";
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
     }
 ?>

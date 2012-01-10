@@ -29,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_type) && isset($v_id)) {
-                        $manage_subject->deletePeople($v_id);
+                        try {
+                            $manage_subject->deletePeople($v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $matiere = $manage_subject->getSubject();
-                    $header = $manage_subject->getHeader();
+                    try {
+                        $matiere = $manage_subject->getSubject();
+                        $header = $manage_subject->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

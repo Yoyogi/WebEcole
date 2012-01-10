@@ -26,8 +26,13 @@ if (isset($status)){
             && ($firstName != null) && ($email != null) && ($street != null) 
                 && ($zipcode != null) && ($city != null)){
             
-            $add_people->addTeacher($lastName, $firstName, $street, $zipcode, $city, $email, $login, $password);
-            echo "enseignant ajoute";
+            try {
+                $add_people->addTeacher($lastName, $firstName, $street, $zipcode, $city, $email, $login, $password);
+                echo "enseignant ajoute";
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }else{
             echo "Login : " . $login;
             echo "password : " . $password;
@@ -46,8 +51,13 @@ if (isset($status)){
         if (($login != null) && ($password != null) && ($lastName != null)
             && ($firstName != null) && ($email != null) && ($street != null) 
                 && ($zipcode != null) && ($city != null) && ($photo != null) && ($birthDay != null)){
-            $add_people->addPupil($lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
-            echo "eleve ajoute";
+            try {
+                $add_people->addPupil($lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
+                echo "eleve ajoute";
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
         else {
             echo "<br>Login : " . ($login != null);

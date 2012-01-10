@@ -21,8 +21,13 @@ $add_division = AddDivision::getInstance();
 
 if ($isValided != null) {
     if ($libelle != null) {
-        $add_division->addDivisionFunc($libelle);
+        try {
+            $add_division->addDivisionFunc($libelle);
         echo "Matiere ajoutee";
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
     } else {
 
         echo $isValided;
