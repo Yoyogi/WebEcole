@@ -27,7 +27,7 @@ if ($isValided != null) {
     if ($libelle != null) {
         try {
             $modify_subject->updateSubject($v_id, $libelle);
-            echo "Matiere ajoutee";
+            echo "Matiere modifiée";
         }
         catch (Exception $e) {
             echo $e->getMessage();
@@ -45,10 +45,10 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-            <form method="POST" action="adm-addSubject.htm">
+            <form method="POST" action="adm-modifySubject-<?php echo $v_id; ?>.htm">
                 <input type="hidden" name="isValided" value="valided">
                 <p><label> Libelle </label> <input type=text name=libelle value="<?php echo $subject->libelle; ?>"> </p>
-                <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
+                <p> <input type="submit" name="envoyer" value="Modifier matiere"> </p>
             </form>
         </td>
     </tr>

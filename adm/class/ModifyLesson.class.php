@@ -99,7 +99,7 @@ public function getTeachers() {
     public function updateLesson($id, $date, $duree, $descript, $id_enseignant, $id_promotion, $id_matiere) {
         try {
             $crud = Crud::getInstance();
-            $enseignant = getTeacherById($id_enseignant);
+            $enseignant = $crud->getTeacherById($id_enseignant);
             $promotion = $crud->getPromotionById($id_promotion);
             $matiere = $crud->getSubjectById($id_matiere);
 

@@ -24,8 +24,8 @@ $division = $modify_division->getDivisionById($v_id);
 if ($isValided != null) {
     if ($libelle != null) {
         try {
-            $modify_division->modifyDivisionFunc($libelle);
-        echo "Matiere ajoutee";
+            $modify_division->updateDivision($v_id, $libelle);
+            echo "Matiere modifiee";
         }
         catch (Exception $e) {
             echo $e->getMessage();
@@ -44,11 +44,11 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-            <form method="POST" action="adm-addDivision.htm">
+            <form method="POST" action="adm-modifyDivision.htm-<?php echo $v_id; ?>">
                 <input type="hidden" name="isValided" value="valided">
                 <p><label> Libelle </label> <input type=text name=libelle value="<?php echo $division->libelle; ?>"> </p>
 
-                <p> <input type="submit" name="envoyer" value="Se connecter"> </p>
+                <p> <input type="submit" name="envoyer" value="Modifier division"> </p>
             </form>
         </td>
     </tr>

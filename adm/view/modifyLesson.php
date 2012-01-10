@@ -31,12 +31,12 @@
     if ($isValided != null) {
         if (($date_cours != null) && ($duree != null) && ($descript != null)) {
             try {
-                $modify_lesson->updateLesson($date_cours, $duree, $descript, $teacher, $promotion, $matiere);
+                $modify_lesson->updateLesson($v_id, $date_cours, $duree, $descript, $teacher, $promotion, $matiere);
             }
             catch (Exception $e) {
                 echo $e;
             }
-            echo "Cours ajoutee";
+            echo "Cours modifiée";
         } else {
 
             echo $isValided;
@@ -54,7 +54,7 @@
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-             <form method="POST" action="adm-addLesson.htm">
+             <form method="POST" action="adm-modifyLesson-<?php echo $v_id; ?>.htm">
                 <input type="hidden" name="isValided" value="valided" />
                 
                 <!-- combobox teacher -->
@@ -113,7 +113,7 @@
                 <p><label> Duree : </label> <input type=text name=duree value="<?php echo $lesson->duree; ?>"> </p>
                 <p><label> Description : </label> <input type=text name=descript value="<?php echo $lesson->descript; ?>"> </p>
                 
-                <input type="submit" name="addLesson" value="Créer le cours" />
+                <input type="submit" name="modifyLesson" value="Modifier le cours" />
             </form>
         </td>
     </tr>
