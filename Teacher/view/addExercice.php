@@ -1,24 +1,25 @@
 <?php
 
-
     require_once $add_exercice_class;
     require_once $coursclass_file;
     $add_exercice = AddExercice::getInstance();
     $lessons = $add_exercice->getLessons();
     
     
+    echo "allalalal  : " + $lesson;
     
     if ($isValided != null) {
         if ($libelle != null) {
             $LessonObj = new Cours();
             $LessonObj = $add_exercice->getLessonByIdFunc($lesson);
-            $add_absence->addExerciceFunc($libelle, $LessonObj);
-            echo "Exercice ajoutée";
+            $add_exercice->addExerciceFunc($libelle, $LessonObj);
+            echo "Exercice ajouté";
         } else {
             echo $isValided;
             echo "Veillez a remplir tous les champs correctement";
         }
     }
+    
 
 ?>
 
@@ -51,7 +52,7 @@
                                 
                 <p><label> Libelle : </label> <input type=text name=libelle> </p>
                 
-                <input type="submit" name="addAbsence" value="Créer le cours" />
+                <input type="submit" name="addExercice" value="Créer le cours" />
             </form>
         </td>
     </tr>
