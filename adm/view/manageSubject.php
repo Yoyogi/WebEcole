@@ -28,9 +28,9 @@
                 <caption align="center">Gestion des matieres</caption>
                 <tr bgcolor="#ff0000">
                 <?php
-                    if (isset($v_type) && isset($v_id)) {
+                    if (isset($v_id)) {
                         try {
-                            $manage_subject->deletePeople($v_id);
+                            $manage_subject->deleteSubject($v_id);
                         }
                         catch (Exception $e) {
                             echo $e->getMessage();
@@ -60,7 +60,7 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='adm-modifySubject-" . $row['id'] . ".htm'>Modifier</a> / <a href='adm-manageSubject-" . $row['id_matiere'] . ".htm'>Supprimer</a></td>";
+                        echo "<td><a href='adm-modifySubject-" . $row['id'] . ".htm'>Modifier</a> / <a href='adm-manageSubject-" . $row['id'] . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>

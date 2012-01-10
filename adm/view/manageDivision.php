@@ -30,7 +30,7 @@
                 <?php
                     if (isset($v_id)) {
                         try {
-                            $manage_absence->deleteDivision($v_id);
+                            $manage_division->deleteDivision($v_id);
                         }
                         catch (Exception $e) {
                             echo $e->getMessage();
