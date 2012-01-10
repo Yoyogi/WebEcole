@@ -7,7 +7,7 @@
 ?>
 <ul id="css3menu1" class="topmenu">
     <li class="topfirst">
-        <a href="adm-addPeople.htm" title="Gestion des personnes" style="width:168px;">Gestion des personnes</a>
+        <a href="adm-managePeople.htm" title="Gestion des personnes" style="width:168px;">Gestion des personnes</a>
     </li>
     <li>
         <a href="#" title="Gestion scolaire" style="width:168px;"><span>Gestion scolaire</span></a>

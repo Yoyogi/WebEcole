@@ -46,6 +46,8 @@ RewriteRule ^tea-manageExercice-([0-9]+).htm$ index.php?&page=teacher&spage=mana
 RewriteRule ^tea-manageLesson.htm$ index.php?&page=teacher&spage=manage_lesson [L,QSA]
 RewriteRule ^tea-manageLesson-([0-9]+).htm$ index.php?&page=teacher&spage=manage_lesson&v_id=$1 [L,QSA]
 RewriteRule ^tea-showStudents.htm$ index.php?&page=teacher&spage=show_students [L,QSA]
+RewriteRule ^tea-addAbsences.htm$ index.php?&page=teacher&spage=add_absences [L,QSA]
+RewriteRule ^tea-addExercices.htm$ index.php?&page=teacher&spage=add_exercices [L,QSA]
 
 # ------ PUPIL
 RewriteRule ^pup-indexPupil.htm$ index.php?&page=pupil&spage=index_pupil [L,QSA]
