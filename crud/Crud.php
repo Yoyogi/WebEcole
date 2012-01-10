@@ -89,7 +89,25 @@ class Crud implements ICrud {
     function deleteStudent($idStudent) {
         try {
             if (Doctrine_Core::getTable("Etudiant")->find($idStudent)) {
+                $absences = Doctrine_Core::getTable("Absence")->findBy("id_etudiant", $idStudent);
+                foreach ($absences as $absence) {
+                    $this->deleteAbsence($absence->id_absence);
+                }
+                
+                $promotions = Doctrine_Core::getTable("Promotion")->findAll();
                 $student = Doctrine_Core::getTable("Etudiant")->find($idStudent);
+                foreach ($promotions as $promotion) {
+                    $flag = false;
+                    foreach($promotion->Etudiants as $etudiant) {
+                        if ($etudiant->id_etudiant == $idStudent) {
+                            $flag = true;
+                        }
+                    }
+                    if ($flag == true) {
+                        $this->removeStudentFromPromotion($promotion, $student);
+                    }
+                }
+                
                 $student->delete();
             }
         }
