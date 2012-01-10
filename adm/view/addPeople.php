@@ -96,19 +96,32 @@ if (isset($status)){
                     <option <?php if ($type==1) echo "selected='selected'"; ?> value="1">Elève</option>
                     <option <?php if ($type==2) echo "selected='selected'"; ?> value="2">Professeur</option>
                 </select>
+                
+                <?php
+                    if (isset($type)) {
+                        if ($type != 0) {
+                            if ($type == 1) {
+                                echo "<p class='title_form'>Ajout d'un élève</p>";
+                            }
+                            else {
+                                echo "<p class='title_form'>Ajout d'un enseignant</p>";
+                            }
+                        }
+                    }
+                ?>
 
                 <?php
                     if (isset($type)) {
                         if ($type != 0) {
                 ?>
-                <p><label class="label_form"> Login </label> <input class="input_form" type="text" name="login"> </p>
-                <p><label class="label_form"> Mot de passe </label> <input class="input_form" type="text" name="password"> </p>
-                <p><label class="label_form"> Nom </label> <input class="input_form" type="text" name="lastName"> </p>
-                <p><label class="label_form"> Prenom </label> <input class="input_form" type="text" name="firstName"> </p>
-                <p><label class="label_form"> Rue </label> <input class="input_form" type="text" name="street"> </p>
-                <p><label class="label_form"> Code postal </label> <input class="input_form" type="text" name="zipcode"> </p>
-                <p><label class="label_form"> Ville </label> <input class="input_form" type="text" name="city"> </p>
-                <p><label class="label_form"> Email </label> <input class="input_form" type="text" name="email"> </p>
+                <p><span class="label_form"><label>Login</label></span><input class="input_form" type="text" name="login"></p>
+                <p><span class="label_form"><label>Mot de passe</label></span><input class="input_form" type="text" name="password"></p>
+                <p><span class="label_form"><label>Nom</label></span><input class="input_form" type="text" name="lastName"></p>
+                <p><span class="label_form"><label>Prenom</label></span><input class="input_form" type="text" name="firstName"></p>
+                <p><span class="label_form"><label>Rue</label></span><input class="input_form" type="text" name="street"></p>
+                <p><span class="label_form"><label>Code postal</label></span><input class="input_form" type="text" name="zipcode"></p>
+                <p><span class="label_form"><label>Ville</label></span><input class="input_form" type="text" name="city"></p>
+                <p><span class="label_form"><label>Email</label></span><input class="input_form" type="text" name="email"></p>
 
                 <?php
                         }
@@ -117,13 +130,15 @@ if (isset($status)){
 
                 <!-- si la personne a ajouter est un étudiant -->
 
-                <p><label class="label_form"> Photo </label> <input class="input_form" type="text" name="photo"> </p>
-                <p><label class="label_form"> Date de naissance </label> <input class="input_form" type="text" name="birthDay"> </p>
+                <p><label class="label_form">Photo</label><input class="input_form" type="text" name="photo"></p>
+                <p><label class="label_form">Date de naissance</label><input class="input_form" type="text" name="birthDay"></p>
                 <?php
                         }
+                        if ($type != 0) {
                 ?>
-                <p> <input type="submit" name="envoyer" value="Ajouter personne"> </p>
+                <p><input class="button_form" type="submit" name="envoyer" value="Ajouter personne"></p>
                 <?php
+                        }
                     }
                 ?>
 

@@ -160,11 +160,23 @@ a:hover {
 }
 
 /* formulaires */
-form p {
+form {
+    width: 100%;
+}
+.title_form {
+    text-align: center;
+    font: 24px Trebuchet MS;
+    margin-top: 10px;
 }
 .label_form {
+    display: block;
+    width: 150px;
+    float: left;
+    margin-left: 50px;
 }
-.input_form {
+.button_form {
+    position: relative;
+    left: 20%;
 }
 
 /* AUTHENTIFICATION CSS */
