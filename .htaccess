@@ -10,6 +10,7 @@ RewriteRule ^deconnexion.htm$ index.php?&page=auth&spage=deconnexion [L,QSA]
 
 # ------ ADMIN
 RewriteRule ^adm-addDivision.htm$ index.php?&page=adm&spage=add_division [L,QSA]
+RewriteRule ^adm-addAbsence.htm$ index.php?&page=adm&spage=add_absence [L,QSA]
 RewriteRule ^adm-addLesson.htm$ index.php?&page=adm&spage=add_lesson [L,QSA]
 RewriteRule ^adm-addPeople.htm$ index.php?&page=adm&spage=add_people [L,QSA]
 RewriteRule ^adm-addPeople-([0-9]+).htm$ index.php?&page=adm&spage=add_people&type=$1 [L,QSA]
