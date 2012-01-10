@@ -14,7 +14,7 @@
         header('Location: accueil.htm');
     }
     
-    require_once $manage_lesson_class;
+    require_once $manage_lesson_class_teacher;
     $manage_lesson = ManageLesson::getInstance();
 ?>
 
@@ -50,7 +50,6 @@
                     {
                         echo "<th>" . $value . "</th>";   
                     } 
-                    echo "<th></th>";
                     echo "</tr>";
 
                     foreach ($lessons as $key => $row)
@@ -60,14 +59,12 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='tea-modifyLesson-" . $row['id'] . ".htm'>Modifier</a>  <a href='tea-manageLesson-" . $row['id'] . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>
                 </tr>
 
             </table>
-            <a href="tea-addLesson.htm">Ajouter une Lesson</a>
         </td>
     </tr>
 </table>

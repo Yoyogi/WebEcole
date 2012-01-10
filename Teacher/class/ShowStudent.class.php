@@ -19,7 +19,7 @@ class ShowStudent extends Manager {
     }
     
     function ShowStudent() {
-        $this->header = array('id' => 'Identifiant', 'nom' => 'Nom', 'prenom' => 'Prenom', 'date_naissance' => 'Date de naissance', 'rue' => 'rue', 'cp' => 'CP', 'ville' => 'Ville', 'email' => 'Email');
+        $this->header = array('nom' => 'Nom', 'prenom' => 'Prenom', 'date_naissance' => 'Date de naissance', 'rue' => 'rue', 'cp' => 'CP', 'ville' => 'Ville', 'email' => 'Email');
     }
     
     public function getStudent() {
@@ -32,7 +32,6 @@ class ShowStudent extends Manager {
             $array = array();
             foreach ($students as $student) {
                 $array[$index] = array();
-                $array[$index]['id'] = $student->id_etudiant;
                 $array[$index]['nom'] = $student->nom;
                 $array[$index]['prenom'] = $student->prenom;
                 $array[$index]['date_naissance'] = $student->date_naissance;

@@ -14,7 +14,7 @@
         header('Location: accueil.htm');
     }
     
-    require_once $manage_absence_class;
+    require_once $manage_absence_class_teacher;
     $manage_absence = ManageAbsence::getInstance();
 ?>
 
