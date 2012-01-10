@@ -184,7 +184,7 @@ class Crud implements ICrud {
     
     function addAbsenceToStudent(Absence $absence, Etudiant $student) {
         try {
-            if (!$student->Absences->contains($absence)) {
+            if ($this->collectionContains($student->Absences, $absence)) {
                 $student->Absences->add($absence);
                 $student->Absences->save();
                 $student->save();
@@ -1670,6 +1670,15 @@ class Crud implements ICrud {
             throw $e;
         }
         return null;
+    }
+    
+    function collectionContains(Doctrine_Collection $collection, $instance) {
+        foreach ($collection as $element) {
+            if ($instance == $element) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
