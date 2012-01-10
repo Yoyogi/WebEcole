@@ -80,10 +80,14 @@ $manage_absence_file_teacher = $teacher_repo."view/ManageAbsence.php";
 $manage_exercice_file = $teacher_repo."view/ManageExercice.php";
 $manage_lesson_file_teacher = $teacher_repo."view/ManageLesson.php";
 $show_student_file = $teacher_repo."view/ShowStudents.php";
+$add_exercice_file = $teacher_repo."view/AddExercice.php";
+$add_absence_file = $teacher_repo."view/AddAbsence.php";
 $manage_exercice_class = $teacher_repo."class/ManageExercice.class.php";
 $manage_absence_class_teacher = $teacher_repo."class/ManageAbsence.class.php";
 $manage_lesson_class_teacher = $teacher_repo."class/ManageLesson.class.php";
 $show_student_class = $teacher_repo."class/showStudent.class.php";
+$add_absence_class = $teacher_repo."class/AddAbsence.class.php";
+$add_exercice_class = $teacher_repo."class/AddExercice.class.php";
 $menu_teacher_file = $teacher_repo."teacher_menu.php";
 
 /* nom des fichiers PUPIL */
