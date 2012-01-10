@@ -106,12 +106,12 @@ class Crud implements ICrud {
     
     function addPromotionToStudent(Etudiant $student, Promotion $promotion) {
         try {
-            if (!$student->Promotions->contains($promotion)) {
+            if (!$this->collectionContains($student->Promotions, $promotion)) {
                 $student->Promotions->add($promotion);
                 $student->Promotions->save();
             }
 
-            if (!$promotion->Etudiants->contains($student)) {
+            if (!$this->collectionContains($promotion->Etudiants, $student)) {
                 $promotion->Etudiants->add($student);
                 $promotion->Etudiants->save();
             }
@@ -122,12 +122,12 @@ class Crud implements ICrud {
             $sp->Etudiant = $student;
             $sp->Promotion = $promotion;
 
-            if (!$student->EtudiantPromotion->contains($sp)) {
+            if (!$this->collectionContains($student->EtudiantPromotion, $sp)) {
                 $student->EtudiantPromotion->add($sp);
                 $student->EtudiantPromotion->save();
             }
 
-            if (!$promotion->EtudiantPromotion->contains($sp)) {
+            if (!$this->collectionContains($promotion->EtudiantPromotion, $sp)) {
                 $promotion->EtudiantPromotion->add($sp);
                 $promotion->EtudiantPromotion->save();
             }
@@ -184,7 +184,7 @@ class Crud implements ICrud {
     
     function addAbsenceToStudent(Absence $absence, Etudiant $student) {
         try {
-            if ($this->collectionContains($student->Absences, $absence)) {
+            if (!$this->collectionContains($student->Absences, $absence)) {
                 $student->Absences->add($absence);
                 $student->Absences->save();
                 $student->save();
@@ -203,7 +203,7 @@ class Crud implements ICrud {
     
     function removeAbsenceToStudent(Absence $absence, Etudiant $student) {
         try {
-            if (!$student->Absences->contains($absence)) {
+            if (!$this->collectionContains($student->Absences, $absence)) {
                 $student->Absences->remove($absence);
                 $student->Absences->save();
                 $student->save();
@@ -281,7 +281,7 @@ class Crud implements ICrud {
         try {
             $students = Doctrine_Core::getTable("Etudiant")->findAll();
             foreach ($students as $student) {
-                if ($student->Absences->contains($absence)) {
+                if ($this->collectionContains($student->Absences, $absence)) {
                     return $student;
                 }
             }
@@ -373,12 +373,12 @@ class Crud implements ICrud {
     
     function addSubjectToTeacher(Enseignant $enseignant, Matiere $matiere) {
         try {
-            if (!$enseignant->Matieres->contains($matiere)) {
+            if (!$this->collectionContains($enseignant->Matieres, $matiere)) {
                 $enseignant->Matieres->add($matiere);
                 $enseignant->Matieres->save();
             }
 
-            if (!$matiere->Enseignants->contains($enseignant)) {
+            if (!$this->collectionContains($matiere->Enseignants, $enseignant)) {
                 $matiere->Enseignants->add($enseignant);
                 $matiere->Enseignants->save();
             }
@@ -389,12 +389,12 @@ class Crud implements ICrud {
             $em->Enseignant = $enseignant;
             $em->Matiere = $matiere;
 
-            if (!$enseignant->EnseignantMatiere->contains($em)) {
+            if (!$this->collectionContains($enseignant->EnseignantMatiere, $em)) {
                 $enseignant->EnseignantMatiere->add($em);
                 $enseignant->EnseignantMatiere->save();
             }
 
-            if (!$matiere->EnseignantMatiere->contains($em)) {
+            if (!$this->collectionContains($matiere->EnseignantMatiere, $em)) {
                 $matiere->EnseignantMatiere->add($em);
                 $matiere->EnseignantMatiere->save();
             }
@@ -451,7 +451,7 @@ class Crud implements ICrud {
     
     function addLessonToTeacher(Enseignant $enseignant, Cours $cours) {
         try {
-            if (!$enseignant->Cours->contains($cours)) {
+            if (!$this->collectionContains($enseignant->Cours, $cours)) {
                 $enseignant->Cours->add($cours);
                 $enseignant->Cours->save();
                 $enseignant->save();
@@ -470,7 +470,7 @@ class Crud implements ICrud {
     
     function removeLessonToTeacher(Enseignant $enseignant, Cours $cours) {
         try {
-            if (!$enseignant->Cours->contains($cours)) {
+            if (!$this->collectionContains($enseignant->Cours, $cours)) {
                 $enseignant->Cours->remove($cours);
                 $enseignant->Cours->save();
                 $enseignant->save();
@@ -548,7 +548,7 @@ class Crud implements ICrud {
         try {
             $teachers = Doctrine_Core::getTable("Enseignant")->findAll();
             foreach ($teachers as $teacher) {
-                if ($teacher->Cours->contains($lesson)) {
+                if ($this->collectionContains($teacher->Cours, $lesson)) {
                     return $teacher;
                 }
             }
@@ -862,7 +862,7 @@ class Crud implements ICrud {
     
     function addAbsenceToLesson(Cours $lesson, Absence $absence) {
         try {
-            if (!$lesson->Absences->contains($absence)) {
+            if (!$this->collectionContains($lesson->Absences, $absence)) {
                 $lesson->Absences->add($absence);
                 $lesson->Absences->save();
                 $lesson->save();
@@ -881,7 +881,7 @@ class Crud implements ICrud {
     
     function removeAbsenceToLesson(Cours $lesson, Absence $absence) {
         try {
-            if (!$lesson->Absences->contains($absence)) {
+            if (!$this->collectionContains($lesson->Absences, $absence)) {
                 $lesson->Absences->remove($absence);
                 $lesson->Absences->save();
                 $lesson->save();
@@ -900,7 +900,7 @@ class Crud implements ICrud {
     
     function addExerciceToLesson(Cours $lesson, Exercice $exercice) {
         try {
-            if (!$lesson->Exercices->contains($exercice)) {
+            if (!$this->collectionContains($lesson->Exercices, $exercice)) {
                 $lesson->Exercices->add($exercice);
                 $lesson->Exercices->save();
                 $lesson->save();
@@ -919,7 +919,7 @@ class Crud implements ICrud {
     
     function removeExerciceToLesson(Cours $lesson, Exercice $exercice) {
         try {
-            if (!$lesson->Exercices->contains($exercice)) {
+            if (!$this->collectionContains($lesson->Exercices, $exercice)) {
                 $lesson->Exercices->remove($exercice);
                 $lesson->Exercices->save();
                 $lesson->save();
@@ -1035,7 +1035,7 @@ class Crud implements ICrud {
         try {
             $lessons = Doctrine_Core::getTable("Cours")->findAll();
             foreach ($lessons as $lesson) {
-                if ($lesson->Absences->contains($absence)) {
+                if ($this->collectionContains($lesson->Absences, $absence)) {
                     return $lesson;
                 }
             }
@@ -1122,7 +1122,7 @@ class Crud implements ICrud {
     
     function addLessonToSubject(Matiere $subject, Cours $lesson) {
         try {
-            if (!$subject->Cours->contains($lesson)) {
+            if (!$this->collectionContains($subject->Cours, $lesson)) {
                 $subject->Cours->add($lesson);
                 $subject->Cours->save();
                 $subject->save();
@@ -1141,7 +1141,7 @@ class Crud implements ICrud {
     
     function removeLessonToSubject(Matiere $subject, Cours $lesson) {
         try {
-            if (!$subject->Cours->contains($lesson)) {
+            if (!$this->collectionContains($subject->Cours, $lesson)) {
                 $subject->Cours->remove($lesson);
                 $subject->Cours->save();
                 $subject->save();
@@ -1425,7 +1425,7 @@ class Crud implements ICrud {
     
     function addLessonToPromotion(Promotion $promotion, Cours $lesson) {
         try {
-            if (!$promotion->Cours->contains($lesson)) {
+            if (!$this->collectionContains($promotion->Cours, $lesson)) {
                 $promotion->Cours->add($lesson);
                 $promotion->Cours->save();
                 $promotion->save();
@@ -1444,7 +1444,7 @@ class Crud implements ICrud {
     
     function removeLessonFromPromotion(Promotion $promotion, Cours $lesson) {
         try {
-            if (!$promotion->Cours->contains($lesson)) {
+            if (!$this->collectionContains($promotion->Cours, $lesson)) {
                 $promotion->Cours->remove($lesson);
                 $promotion->Cours->save();
                 $promotion->save();
@@ -1505,7 +1505,7 @@ class Crud implements ICrud {
             $promotions = $this->getPromotions();
             $i = 0;
             foreach ($promotions as $promotion) {
-                if ($promotion->Etudiants->contains($student)) {
+                if ($this->collectionContains($promotion->Etudiants, $student)) {
                     $results[$i] = $promotion;
                     $i++;
                 }
@@ -1529,7 +1529,7 @@ class Crud implements ICrud {
             $promotions = $this->getPromotions();
             $i = 0;
             foreach($promotions as $promotion) {
-                if ($promotion->Cours->contains($lesson)) {
+                if ($this->collectionContains($promotion->Cours, $lesson)) {
                     $results[$i] = $promotion;
                     $i++;
                 }
