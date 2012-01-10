@@ -43,7 +43,7 @@ class ManageSubject extends Manager {
         return $this->header;
     }
     
-    public function deleteSubject($type, $id) {
+    public function deleteSubject($id) {
         try {
             $crud = Crud::getInstance();
             $crud->deleteSubject($id);
