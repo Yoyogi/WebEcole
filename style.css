@@ -29,6 +29,13 @@ body {
     letter-spacing: -5px;
 }
 
+/* */
+#header_login {
+    font: bold 14px Trebuchet MS;
+    color: white;
+    letter-spacing: 1px;
+}
+
 #footer {
     /* positionnement */
     text-align: center;
