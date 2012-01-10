@@ -101,6 +101,10 @@ body {
     vertical-align: top;
 }
 
+.content_td p {
+    text-align: center;
+}
+
 /* conteneur de chaque page */
 #main_container {
     /* size */

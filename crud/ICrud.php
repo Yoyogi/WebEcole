@@ -49,6 +49,7 @@ interface ICrud {
     function updateAbsence($id, $motif, Etudiant $etudiant, Cours $cours);
     function deleteAbsence($id);
     function getAbsences();
+    function getAbsenceById($idLesson);
     function getAbsencesBylesson($idLesson);
     function getAbsencesByStudent($idStudent);
     

@@ -727,6 +727,25 @@ class Crud implements ICrud {
         return null;
     }
     
+    function getAbsenceById($idLesson) {
+        try {
+            $absence = Doctrine_Core::getTable("Absence")->findOneBy("id_absence", $idLesson);
+            if ($absence != null) {
+                return $absence;
+            }
+        }
+        catch (Doctrine_Validator_Exception $e) {
+            throw $e;
+        }
+        catch (Doctrine_Connection_Exception $e) {
+            throw $e;
+        }
+        catch (Doctrine_Manager_Exception $e) {
+            throw $e;
+        }
+        return null;
+    }
+    
     function getAbsencesBylesson($idLesson) {
         try {
             $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLessons);

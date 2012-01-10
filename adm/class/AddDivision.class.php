@@ -37,16 +37,6 @@ class AddDivision {
             throw $e;
         }
     }
-    
-    function getDivisionById($idDivision){
-        try {
-            $crud = Crud::getInstance();
-            $crud->get($idDivision);
-        }
-        catch (Exception $e) {
-            throw $e;
-        }
-    } 
 }
 
 ?>
