@@ -142,11 +142,21 @@ table th {
     font-weight: normal;
     font-style: italic;
     padding: 5px;
-    background-color: #ddeeee;
+    background-color: #dfeeee;
     text-align: center;
 }
 table td {
     padding: 5px;
+}
+
+/* liens */
+a {
+    text-decoration: none;
+    color: #424542;
+}
+a:hover {
+    text-decoration: underline;
+    color: #85a8a8;
 }
 
 /* AUTHENTIFICATION CSS */

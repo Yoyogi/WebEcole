@@ -93,8 +93,8 @@ if (isset($status)){
 
                 <select name="status" onchange="window.location.href='addPeople-'+this.selectedIndex+'.htm'">
                     <option <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>
-                    <option <?php if ($type==1) echo "selected='selected'"; ?> value="1">eleve</option>
-                    <option <?php if ($type==2) echo "selected='selected'"; ?> value="2">professeur</option>
+                    <option <?php if ($type==1) echo "selected='selected'"; ?> value="1">Elève</option>
+                    <option <?php if ($type==2) echo "selected='selected'"; ?> value="2">Professeur</option>
                 </select>
 
                 <?php
