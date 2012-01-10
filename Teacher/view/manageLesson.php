@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "teacher") {
+            if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+            else if ($_SESSION["type"] == "admin") {
+                header('Location: adm-indexAdmin.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $manage_lesson_class;
     $manage_lesson = ManageLesson::getInstance();
 ?>
@@ -14,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {
-                        $manage_lesson->deleteLesson($v_id);
+                        try {
+                            $manage_lesson->deleteLesson($v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $lessons = $manage_lesson->getLesson();
-                    $header = $manage_lesson->getHeader();
+                    try {
+                        $lessons = $manage_lesson->getLesson();
+                        $header = $manage_lesson->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

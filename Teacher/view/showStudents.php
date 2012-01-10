@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "teacher") {
+            if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+            else if ($_SESSION["type"] == "admin") {
+                header('Location: adm-indexAdmin.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $show_student_class;
     $show_student = ShowStudent::getInstance();
 ?>
@@ -13,8 +28,13 @@
                 <caption align="center">Affichage des eleves</caption>
                 <tr bgcolor="#ff0000">
                 <?php    
-                    $students = $show_student->getStudent();
-                    $header = $show_student->getHeader();
+                    try {
+                        $students = $show_student->getStudent();
+                        $header = $show_student->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

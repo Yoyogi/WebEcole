@@ -6,6 +6,7 @@ AddDefaultCharset UTF-8
 # ------ Réécriture index
 RewriteRule ^accueil.htm$ index.php?&page=auth&spage=auth [L,QSA]
 RewriteRule ^forwarding.htm$ index.php?&page=auth&spage=log_forward [L,QSA]
+RewriteRule ^deconnexion.htm$ index.php?&page=auth&spage=deconnexion [L,QSA]
 
 # ------ ADMIN
 RewriteRule ^adm-addDivision.htm$ index.php?&page=adm&spage=add_division [L,QSA]

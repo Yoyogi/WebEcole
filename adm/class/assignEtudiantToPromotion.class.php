@@ -14,18 +14,33 @@ class AssignEtudiantToPromotion extends Manager {
     }
     
     public function getStudent() {
-        $crud = Crud::getInstance();
-        return $crud->getStudents();
+        try {
+            $crud = Crud::getInstance();
+            return $crud->getStudents();
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function getPromotion() {
-        $crud = Crud::getInstance();
-        return $crud->getPromotions();
+        try {
+            $crud = Crud::getInstance();
+            return $crud->getPromotions();
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function assign($student, $promotion) {
-        $crud = Crud::getInstance();
-        $crud->addPromotionToStudent($crud->getStudentById($student), $crud->getPromotionById($promotion));
+        try {
+            $crud = Crud::getInstance();
+            $crud->addPromotionToStudent($crud->getStudentById($student), $crud->getPromotionById($promotion));
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

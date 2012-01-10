@@ -19,19 +19,24 @@ class ManageSubject extends Manager {
     }
     
     public function getSubject() {
-        $crud = Crud::getInstance();
-        $matieres = $crud->getSubjects();
-        $index = 0;
+        try {
+            $crud = Crud::getInstance();
+            $matieres = $crud->getSubjects();
+            $index = 0;
 
-        $array = array();
-        foreach ($matieres as $matiere) {
-            $array[$index] = array();
-            $array[$index]['id_matiere'] = $matiere->id_matiere;
-            $array[$index]['libelle'] = $matiere->libelle;
-            $index++;
+            $array = array();
+            foreach ($matieres as $matiere) {
+                $array[$index] = array();
+                $array[$index]['id_matiere'] = $matiere->id_matiere;
+                $array[$index]['libelle'] = $matiere->libelle;
+                $index++;
+            }
+
+            return $array;
         }
-        
-        return $array;
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function getHeader() {
@@ -39,8 +44,13 @@ class ManageSubject extends Manager {
     }
     
     public function deleteSubject($type, $id) {
-        $crud = Crud::getInstance();
-        
+        try {
+            $crud = Crud::getInstance();
+            $crud->deleteSubject($id);
+        }
+        catch (Exception $e) {
+            throw $e;
+        }
     }
 }
 

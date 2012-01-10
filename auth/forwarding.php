@@ -31,6 +31,9 @@ function loggingOK($login, $passwd) {
     return 0;
 }
 
+session_start();
+$crud = Crud::getInstance();
+
 $logged = loggingOK($login, $password);
 
 if ($logged == 0) {
@@ -44,12 +47,26 @@ if ($logged == 0) {
     <?php
 }
 else if ($logged == 1) {
+    $student = $crud->getStudentByLogin($login);
+    $_SESSION["type"] = "student";
+    $_SESSION["login"] = $login;
+    $_SESSION["prenom"] = $student->prenom;
+    $_SESSION["nom"] = $student->nom;
     header('Location: pup-indexPupil.htm');
 } 
 else if ($logged == 2) {
+    $teacher = $crud->getTeacherByLogin($login);
+    $_SESSION["type"] = "teacher";
+    $_SESSION["login"] = $login;
+    $_SESSION["prenom"] = $teacher->prenom;
+    $_SESSION["nom"] = $teacher->nom;
     header('Location: tea-indexTeacher.htm');
 } 
 else if ($logged == 3) {
+    $student = $crud->getStudentByLogin($login);
+    $_SESSION["type"] = "admin";
+    $_SESSION["login"] = $login;
+    $_SESSION["prenom"] = "Administrateur";
     header('Location: adm-indexAdmin.htm');
 }
 

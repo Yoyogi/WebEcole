@@ -1,9 +1,18 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "admin") {
+            if ($_SESSION["type"] == "teacher") {
+                header('Location: tea-indexTeacher.htm');
+            }
+            else if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
 ?>
 
 <table class="sub_body">

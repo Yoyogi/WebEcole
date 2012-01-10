@@ -1,13 +1,39 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "admin") {
+            if ($_SESSION["type"] == "teacher") {
+                header('Location: tea-indexTeacher.htm');
+            }
+            else if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $assign_matieretoenseignant_class;
     $assign_matiere_to_enseignant = AssignMatiereToEnseignant::getInstance();
-    $teachers = $assign_matiere_to_enseignant->getTeacher();
-    $subjects = $assign_matiere_to_enseignant->getSubject();
+    
+    try {
+        $teachers = $assign_matiere_to_enseignant->getTeacher();
+        $subjects = $assign_matiere_to_enseignant->getSubject();
+    }
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     if ($isValided != null) {
         if ($teachers != null && $subjects != null) {
-            $assign_matiere_to_enseignant->assign($teachers, $subjects);
-            echo "Matiere assignée à l'enseignant";
+            try {
+                $assign_matiere_to_enseignant->assign($teachers, $subjects);
+                echo "Matiere assignée à l'enseignant";
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
     }
 ?>

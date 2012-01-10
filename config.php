@@ -30,6 +30,7 @@ $classes_repo = "crud/classes/";
 $controller_auth_file = $auth_repo."controller_Auth.php";
 $index_file = $auth_repo."auth.php";
 $log_forwarding_file = $auth_repo."forwarding.php";
+$deconnexion_file = $auth_repo."deconnexion.php";
 
 /* manager générale */
 $manager = "manager.class.php";

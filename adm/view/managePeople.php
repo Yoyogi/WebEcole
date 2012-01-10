@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "admin") {
+            if ($_SESSION["type"] == "teacher") {
+                header('Location: tea-indexTeacher.htm');
+            }
+            else if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $manage_people_class;
     $manage_people = ManagePeople::getInstance();
 ?>
@@ -14,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_type) && isset($v_id)) {
-                        $manage_people->deletePeople($v_type, $v_id);
+                        try {
+                            $manage_people->deletePeople($v_type, $v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $people = $manage_people->getPeople();
-                    $header = $manage_people->getHeader();
+                    try {
+                        $people = $manage_people->getPeople();
+                        $header = $manage_people->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)

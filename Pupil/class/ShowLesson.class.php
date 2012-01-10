@@ -19,26 +19,31 @@ class ShowLesson {
     }
     
     public function getLesson() {
-        $crud = Crud::getInstance();
-        $lessons = $crud->getLessons();
-        $index = 0;
+        try {
+            $crud = Crud::getInstance();
+            $lessons = $crud->getLessons();
+            $index = 0;
 
-        $array = array();
-        foreach ($lessons as $lesson) {  
-            $promotion = $crud->getPromotionById($lesson->id_promo);
-            $matiere = $crud->getSubjectByLesson($lesson->id_cours);
-            
-            $array[$index] = array();
-            $array[$index]['id'] = $lesson->id_cours;
-            $array[$index]['date_cours'] = $lesson->date_cours;
-            $array[$index]['duree'] = $lesson->duree;
-            $array[$index]['descript'] = $lesson->descript;
-            $array[$index]['promotion'] = $promotion->libelle;
-            $array[$index]['matiere'] = $matiere->libelle;
-            $index++;
+            $array = array();
+            foreach ($lessons as $lesson) {  
+                $promotion = $crud->getPromotionById($lesson->id_promo);
+                $matiere = $crud->getSubjectByLesson($lesson->id_cours);
+
+                $array[$index] = array();
+                $array[$index]['id'] = $lesson->id_cours;
+                $array[$index]['date_cours'] = $lesson->date_cours;
+                $array[$index]['duree'] = $lesson->duree;
+                $array[$index]['descript'] = $lesson->descript;
+                $array[$index]['promotion'] = $promotion->libelle;
+                $array[$index]['matiere'] = $matiere->libelle;
+                $index++;
+            }
+
+            return $array;
         }
-        
-        return $array;
+        catch (Exception $e) {
+            throw $e;
+        }
     }
     
     public function getHeader() {

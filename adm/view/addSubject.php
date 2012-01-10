@@ -1,8 +1,19 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+session_start();
+if(isset($_SESSION["type"])) {
+    if (!$_SESSION["type"] == "admin") {
+        if ($_SESSION["type"] == "teacher") {
+            header('Location: tea-indexTeacher.htm');
+        }
+        else if ($_SESSION["type"] == "student") {
+            header('Location: pup-indexPupil.htm');
+        }
+    }
+}
+else {
+    header('Location: accueil.htm');
+}
 
 
 require_once $add_subject_class;
@@ -13,10 +24,14 @@ $add_subject = AddSubject::getInstance();
 
 if ($isValided != null) {
     if ($libelle != null) {
-        $add_subject->addSubjectFunc($libelle);
-        echo "Matiere ajoutee";
+        try {
+            $add_subject->addSubjectFunc($libelle);
+            echo "Matiere ajoutee";
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
     } else {
-
         echo $isValided;
         echo "Veillez a remplir tous les champs correctement";
     }

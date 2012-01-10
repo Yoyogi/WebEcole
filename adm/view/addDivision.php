@@ -1,8 +1,18 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+session_start();
+if(isset($_SESSION["type"])) {
+    if (!$_SESSION["type"] == "admin") {
+        if ($_SESSION["type"] == "teacher") {
+            header('Location: tea-indexTeacher.htm');
+        }
+        else if ($_SESSION["type"] == "student") {
+            header('Location: pup-indexPupil.htm');
+        }
+    }
+}
+else {
+    header('Location: accueil.htm');
+}
 require_once $add_division_class;
 $add_division = AddDivision::getInstance();
 
@@ -11,8 +21,13 @@ $add_division = AddDivision::getInstance();
 
 if ($isValided != null) {
     if ($libelle != null) {
-        $add_division->addDivisionFunc($libelle);
+        try {
+            $add_division->addDivisionFunc($libelle);
         echo "Matiere ajoutee";
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
     } else {
 
         echo $isValided;

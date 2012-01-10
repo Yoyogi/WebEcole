@@ -1,4 +1,19 @@
 <?php
+    session_start();
+    if(isset($_SESSION["type"])) {
+        if (!$_SESSION["type"] == "admin") {
+            if ($_SESSION["type"] == "teacher") {
+                header('Location: tea-indexTeacher.htm');
+            }
+            else if ($_SESSION["type"] == "student") {
+                header('Location: pup-indexPupil.htm');
+            }
+        }
+    }
+    else {
+        header('Location: accueil.htm');
+    }
+    
     require_once $manage_division_class;
     $manage_division = ManageDivision::getInstance();
 ?>
@@ -14,11 +29,21 @@
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {
-                        $manage_absence->deleteDivision($v_id);
+                        try {
+                            $manage_absence->deleteDivision($v_id);
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
                     }
 
-                    $promotions = $manage_division->getDivision();
-                    $header = $manage_division->getHeader();
+                    try {
+                        $promotions = $manage_division->getDivision();
+                        $header = $manage_division->getHeader();
+                    }
+                    catch (Exception $e) {
+                        echo $e->getMessage();
+                    }
 
                     echo "<tr>";
                     foreach ($header as $id => $value)
