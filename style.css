@@ -159,6 +159,14 @@ a:hover {
     color: #85a8a8;
 }
 
+/* formulaires */
+form p {
+}
+.label_form {
+}
+.input_form {
+}
+
 /* AUTHENTIFICATION CSS */
 #auth_fail {
     margin: 10px;

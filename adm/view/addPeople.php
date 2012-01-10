@@ -91,7 +91,7 @@ if (isset($status)){
         <td class="content_td">
             <form method="POST" action="adm-addPeople.htm">
 
-                <select name="status" onchange="window.location.href='addPeople-'+this.selectedIndex+'.htm'">
+                <select name="status" onchange="window.location.href='adm-addPeople-'+this.selectedIndex+'.htm'">
                     <option <?php if ($type==0) echo "selected='selected'"; ?> value="0"></option>
                     <option <?php if ($type==1) echo "selected='selected'"; ?> value="1">Elève</option>
                     <option <?php if ($type==2) echo "selected='selected'"; ?> value="2">Professeur</option>
@@ -101,14 +101,14 @@ if (isset($status)){
                     if (isset($type)) {
                         if ($type != 0) {
                 ?>
-                <p><label> Login </label> <input type="text" name="login"> </p>
-                <p><label> Mot de passe </label> <input type="text" name="password"> </p>
-                <p><label> Nom </label> <input type="text" name="lastName"> </p>
-                <p><label> Prenom </label> <input type="text" name="firstName"> </p>
-                <p><label> Rue </label> <input type="text" name="street"> </p>
-                <p><label> Code postal </label> <input type="text" name="zipcode"> </p>
-                <p><label> Ville </label> <input type="text" name="city"> </p>
-                <p><label> Email </label> <input type="text" name="email"> </p>
+                <p><label class="label_form"> Login </label> <input class="input_form" type="text" name="login"> </p>
+                <p><label class="label_form"> Mot de passe </label> <input class="input_form" type="text" name="password"> </p>
+                <p><label class="label_form"> Nom </label> <input class="input_form" type="text" name="lastName"> </p>
+                <p><label class="label_form"> Prenom </label> <input class="input_form" type="text" name="firstName"> </p>
+                <p><label class="label_form"> Rue </label> <input class="input_form" type="text" name="street"> </p>
+                <p><label class="label_form"> Code postal </label> <input class="input_form" type="text" name="zipcode"> </p>
+                <p><label class="label_form"> Ville </label> <input class="input_form" type="text" name="city"> </p>
+                <p><label class="label_form"> Email </label> <input class="input_form" type="text" name="email"> </p>
 
                 <?php
                         }
@@ -117,8 +117,8 @@ if (isset($status)){
 
                 <!-- si la personne a ajouter est un étudiant -->
 
-                <p><label> Photo </label> <input type="text" name="photo"> </p>
-                <p><label> Date de naissance </label> <input type="text" name="birthDay"> </p>
+                <p><label class="label_form"> Photo </label> <input class="input_form" type="text" name="photo"> </p>
+                <p><label class="label_form"> Date de naissance </label> <input class="input_form" type="text" name="birthDay"> </p>
                 <?php
                         }
                 ?>
