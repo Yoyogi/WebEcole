@@ -54,6 +54,7 @@ $modify_people_file = $adm_repo."view/ModifyPeople.php";
 $modify_subject_file = $adm_repo."view/ModifySubject.php";
 $assign_etudianttopromotion_file = $adm_repo."view/assignEtudiantToPromotion.php";
 $assign_matieretoenseignant_file = $adm_repo."view/assignMatiereToEnseignant.php";
+$forward_absence_file = $adm_repo."view/forwardAbsence.php";
 $menu_adm_file = $adm_repo."adm_menu.php";
 
 $manage_people_class = $adm_repo."class/ManagePeople.class.php";
