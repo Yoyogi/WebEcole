@@ -65,12 +65,16 @@
                     foreach ($teachers as $key => $row)
                     {
                         
-                        echo "<option value=\" " . $row["id_enseignant"] . " \">";
+                        echo "<option value=\" " . $row["id_enseignant"] . "\"";
+                        if ($row["id_enseignant"] == $lesson->id_enseignant) {
+                            echo " selected='selected' ";
+                        }
+                        echo "\>";
                         
-                            echo " " . $row["nom"] . " "; 
-                            echo " " . $row["prenom"] . " ";
+                        echo " " . $row["nom"] . " "; 
+                        echo " " . $row["prenom"] . " ";
                         
-                         echo "</option>";
+                        echo "</option>";
                     } 
                 ?>
                 </select>
@@ -83,11 +87,15 @@
                     foreach ($promotions as $key => $row)
                     {
                         
-                        echo "<option value=\" " . $row["id_promo"] . " \">";
+                        echo "<option value=\" " . $row["id_promo"] . "\"";
+                        if ($row["id_promo"] == $lesson->id_promo) {
+                            echo " selected='selected' ";
+                        }
+                        echo "\>";
                         
-                            echo " " . $row["libelle"] . " ";
-                        
-                         echo "</option>";
+                        echo " " . $row["libelle"] . " ";
+
+                        echo "</option>";
                     } 
                 ?>
                 </select>
@@ -100,11 +108,15 @@
                     foreach ($matieres as $key => $row)
                     {
                         
-                        echo "<option value=\" " . $row["id_matiere"] . " \">";
+                        echo "<option value=\" " . $row["id_matiere"] . "\"";
+                        if ($row["id_matiere"] == $lesson->id_matiere) {
+                            echo " selected='selected' ";
+                        }
+                        echo "\>";
                         
-                            echo " " . $row["libelle"] . " ";
+                        echo " " . $row["libelle"] . " ";
                         
-                         echo "</option>";
+                        echo "</option>";
                     } 
                 ?>
                 </select>

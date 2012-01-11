@@ -21,28 +21,6 @@ class ModifyExercice {
     }
     
     public function getLessons() {
-        $crud = Crud::getInstance();
-        $lessons = $crud->getLessons();
-        $index = 0;
-
-        $array = array();
-        foreach ($lessons as $lesson) {
-            
-            $array[$index] = array();
-            $array[$index]['id_cours'] = $lesson->id_cours;
-            $array[$index]['date_cours'] = $lesson->date_cours;
-            $array[$index]['duree'] = $lesson->duree;
-            $array[$index]['descript'] = $lesson->descript;
-            $array[$index]['id_enseignant'] = $lesson->id_enseignant;
-            $array[$index]['id_promo'] = $lesson->id_promo;
-            $array[$index]['id_matiere'] = $lesson->id_matiere;
-            $index++;
-        }
-        
-        return $array;
-    }
-    
-    public function getLessons() {
         try {
             $crud = Crud::getInstance();
             $lessons = $crud->getLessons();
@@ -69,10 +47,10 @@ class ModifyExercice {
         }
     }
     
-    function getLessonById($id_cours) {
+    function getExerciceById($id_cours) {
         try {
             $crud = Crud::getInstance();
-            return $crud->getLessonById($id_cours);
+            return $crud->getExerciceById($id_cours);
         }
         catch (Exception $e) {
             throw $e;

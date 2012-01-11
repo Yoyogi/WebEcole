@@ -5,7 +5,7 @@
     
     try {
         $modify_exercice = ModifyExercice::getInstance();
-        $exercice = $modify_exercice->getLessonById($v_id);
+        $exercice = $modify_exercice->getExerciceById($v_id);
         $lessons = $modify_exercice->getLessons();
     }
     catch (Exception $e) {
@@ -42,14 +42,18 @@
                 <input type="hidden" name="isValided" value="valided" />
                 
                 <!-- combobox promotion -->
-                Cours : <select name="lesson" id="lesson" selected="<?php echo $exercice->id_cours; ?>">
+                Cours : <select name="lesson" id="lesson">
                 <?php
 
                     
                     foreach ($lessons as $key => $row)
                     {
                         
-                        echo "<option value=\"" . $row["id_cours"] . "\">";
+                        echo "<option value=\"" . $row["id_cours"] . "\"";
+                        if ($row["id_cours"] == $exercice->id_cours) {
+                            echo " selected='selected' ";
+                        }
+                        echo "\>";
                         
                             echo " " . $row["descript"] . " ";
                         
@@ -60,7 +64,7 @@
                                 
                 <p><label> Libelle : </label> <input type="text" name="libelle" value="<?php echo $exercice->libelle; ?>"> </p>
                 
-                <input type="submit" name="addExercice" value="Créer le cours" />
+                <input type="submit" name="addExercice" value="Modifier l'exercice" />
             </form>
         </td>
     </tr>
