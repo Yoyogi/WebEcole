@@ -15,7 +15,7 @@
             $PupilObj = new Etudiant();
             $PupilObj = $add_absence->getPupilByIdFunc($pupil);
             $add_absence->addAbsenceFunc($motif, $PupilObj, $LessonObj);
-            echo "Absence ajoutée";
+            header('Location: tea-manageAbsence.htm');
         } else {
             echo $isValided;
             echo "Veillez a remplir tous les champs correctement";
@@ -70,7 +70,7 @@
                                 
                 <p><label> Motif : </label> <input type=text name=motif> </p>
                 
-                <input type="submit" name="addAbsence" value="Créer le cours" />
+                <input type="submit" name="addAbsence" value="Ajouter l'absence" />
             </form>
         </td>
     </tr>

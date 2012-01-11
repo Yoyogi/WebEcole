@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-            <a href="tea-addAbsence.htm">Ajouter une Absence</a>
+            <a href="tea-addAbsence.htm">Ajouter une absence</a>
         </td>
     </tr>
 </table>
