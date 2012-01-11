@@ -91,6 +91,8 @@ $show_student_class = $teacher_repo."class/showStudent.class.php";
 $add_absence_class = $teacher_repo."class/AddAbsence.class.php";
 $add_exercice_class = $teacher_repo."class/AddExercice.class.php";
 $menu_teacher_file = $teacher_repo."teacher_menu.php";
+$modify_exercice_file = $teacher_repo."view/ModifyExercice.php";
+$modify_exercice_class = $teacher_repo."class/ModifyExercice.class.php";
 
 /* nom des fichiers PUPIL */
 $controller_pupil_file = $pupil_repo."controller_Pupil.php";

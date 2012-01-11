@@ -2,15 +2,25 @@
 
     require_once $add_exercice_class;
     require_once $coursclass_file;
-    $add_exercice = AddExercice::getInstance();
-    $lessons = $add_exercice->getLessons();
+    
+    try {
+        $add_exercice = AddExercice::getInstance();
+        $lessons = $add_exercice->getLessons();
+    }
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
     
     if ($isValided != null) {
         if ($libelle != null) {
-            $LessonObj = new Cours();
-            $LessonObj = $add_exercice->getLessonByIdFunc($lesson);
-            $add_exercice->addExerciceFunc($libelle, $LessonObj);
-            header('Location: tea-manageExercice.htm');
+            try {
+                $LessonObj = $add_exercice->getLessonByIdFunc($lesson);
+                $add_exercice->addExerciceFunc($libelle, $LessonObj);
+                header('Location: tea-manageExercice.htm');
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
         } else {
             echo $isValided;
             echo "Veillez a remplir tous les champs correctement";

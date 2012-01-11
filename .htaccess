@@ -50,6 +50,7 @@ RewriteRule ^tea-manageLesson-([0-9]+).htm$ index.php?&page=teacher&spage=manage
 RewriteRule ^tea-showStudents.htm$ index.php?&page=teacher&spage=show_students [L,QSA]
 RewriteRule ^tea-addAbsence.htm$ index.php?&page=teacher&spage=add_absences [L,QSA]
 RewriteRule ^tea-addExercice.htm$ index.php?&page=teacher&spage=add_exercices [L,QSA]
+RewriteRule ^tea-modifyExercice-([0-9]+).htm$ index.php?&page=teacher&spage=add_exercices&v_id=$1 [L,QSA]
 
 # ------ PUPIL
 RewriteRule ^pup-indexPupil.htm$ index.php?&page=pupil&spage=index_pupil [L,QSA]

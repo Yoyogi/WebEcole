@@ -43,6 +43,11 @@ switch ($spage){
         $metadescription = "Web Ecole - Ajout d'un exercice";
         break;
     
+    case "modify_exercices":
+        $body = $modify_exercice_file;
+        $title = "Modifier un exercice";
+        $metadescription = "Web Ecole - Modification d'un exercice";
+        break;
     
     default:
         $body = $index_teacher_file;
