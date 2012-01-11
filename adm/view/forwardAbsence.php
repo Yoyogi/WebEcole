@@ -28,7 +28,7 @@ $absence = $business->getAbsenceById($idAbs);
         </td>
         <td class="content_td">
             <p>Un mail a été envoyé à l'élève <?php echo $absence->etudiant->nom." ".$absence->etudiant->prenom; ?> pour son absence.</p>
-            <input type="button" onclick='window.location.href="adm-indexAdmin.htm"' value="Retour &agrave; la page de connexion"/>
+            <input type="button" onclick='window.location.href="adm-indexAdmin.htm"' value="Retour &agrave; la page d'accueil"/>
         </td>
     </tr>
 </table>
