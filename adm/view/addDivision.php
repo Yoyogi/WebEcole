@@ -23,7 +23,7 @@ if ($isValided != null) {
     if ($libelle != null) {
         try {
             $add_division->addDivisionFunc($libelle);
-        echo "Matiere ajoutee";
+            header('Location: adm-manageDivision.htm');
         }
         catch (Exception $e) {
             echo $e->getMessage();

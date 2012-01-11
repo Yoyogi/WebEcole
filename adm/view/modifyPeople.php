@@ -34,7 +34,7 @@ else {
 
                     try {
                         $modify_people->updateTeacher($v_id, $lastName, $firstName, $street, $zipcode, $city, $email, $login, $password);
-                        echo "enseignant modifié";
+                        header('Location: adm-managePeople.htm');
                     }
                     catch (Exception $e) {
                         echo $e->getMessage();
@@ -63,7 +63,7 @@ else {
                         && ($zipcode != null) && ($city != null) && ($photo != null) && ($birthDay != null)){
                     try {
                         $add_people->updateStudent($v_id, $lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
-                        echo "eleve modifié";
+                        header('Location: adm-managePeople.htm');
                     }
                     catch (Exception $e) {
                         echo $e->getMessage();

@@ -26,7 +26,7 @@ if ($isValided != null) {
     if ($libelle != null) {
         try {
             $add_subject->addSubjectFunc($libelle);
-            echo "Matiere ajoutee";
+            header('Location: adm-manageSubject.htm');
         }
         catch (Exception $e) {
             echo $e->getMessage();

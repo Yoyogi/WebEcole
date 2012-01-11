@@ -25,7 +25,7 @@ if ($isValided != null) {
     if ($libelle != null) {
         try {
             $modify_division->updateDivision($v_id, $libelle);
-            echo "Matiere modifiee";
+            header('Location: adm-manageDivision.htm');
         }
         catch (Exception $e) {
             echo $e->getMessage();

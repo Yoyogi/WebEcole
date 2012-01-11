@@ -27,7 +27,7 @@ if ($isValided != null) {
     if ($libelle != null) {
         try {
             $modify_subject->updateSubject($v_id, $libelle);
-            echo "Matiere modifiée";
+            header('Location: adm-manageSubject.htm');
         }
         catch (Exception $e) {
             echo $e->getMessage();

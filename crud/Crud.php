@@ -1160,6 +1160,22 @@ class Crud implements ICrud {
         try {
             if (Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $id)) {
                 $subject = Doctrine_Core::getTable("Matiere")->findOneBy("id_matiere", $id);
+                
+                $relations = Doctrine_Core::getTable("EnseignantMatiere")->findAll();
+                foreach ($relations as $relation) {
+                    if ($relation->id_matiere == $id) {
+                        $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $relation->id_enseignant);
+                        $this->removeSubjectToTeacher($teacher, $subject);
+                    }
+                }
+                
+                $lessons = Doctrine_Core::getTable("Cours")->findAll();
+                foreach ($lessons as $lesson) {
+                    if ($lesson->id_matiere == $id) {
+                        $this->deleteLesson($lesson->id_cours);
+                    }
+                }
+                
                 $subject->delete();
             }
         }

@@ -32,11 +32,11 @@
         if (($date_cours != null) && ($duree != null) && ($descript != null)) {
             try {
                 $modify_lesson->updateLesson($v_id, $date_cours, $duree, $descript, $teacher, $promotion, $matiere);
+                header('Location: adm-manageLesson.htm');
             }
             catch (Exception $e) {
                 echo $e;
             }
-            echo "Cours modifiée";
         } else {
 
             echo $isValided;

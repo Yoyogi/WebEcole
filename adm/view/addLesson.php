@@ -33,7 +33,7 @@
             $promoObj = new Promotion();
             $promoObj = $add_lesson->getPromotionByIdFunc($promotion);
             $add_lesson->addLessonFunc($date_cours, $duree, $descript, $teacherObj, $promoObj, $matiereObj);
-            echo "Cours ajoutee";
+            header('Location: adm-manageLesson.htm');
         } else {
 
             echo $isValided;

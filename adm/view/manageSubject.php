@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-            <a href="adm-addSubject.htm">Ajouter une matieres</a>
+            <a class="manage_link" href="adm-addSubject.htm">Ajouter une matière</a>
         </td>
     </tr>
 </table>
