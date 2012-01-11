@@ -15,7 +15,7 @@ class ManageExercice {
     }
     
     function ManageExercice() {
-        $this->header = array('libelle' => 'Libelle', 'cours' => 'Cours');
+        $this->header = array('id' => 'ID','libelle' => 'Libelle', 'cours' => 'Cours');
     }
     
     public function getExercice() {
@@ -29,8 +29,9 @@ class ManageExercice {
                 $cour = $crud->getLessonById($exercice->id_cours);
 
                 $array[$index] = array();
+                $array[$index]['id'] = $exercice->id_exercice;
                 $array[$index]['libelle'] = $exercice->libelle;
-                $array[$index]['libelle'] = $cour->id_cours;
+                $array[$index]['descript'] = $cour->descript;
                 $index++;
             }
 

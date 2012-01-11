@@ -5,15 +5,12 @@
     $add_exercice = AddExercice::getInstance();
     $lessons = $add_exercice->getLessons();
     
-    
-    echo "allalalal  : " + $lesson;
-    
     if ($isValided != null) {
         if ($libelle != null) {
             $LessonObj = new Cours();
             $LessonObj = $add_exercice->getLessonByIdFunc($lesson);
             $add_exercice->addExerciceFunc($libelle, $LessonObj);
-            echo "Exercice ajouté";
+            header('Location: tea-manageExercice.htm');
         } else {
             echo $isValided;
             echo "Veillez a remplir tous les champs correctement";
@@ -28,6 +25,7 @@
 <table class="sub_body">
     <tr>
         <td class="menu">
+            <?php include $menu_teacher_file; ?>
         </td>
         <td class="content_td">
              <form method="POST" action="tea-addExercice.htm">

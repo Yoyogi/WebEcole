@@ -60,14 +60,14 @@
                         {
                             echo "<td>" . $cell . "</td>";
                         }
-                        echo "<td><a href='tea-modifyExercice-" . $row['id'] . ".htm'>Modifier</a>  <a href='tea-manageExercice-" . $row['id'] . ".htm'>Supprimer</a></td>";
+                        echo "<td><a href='tea-modifyExercice-" . $row['id'] . ".htm'>Modifier</a> / <a href='tea-manageExercice-" . $row['id'] . ".htm'>Supprimer</a></td>";
                         echo "</tr>";
                     } 
                 ?>
                 </tr>
 
             </table>
-            <a href="tea-addExercice.htm">Ajouter une exercices</a>
+            <a href="tea-addExercice.htm">Ajouter une exercice</a>
         </td>
     </tr>
 </table>

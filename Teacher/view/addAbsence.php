@@ -27,6 +27,7 @@
 <table class="sub_body">
     <tr>
         <td class="menu">
+            <?php include $menu_teacher_file; ?>
         </td>
         <td class="content_td">
              <form method="POST" action="tea-addAbsence.htm">
