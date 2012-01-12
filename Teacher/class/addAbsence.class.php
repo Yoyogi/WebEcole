@@ -58,6 +58,7 @@ class AddAbsence {
 
         $array = array();
         foreach ($lessons as $lesson) {
+            $matiere = $crud->getSubjectById($lesson->id_matiere);
             
             $array[$index] = array();
             $array[$index]['id_cours'] = $lesson->id_cours;
@@ -67,6 +68,7 @@ class AddAbsence {
             $array[$index]['id_enseignant'] = $lesson->id_enseignant;
             $array[$index]['id_promo'] = $lesson->id_promo;
             $array[$index]['id_matiere'] = $lesson->id_matiere;
+            $array[$index]['matiere'] = $matiere->libelle;
             $index++;
         }
         

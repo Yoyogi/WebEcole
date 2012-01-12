@@ -2,6 +2,7 @@
 body {
     /* alignment */
     text-align: center;
+    font-family: Trebuchet MS;
 }
 
 #header {
@@ -125,6 +126,12 @@ body {
     
     /* police */
     font-family: Calibri;
+}
+
+.subtitle {
+    text-align: center;
+    font: 20px Calibri;
+    letter-spacing: 1px;
 }
 
 /* tableaux */

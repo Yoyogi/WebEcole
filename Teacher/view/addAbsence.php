@@ -30,7 +30,8 @@
             <?php include $menu_teacher_file; ?>
         </td>
         <td class="content_td">
-             <form method="POST" action="tea-addAbsence.htm">
+            <p class="subtitle">Ajout d'une absence</p>
+            <form method="POST" action="tea-addAbsence.htm">
                 <input type="hidden" name="isValided" value="valided" />
                 
                 <!-- combobox teacher -->
@@ -61,7 +62,7 @@
                         
                         echo "<option value=\"" . $row["id_cours"] . "\">";
                         
-                            echo " " . $row["descript"] . " ";
+                            echo " " . $row["date_cours"] . " - " . $row["matiere"] . " : " . $row["descript"] . " ";
                         
                          echo "</option>";
                     } 
@@ -71,6 +72,7 @@
                 <p><label> Motif : </label> <input type=text name=motif> </p>
                 
                 <input type="submit" name="addAbsence" value="Ajouter l'absence" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='tea-manageAbsence.htm';" />
             </form>
         </td>
     </tr>

@@ -15,7 +15,7 @@ class ManageLesson {
     }
     
     function ManageLesson() {
-        $this->header = array('date_cours' => 'Date', 'duree' => 'Duree', 'descript' => 'Description', 'promo' => 'Promotion', 'matiere' => 'Matiere');
+        $this->header = array('date_cours' => 'Date', 'duree' => 'Duree', 'promo' => 'Promotion', 'matiere' => 'Matiere');
     }
     
     public function getLesson() {
@@ -32,7 +32,6 @@ class ManageLesson {
                 $array[$index] = array();
                 $array[$index]['date_cours'] = $lesson->date_cours;
                 $array[$index]['duree'] = $lesson->duree;
-                $array[$index]['descript'] = $lesson->descript;
                 $array[$index]['promotion'] = $promotion->libelle;
                 $array[$index]['matiere'] = $matiere->libelle;
                 $index++;

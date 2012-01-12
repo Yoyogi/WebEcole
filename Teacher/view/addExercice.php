@@ -38,9 +38,10 @@
             <?php include $menu_teacher_file; ?>
         </td>
         <td class="content_td">
-             <form method="POST" action="tea-addExercice.htm">
+            <p class="subtitle">Ajout d'un exercice</p>
+            <form method="POST" action="tea-addExercice.htm">
                 <input type="hidden" name="isValided" value="valided" />
-                
+
                 <!-- combobox promotion -->
                 Cours : <select name="lesson" id="lesson">
                 <?php
@@ -51,7 +52,7 @@
                         
                         echo "<option value=\"" . $row["id_cours"] . "\">";
                         
-                            echo " " . $row["descript"] . " ";
+                            echo " " . $row["date_cours"] . " - " . $row["matiere"] . " : " . $row["descript"] . " ";
                         
                          echo "</option>";
                     } 
@@ -61,6 +62,7 @@
                 <p><label> Libelle : </label> <input type=text name=libelle> </p>
                 
                 <input type="submit" name="addExercice" value="Créer le cours" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='tea-manageExercice.htm';" />
             </form>
         </td>
     </tr>

@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-            <a href="tea-addExercice.htm">Ajouter une exercice</a>
+            <a href="tea-addExercice.htm">Ajouter un exercice</a>
         </td>
     </tr>
 </table>
