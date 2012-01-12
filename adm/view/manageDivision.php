@@ -25,7 +25,7 @@
         </td>
         <td class="content_td">
             <table border="1">
-                <caption align="center">Gestion des divisions</caption>
+                <caption align="center">Gestion des promotions</caption>
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {
@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-            <a href="adm-addDivision.htm">Ajouter une Division</a>
+            <a href="adm-addDivision.htm">Ajouter une promotion</a>
         </td>
     </tr>
 </table>

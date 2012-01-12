@@ -15,7 +15,7 @@ class ManageLesson {
     }
     
     function ManageLesson() {
-        $this->header = array('id' => 'ID', 'date_cours' => 'Date', 'duree' => 'Duree', 'descript' => 'Description', 'promo' => 'Promotion', 'matiere' => 'Matiere');
+        $this->header = array('id' => 'ID', 'date_cours' => 'Date', 'duree' => 'Durée', 'promo' => 'Promotion', 'matiere' => 'Matière', 'professeur' => 'Enseignant');
     }
     
     public function getLesson() {
@@ -28,14 +28,15 @@ class ManageLesson {
             foreach ($lessons as $lesson) {  
                 $promotion = $crud->getPromotionById($lesson->id_promo);
                 $matiere = $crud->getSubjectByLesson($lesson->id_cours);
+                $teacher = $crud->getTeacherById($lesson->id_cours);
 
                 $array[$index] = array();
                 $array[$index]['id'] = $lesson->id_cours;
-                $array[$index]['date_cours'] = $lesson->date_cours;
+                $array[$index]['date_cours'] = date("d/m/Y", strtotime($lesson->date_cours));
                 $array[$index]['duree'] = $lesson->duree;
-                $array[$index]['descript'] = $lesson->descript;
                 $array[$index]['promotion'] = $promotion->libelle;
                 $array[$index]['matiere'] = $matiere->libelle;
+                $array[$index]['professeur'] = $teacher->nom;
                 $index++;
             }
 

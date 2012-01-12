@@ -31,7 +31,8 @@
     if ($isValided != null) {
         if (($date_cours != null) && ($duree != null) && ($descript != null)) {
             try {
-                $modify_lesson->updateLesson($v_id, $date_cours, $duree, $descript, $teacher, $promotion, $matiere);
+                $date = $modify_lesson->convertStringToDate($date_cours);
+                $modify_lesson->updateLesson($v_id, $date, $duree, $descript, $teacher, $promotion, $matiere);
                 header('Location: adm-manageLesson.htm');
             }
             catch (Exception $e) {
@@ -54,7 +55,8 @@
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-             <form method="POST" action="adm-modifyLesson-<?php echo $v_id; ?>.htm">
+            <p class="subtitle">Modifier un cours</p>
+            <form method="POST" action="adm-modifyLesson-<?php echo $v_id; ?>.htm">
                 <input type="hidden" name="isValided" value="valided" />
                 
                 <!-- combobox teacher -->
@@ -101,7 +103,7 @@
                 </select>
                 
                 <!-- combobox matiere -->
-                Matiere : <select name="matiere" id="matiere" selected="<?php echo $lesson->id_matiere; ?>">
+                Matière : <select name="matiere" id="matiere" selected="<?php echo $lesson->id_matiere; ?>">
                 <?php
 
                     
@@ -121,11 +123,12 @@
                 ?>
                 </select>
                 
-                <p><label> Date : </label> <input type=text name=date_cours value="<?php echo $lesson->date_cours; ?>"> </p>
-                <p><label> Duree : </label> <input type=text name=duree value="<?php echo $lesson->duree; ?>"> </p>
+                <p><label> Date : </label> <input type=text name=date_cours value="<?php echo date("d/m/Y", strtotime($lesson->date_cours)); ?>"> </p>
+                <p><label> Durée : </label> <input type=text name=duree value="<?php echo $lesson->duree; ?>"> </p>
                 <p><label> Description : </label> <input type=text name=descript value="<?php echo $lesson->descript; ?>"> </p>
                 
                 <input type="submit" name="modifyLesson" value="Modifier le cours" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageLesson.htm';" />
             </form>
         </td>
     </tr>

@@ -144,6 +144,13 @@ class AddLesson {
             throw $e;
         }
     }
+    
+    function convertStringToDate($string) {
+        list($d, $m, $y) = explode('/', $string);
+        $mk = mktime(0, 0, 0, $m, $d, $y);
+        $result = strftime('%Y-%m-%d',$mk);
+        return $result;
+    }
 }
 
 ?>

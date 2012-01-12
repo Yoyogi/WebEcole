@@ -42,11 +42,13 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
+            <p class="subtitle">Ajout d'une promotion</p>
             <form method="POST" action="adm-addDivision.htm">
                 <input type="hidden" name="isValided" value="valided">
-                <p><label> Libelle </label> <input type=text name=libelle> </p>
+                <p><label> Libellé </label> <input type=text name=libelle> </p>
 
-                <p> <input type="submit" name="envoyer" value="Se connecter"> </p>
+                <input type="submit" name="envoyer" value="Ajout de la promotion" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageDivision.htm';" />
             </form>
         </td>
     </tr>

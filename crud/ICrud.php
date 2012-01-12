@@ -50,7 +50,7 @@ interface ICrud {
     function deleteAbsence($id);
     function getAbsences();
     function getAbsenceById($idLesson);
-    function getAbsencesBylesson($idLesson);
+    function getAbsencesByLesson($idLesson);
     function getAbsencesByStudent($idStudent);
     
     //crud cours

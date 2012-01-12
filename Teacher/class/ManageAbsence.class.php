@@ -21,20 +21,25 @@ class ManageAbsence extends Manager {
     public function getAbsence() {
         try {
             $crud = Crud::getInstance();
-            $absences = $crud->getAbsences();
+            $teacher = $crud->getTeacherByLogin($_SESSION["login"]);
+            $lessons = $crud->getLessonsByTeacher($teacher->id_enseignant);
             $index = 0;
 
             $array = array();
-            foreach ($absences as $absence) {
-                $student = $crud->getStudentById($absence->id_etudiant);
-                $matiere = $crud->getSubjectByLesson($absence->id_cours);
+            foreach ($lessons as $lesson) {
+                $absences = $crud->getAbsencesByLesson($lesson->id_cours);
+                
+                foreach ($absences as $absence) {
+                    $student = $crud->getStudentById($absence->id_etudiant);
+                    $matiere = $crud->getSubjectByLesson($absence->id_cours);
 
-                $array[$index] = array();
-                $array[$index]['cour'] = $matiere->libelle;
-                $array[$index]['nom'] = $student->nom;
-                $array[$index]['prenom'] = $student->prenom;
-                $array[$index]['motif'] = $absence->motif;
-                $index++;
+                    $array[$index] = array();
+                    $array[$index]['cour'] = $matiere->libelle;
+                    $array[$index]['nom'] = $student->nom;
+                    $array[$index]['prenom'] = $student->prenom;
+                    $array[$index]['motif'] = $absence->motif;
+                    $index++;
+                }
             }
 
             return $array;

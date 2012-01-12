@@ -21,7 +21,8 @@ class ShowAbsence extends Manager {
     public function getAbsence() {
         try {
             $crud = Crud::getInstance();
-            $absences = $crud->getAbsences();
+            $student = $crud->getStudentByLogin($_SESSION["login"]);
+            $absences = $crud->getAbsencesByStudent($student->id_etudiant);
             $index = 0;
 
             $array = array();

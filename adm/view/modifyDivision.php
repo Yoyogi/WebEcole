@@ -44,11 +44,13 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
+            <p class="subtitle">Modifier une promotion</p>
             <form method="POST" action="adm-modifyDivision.htm-<?php echo $v_id; ?>">
                 <input type="hidden" name="isValided" value="valided">
-                <p><label> Libelle </label> <input type=text name=libelle value="<?php echo $division->libelle; ?>"> </p>
+                <p><label> Libellé </label> <input type=text name=libelle value="<?php echo $division->libelle; ?>"> </p>
 
-                <p> <input type="submit" name="envoyer" value="Modifier division"> </p>
+                <input type="submit" name="envoyer" value="Modifier la promotion" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageDivision.htm';" />
             </form>
         </td>
     </tr>

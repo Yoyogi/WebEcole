@@ -32,7 +32,4 @@
             </li>
         </ul>
     </li>
-    <li>
-        <a href="#" title="Gestion technique" style="width:168px;">Gestion technique</a>
-    </li>
 </ul>

@@ -19,7 +19,7 @@ class Manager {
         if ($str == "Admin") {
             return ManagePeople::$ADMIN;
         }
-        else if ($str == "Teacher") {
+        else if ($str == "Enseignant") {
             return ManagePeople::$TEACHER;
         }
         else {

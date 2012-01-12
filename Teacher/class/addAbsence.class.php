@@ -53,7 +53,8 @@ class AddAbsence {
     
     public function getLessons() {
         $crud = Crud::getInstance();
-        $lessons = $crud->getLessons();
+        $teacher = $crud->getTeacherByLogin($_SESSION["login"]);
+        $lessons = $crud->getLessonsByTeacher($teacher->id_enseignant);
         $index = 0;
 
         $array = array();

@@ -375,7 +375,7 @@ class Crud implements ICrud {
         try {
             if (Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher)) {
                 $teacher = Doctrine_Core::getTable("Enseignant")->findOneBy("id_enseignant", $idTeacher);
-                $subjects = Dcotrine_Core::getTables("Matiere")->findAll();
+                $subjects = Doctrine_Core::getTable("Matiere")->findAll();
                 foreach ($subjects as $subject) {
                     $flag = false;
                     foreach ($subject->Enseignants as $enseignant) {
@@ -782,9 +782,9 @@ class Crud implements ICrud {
         return null;
     }
     
-    function getAbsencesBylesson($idLesson) {
+    function getAbsencesByLesson($idLesson) {
         try {
-            $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLessons);
+            $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $idLesson);
             if ($absences != null) {
                 return $absences;
             }
@@ -906,6 +906,13 @@ class Crud implements ICrud {
                 $absences = Doctrine_Core::getTable("Absence")->findBy("id_cours", $id);
                 foreach ($absences as $absence) {
                     $this->deleteAbsence($absence->id_absence);
+                }
+                
+                $exercices = Doctrine_Core::getTable("Exercice")->findAll();
+                foreach ($exercices as $exercice) {
+                    if ($exercice->id_cours = $id) {
+                        $this->deleteExercice($exercice->id_exercice);
+                    }
                 }
 
                 $lesson->delete();
@@ -1583,6 +1590,7 @@ class Crud implements ICrud {
             $promotions = $this->getPromotions();
             $i = 0;
             foreach ($promotions as $promotion) {
+                echo "crud promotion\n";
                 if ($this->collectionContains($promotion->Etudiants, $student)) {
                     $results[$i] = $promotion;
                     $i++;

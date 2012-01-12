@@ -21,7 +21,8 @@ class ManageLesson {
     public function getLesson() {
         try {
             $crud = Crud::getInstance();
-            $lessons = $crud->getLessons();
+            $teacher = $crud->getTeacherByLogin($_SESSION["login"]);
+            $lessons = $crud->getLessonsByTeacher($teacher->id_enseignant);
             $index = 0;
 
             $array = array();
@@ -30,7 +31,7 @@ class ManageLesson {
                 $matiere = $crud->getSubjectByLesson($lesson->id_cours);
 
                 $array[$index] = array();
-                $array[$index]['date_cours'] = $lesson->date_cours;
+                $array[$index]['date_cours'] = date("d/m/Y", strtotime($lesson->date_cours));
                 $array[$index]['duree'] = $lesson->duree;
                 $array[$index]['promotion'] = $promotion->libelle;
                 $array[$index]['matiere'] = $matiere->libelle;

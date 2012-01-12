@@ -31,7 +31,7 @@ class ShowLesson {
                 $teacher = $crud->getTeacherById($lesson->id_cours);
 
                 $array[$index] = array();
-                $array[$index]['date_cours'] = $lesson->date_cours;
+                $array[$index]['date_cours'] = date("d/m/Y", strtotime($lesson->date_cours));
                 $array[$index]['duree'] = $lesson->duree;
                 $array[$index]['promotion'] = $promotion->libelle;
                 $array[$index]['matiere'] = $matiere->libelle;

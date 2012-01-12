@@ -34,7 +34,7 @@ class ShowStudent extends Manager {
                 $array[$index] = array();
                 $array[$index]['nom'] = $student->nom;
                 $array[$index]['prenom'] = $student->prenom;
-                $array[$index]['date_naissance'] = $student->date_naissance;
+                $array[$index]['date_naissance'] = date("d/m/Y", strtotime($student->date_naissance));
                 $array[$index]['rue'] = $student->rue;
                 $array[$index]['cp'] = $student->cp;
                 $array[$index]['ville'] = $student->ville;

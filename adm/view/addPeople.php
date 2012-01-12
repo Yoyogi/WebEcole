@@ -52,7 +52,8 @@ if (isset($status)){
             && ($firstName != null) && ($email != null) && ($street != null) 
                 && ($zipcode != null) && ($city != null) && ($photo != null) && ($birthDay != null)){
             try {
-                $add_people->addPupil($lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
+                $date = $add_people->convertStringToDate($birthDay);
+                $add_people->addPupil($lastName, $firstName, $date, $street, $zipcode, $city, $email, $login, $password, $photo);
                 header('Location: adm-managePeople.htm');
             }
             catch (Exception $e) {
@@ -116,7 +117,7 @@ if (isset($status)){
                 <p><span class="label_form"><label>Login</label></span><input class="input_form" type="text" name="login"></p>
                 <p><span class="label_form"><label>Mot de passe</label></span><input class="input_form" type="text" name="password"></p>
                 <p><span class="label_form"><label>Nom</label></span><input class="input_form" type="text" name="lastName"></p>
-                <p><span class="label_form"><label>Prenom</label></span><input class="input_form" type="text" name="firstName"></p>
+                <p><span class="label_form"><label>Prénom</label></span><input class="input_form" type="text" name="firstName"></p>
                 <p><span class="label_form"><label>Rue</label></span><input class="input_form" type="text" name="street"></p>
                 <p><span class="label_form"><label>Code postal</label></span><input class="input_form" type="text" name="zipcode"></p>
                 <p><span class="label_form"><label>Ville</label></span><input class="input_form" type="text" name="city"></p>
@@ -133,7 +134,10 @@ if (isset($status)){
                 <?php
                         }
                 ?>
-                <p><input class="button_form" type="submit" name="envoyer" value="Ajouter personne"></p>
+                <p class="button_form">
+                    <input type="submit" name="envoyer" value="Ajouter la personne">
+                    <input type="button" name="back" value="Retour" onclick="window.location.href='adm-managePeople.htm';" />
+                </p>
                 <?php
                     }
                     else {
@@ -141,14 +145,17 @@ if (isset($status)){
                 <p><span class="label_form"><label>Login</label></span><input class="input_form" type="text" name="login"></p>
                 <p><span class="label_form"><label>Mot de passe</label></span><input class="input_form" type="text" name="password"></p>
                 <p><span class="label_form"><label>Nom</label></span><input class="input_form" type="text" name="lastName"></p>
-                <p><span class="label_form"><label>Prenom</label></span><input class="input_form" type="text" name="firstName"></p>
+                <p><span class="label_form"><label>Prénom</label></span><input class="input_form" type="text" name="firstName"></p>
                 <p><span class="label_form"><label>Rue</label></span><input class="input_form" type="text" name="street"></p>
                 <p><span class="label_form"><label>Code postal</label></span><input class="input_form" type="text" name="zipcode"></p>
                 <p><span class="label_form"><label>Ville</label></span><input class="input_form" type="text" name="city"></p>
                 <p><span class="label_form"><label>Email</label></span><input class="input_form" type="text" name="email"></p>
                 <p><label class="label_form">Photo</label><input class="input_form" type="text" name="photo"></p>
                 <p><label class="label_form">Date de naissance</label><input class="input_form" type="text" name="birthDay"></p>
-                <p><input class="button_form" type="submit" name="envoyer" value="Ajouter personne"></p>
+                <p class="button_form">
+                    <input type="submit" name="envoyer" value="Ajouter la personne">
+                    <input type="button" name="back" value="Retour" onclick="window.location.href='adm-managePeople.htm';" />
+                </p>
                         <?php
                     }
                 ?>

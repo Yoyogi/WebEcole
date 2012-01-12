@@ -25,7 +25,7 @@
         </td>
         <td class="content_td">
             <table border="1">
-                <caption align="center">Gestion des matieres</caption>
+                <caption align="center">Gestion des matières</caption>
                 <tr bgcolor="#ff0000">
                 <?php
                     if (isset($v_id)) {

@@ -61,7 +61,7 @@
                                 
                 <p><label> Libelle : </label> <input type=text name=libelle> </p>
                 
-                <input type="submit" name="addExercice" value="Créer le cours" />
+                <input type="submit" name="addExercice" value="Créer l'exercice" />
                 <input type="button" name="back" value="Retour" onclick="window.location.href='tea-manageExercice.htm';" />
             </form>
         </td>

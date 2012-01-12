@@ -15,7 +15,7 @@ class ManagePeople extends Manager {
     }
     
     function ManagePeople() {
-        $this->header = array('id' => 'ID', 'nom' => 'Nom', 'prenom' => 'Prenom', 'status' => 'Status');
+        $this->header = array('id' => 'ID', 'nom' => 'Nom', 'prenom' => 'Prénom', 'status' => 'Statut');
     }
     
     public function getPeople() {
@@ -31,7 +31,7 @@ class ManagePeople extends Manager {
                 $array[$index]['id'] = $student->id_etudiant;
                 $array[$index]['nom'] = $student->nom;
                 $array[$index]['prenom'] = $student->prenom;
-                $array[$index]['status'] = "Student";
+                $array[$index]['status'] = "Etudiant";
                 $index++;
             }
 
@@ -40,7 +40,7 @@ class ManagePeople extends Manager {
                 $array[$index]['id'] = $teacher->id_enseignant;
                 $array[$index]['nom'] = $teacher->nom;
                 $array[$index]['prenom'] = $teacher->prenom;
-                $array[$index]['status'] = "Teacher";
+                $array[$index]['status'] = "Enseignant";
                 $index++;
             }
 

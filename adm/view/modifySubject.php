@@ -45,10 +45,12 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
+            <p class="subtitle">Modifier une matière</p>
             <form method="POST" action="adm-modifySubject-<?php echo $v_id; ?>.htm">
                 <input type="hidden" name="isValided" value="valided">
-                <p><label> Libelle </label> <input type=text name=libelle value="<?php echo $subject->libelle; ?>"> </p>
-                <p> <input type="submit" name="envoyer" value="Modifier matiere"> </p>
+                <p><label> Libellé </label> <input type=text name=libelle value="<?php echo $subject->libelle; ?>"> </p>
+                <input type="submit" name="envoyer" value="Modifier la matiere">
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageSubject.htm';" />
             </form>
         </td>
     </tr>

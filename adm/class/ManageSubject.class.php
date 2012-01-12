@@ -15,7 +15,7 @@ class ManageSubject extends Manager {
     }
     
     function ManageSubject() {
-        $this->header = array('id' => 'ID', 'libelle' => 'Libelle');
+        $this->header = array('id' => 'ID', 'libelle' => 'Libellé');
     }
     
     public function getSubject() {

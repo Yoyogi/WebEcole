@@ -43,16 +43,20 @@ else {
 
                 $teacher = $modify_people->getPeopleByID($v_id, $v_type);
                 ?>
+                <p class="subtitle">Modifier un enseignant</p>
                 <form method="POST" action="adm-modifyPeople-<?php echo $v_id . "-" . $v_type; ?>.htm">
                     <p><span class="label_form"><label>Login</label></span><input class="input_form" type="text" name="login" value="<?php echo $teacher->ulogin; ?>"></p>
                     <p><span class="label_form"><label>Mot de passe</label></span><input class="input_form" type="text" name="password" value="<?php echo $teacher->passwd; ?>"></p>
                     <p><span class="label_form"><label>Nom</label></span><input class="input_form" type="text" name="lastName" value="<?php echo $teacher->nom; ?>"></p>
-                    <p><span class="label_form"><label>Prenom</label></span><input class="input_form" type="text" name="firstName" value="<?php echo $teacher->prenom; ?>"></p>
+                    <p><span class="label_form"><label>Prénom</label></span><input class="input_form" type="text" name="firstName" value="<?php echo $teacher->prenom; ?>"></p>
                     <p><span class="label_form"><label>Rue</label></span><input class="input_form" type="text" name="street" value="<?php echo $teacher->rue; ?>"></p>
                     <p><span class="label_form"><label>Code postal</label></span><input class="input_form" type="text" name="zipcode" value="<?php echo $teacher->cp; ?>"></p>
                     <p><span class="label_form"><label>Ville</label></span><input class="input_form" type="text" name="city" value="<?php echo $teacher->ville; ?>"></p>
                     <p><span class="label_form"><label>Email</label></span><input class="input_form" type="text" name="email" value="<?php echo $teacher->email; ?>"></p>
-                    <p><input class="button_form" type="submit" name="envoyer" value="Modifier enseignant"></p>
+                    <p class="button_form">
+                        <input type="submit" name="envoyer" value="Modifier l'enseignant">
+                        <input type="button" name="back" value="Retour" onclick="window.location.href='adm-managePeople.htm';" />
+                    </p>
                 </form>
                 <?php
             }
@@ -62,7 +66,8 @@ else {
                     && ($firstName != null) && ($email != null) && ($street != null) 
                         && ($zipcode != null) && ($city != null) && ($photo != null) && ($birthDay != null)){
                     try {
-                        $add_people->updateStudent($v_id, $lastName, $firstName, $birthDay, $street, $zipcode, $city, $email, $login, $password, $photo);
+                        $date = $modify_people->convertStringToDate($birthDay);
+                        $modify_people->updateStudent($v_id, $lastName, $firstName, $date, $street, $zipcode, $city, $email, $login, $password, $photo);
                         header('Location: adm-managePeople.htm');
                     }
                     catch (Exception $e) {
@@ -72,18 +77,22 @@ else {
                 
                 $student = $modify_people->getPeopleByID($v_id, $v_type);
                 ?>
+                <p class="subtitle">Modifier un étudiant</p>
                 <form method="POST" action="adm-modifyPeople-<?php echo $v_id . "-" . $v_type; ?>.htm">
                     <p><span class="label_form"><label>Login</label></span><input class="input_form" type="text" name="login" value="<?php echo $student->ulogin; ?>"></p>
                     <p><span class="label_form"><label>Mot de passe</label></span><input class="input_form" type="text" name="password" value="<?php echo $student->passwd; ?>"></p>
                     <p><span class="label_form"><label>Nom</label></span><input class="input_form" type="text" name="lastName" value="<?php echo $student->nom; ?>"></p>
-                    <p><span class="label_form"><label>Prenom</label></span><input class="input_form" type="text" name="firstName" value="<?php echo $student->prenom; ?>"></p>
+                    <p><span class="label_form"><label>Prénom</label></span><input class="input_form" type="text" name="firstName" value="<?php echo $student->prenom; ?>"></p>
                     <p><span class="label_form"><label>Rue</label></span><input class="input_form" type="text" name="street" value="<?php echo $student->rue; ?>"></p>
                     <p><span class="label_form"><label>Code postal</label></span><input class="input_form" type="text" name="zipcode" value="<?php echo $student->cp; ?>"></p>
                     <p><span class="label_form"><label>Ville</label></span><input class="input_form" type="text" name="city" value="<?php echo $student->ville; ?>"></p>
                     <p><span class="label_form"><label>Email</label></span><input class="input_form" type="text" name="email" value="<?php echo $student->email; ?>"></p>
                     <p><label class="label_form">Photo</label><input class="input_form" type="text" name="photo" value="<?php echo $student->photo; ?>"></p>
-                    <p><label class="label_form">Date de naissance</label><input class="input_form" type="text" name="birthDay" value="<?php echo $student->date_naissance; ?>"></p>
-                    <p><input class="button_form" type="submit" name="envoyer" value="Modifier étudiant"></p>
+                    <p><label class="label_form">Date de naissance</label><input class="input_form" type="text" name="birthDay" value="<?php echo date("d/m/Y", strtotime($student->date_naissance)); ?>"></p>
+                    <p class="button_form">
+                        <input type="submit" name="envoyer" value="Modifier l'étudiant">
+                        <input type="button" name="back" value="Retour" onclick="window.location.href='adm-managePeople.htm';" />
+                    </p>
                 </form>
                 <?php     
             }

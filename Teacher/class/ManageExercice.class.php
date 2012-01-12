@@ -21,18 +21,20 @@ class ManageExercice {
     public function getExercice() {
         try {
             $crud = Crud::getInstance();
-            $exercices = $crud->getExercices();
+            $teacher = $crud->getTeacherByLogin($_SESSION["login"]);
+            $lessons = $crud->getLessonsByTeacher($teacher->id_enseignant);
             $index = 0;
 
             $array = array();
-            foreach ($exercices as $exercice) { 
-                $cour = $crud->getLessonById($exercice->id_cours);
-
-                $array[$index] = array();
-                $array[$index]['id'] = $exercice->id_exercice;
-                $array[$index]['libelle'] = $exercice->libelle;
-                $array[$index]['descript'] = $cour->descript;
-                $index++;
+            foreach ($lessons as $lesson) {
+                $exercices = $crud->getExercicesByLesson($lesson->id_cours);
+                foreach ($exercices as $exercice) {
+                    $array[$index] = array();
+                    $array[$index]['id'] = $exercice->id_exercice;
+                    $array[$index]['libelle'] = $exercice->libelle;
+                    $array[$index]['descript'] = $lesson->descript;
+                    $index++;
+                }
             }
 
             return $array;

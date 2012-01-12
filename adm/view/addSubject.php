@@ -44,10 +44,12 @@ if ($isValided != null) {
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
+            <p class="subtitle">Ajout d'une matière</p>
             <form method="POST" action="adm-addSubject.htm">
                 <input type="hidden" name="isValided" value="valided">
-                <p><label> Libelle </label> <input type=text name=libelle> </p>
-                <p> <input type="submit" name="envoyer" value="Ajouter matiere"> </p>
+                <p><label> Libellé </label> <input type=text name=libelle> </p>
+                <input type="submit" name="envoyer" value="Ajouter la matiere" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageSubject.htm';" />
             </form>
         </td>
     </tr>

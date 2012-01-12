@@ -15,7 +15,7 @@ class ManageDivision {
     }
     
     function ManageDivision() {
-        $this->header = array('id' => 'ID', 'libelle' => 'Libelle');
+        $this->header = array('id' => 'ID', 'libelle' => 'Libellé');
     }
     
     public function getDivision() {

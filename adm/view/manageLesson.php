@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-            <a href="adm-addLesson.htm">Ajouter une Lesson</a>
+            <a href="adm-addLesson.htm">Ajouter un cours</a>
         </td>
     </tr>
 </table>

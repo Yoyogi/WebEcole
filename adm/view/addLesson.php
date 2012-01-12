@@ -32,7 +32,8 @@
             $teacherObj = $add_lesson->getTeacherByIdFunc($teacher);
             $promoObj = new Promotion();
             $promoObj = $add_lesson->getPromotionByIdFunc($promotion);
-            $add_lesson->addLessonFunc($date_cours, $duree, $descript, $teacherObj, $promoObj, $matiereObj);
+            $date = $add_lesson->convertStringToDate($date_cours);
+            $add_lesson->addLessonFunc($date, $duree, $descript, $teacherObj, $promoObj, $matiereObj);
             header('Location: adm-manageLesson.htm');
         } else {
 
@@ -49,7 +50,8 @@
             <?php include $menu_adm_file; ?>
         </td>
         <td class="content_td">
-             <form method="POST" action="adm-addLesson.htm">
+            <p class="subtitle">Ajout d'un cours</p>
+            <form method="POST" action="adm-addLesson.htm">
                 <input type="hidden" name="isValided" value="valided" />
                 
                 <!-- combobox teacher -->
@@ -88,7 +90,7 @@
                 </select>
                 
                 <!-- combobox matiere -->
-                Matiere : <select name="matiere" id="matiere">
+                Matière : <select name="matiere" id="matiere">
                 <?php
 
                     
@@ -105,10 +107,11 @@
                 </select>
                 
                 <p><label> Date : </label> <input type=text name=date_cours> </p>
-                <p><label> Duree : </label> <input type=text name=duree> </p>
+                <p><label> Durée : </label> <input type=text name=duree> </p>
                 <p><label> Description : </label> <input type=text name=descript> </p>
                 
                 <input type="submit" name="addLesson" value="Créer le cours" />
+                <input type="button" name="back" value="Retour" onclick="window.location.href='adm-manageLesson.htm';" />
             </form>
         </td>
     </tr>
