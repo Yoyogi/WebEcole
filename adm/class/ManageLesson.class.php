@@ -28,7 +28,7 @@ class ManageLesson {
             foreach ($lessons as $lesson) {  
                 $promotion = $crud->getPromotionById($lesson->id_promo);
                 $matiere = $crud->getSubjectByLesson($lesson->id_cours);
-                $teacher = $crud->getTeacherById($lesson->id_cours);
+                $teacher = $crud->getTeacherByLesson($lesson);
 
                 $array[$index] = array();
                 $array[$index]['id'] = $lesson->id_cours;
